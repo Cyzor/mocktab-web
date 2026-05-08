@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supported hardware &mdash; MockTab</title>
+  <meta name="description" content="Wacom tablets confirmed working with MockTab, plus tablets registered for future support.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://mocktab.org/hardware.html">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a href="/" class="brand">MockTab</a>
+    <nav>
+      <a href="/hardware.html">Hardware</a>
+      <a href="https://github.com/Cyzor/mocktab-app/releases">Download</a>
+      <a href="https://github.com/Cyzor/mocktab-app">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <h1>Supported hardware</h1>
+    <p class="lede">
+      MockTab targets Wacom USB and Bluetooth tablets from roughly 1996 through the
+      late 2010s. The list below is split into tablets confirmed live on real hardware
+      and tablets covered by the generic decoder pending live confirmation.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <h2>Confirmed</h2>
+    <p>Tested end-to-end on the actual hardware.</p>
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Product ID</th>
+          <th>Transport</th>
+          <th>Pressure</th>
+          <th>Tilt</th>
+          <th>Rotation</th>
+          <th>Express keys / ring</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Intuos Pro Large (PTH-860)</td>
+          <td><code>0x0358</code></td>
+          <td>USB, BT</td>
+          <td>8191 (13-bit)</td>
+          <td>Yes</td>
+          <td>Art Pen (USB)</td>
+          <td>8 keys, touch ring</td>
+        </tr>
+        <tr>
+          <td>Intuos Pro M (PTH-660)</td>
+          <td><code>0x0357</code></td>
+          <td>USB, BT</td>
+          <td>8191 (13-bit)</td>
+          <td>Yes</td>
+          <td>Art Pen</td>
+          <td>6 keys, touch ring</td>
+        </tr>
+        <tr>
+          <td>Intuos 5 Large (PTH-851)</td>
+          <td><code>0x0317</code></td>
+          <td>USB</td>
+          <td>1023 (10-bit)</td>
+          <td>Yes</td>
+          <td>Art Pen</td>
+          <td>8 keys, touch ring</td>
+        </tr>
+        <tr>
+          <td>Intuos3 Widescreen (PTZ-631W)</td>
+          <td><code>0x00B5</code></td>
+          <td>USB</td>
+          <td>2046 (11-bit)</td>
+          <td>Yes</td>
+          <td>Art Pen</td>
+          <td>8 keys, 2 strips</td>
+        </tr>
+        <tr>
+          <td>Cintiq 24HD (DTK-2400)</td>
+          <td><code>0x00F4</code></td>
+          <td>USB</td>
+          <td>2047 (11-bit)</td>
+          <td>Yes</td>
+          <td>Art Pen</td>
+          <td>16 keys, 2 rings</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Generic-decoder support</h2>
+    <p>
+      MockTab ships a registry of roughly fifty Wacom product IDs and a generic
+      decoder that auto-detects the report format. Most Intuos, Intuos Pro, Bamboo
+      Pen &amp; Touch, and Cintiq models from this era should enumerate and work,
+      but they haven't all been confirmed on live hardware yet.
+    </p>
+    <p class="note">
+      If you have a tablet not in the confirmed list and it works (or doesn't), please
+      <a href="https://github.com/Cyzor/mocktab-app/issues/new">open an issue</a>
+      with the model number, USB product ID, and what you saw. Logs from the Info tab help.
+    </p>
+
+    <h2>Wireless</h2>
+    <ul class="bullets">
+      <li><strong>USB dongle (ACK-40401):</strong> works as a generic device once paired.</li>
+      <li><strong>Bluetooth:</strong> supported on tablets that ship with BT (PTH-660, PTH-860). Pairing is done in macOS System Settings; MockTab picks them up automatically.</li>
+    </ul>
+
+    <h2>Not supported</h2>
+    <ul class="bullets">
+      <li>Tablets from Huion, XP-Pen, Xencelabs, Gaomon, and other vendors.</li>
+      <li>Wacom tablets newer than ~2020 (Intuos Pro Gen 3 and successors).</li>
+      <li>Serial / ADB-era Wacom tablets.</li>
+      <li>Graphire-family and original Bamboo (CTL/CTH-4xx) pen decoders &mdash; registered for future work.</li>
+      <li>Touch / multitouch input &mdash; detected but disabled.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>
+      MockTab is an independent project, not affiliated with Wacom.
+      &middot; <a href="https://github.com/Cyzor/mocktab-app">Source on GitHub</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

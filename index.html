@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MockTab — native Wacom driver for modern Macs</title>
+  <meta name="description" content="MockTab is a minimal, high-performance macOS driver that revives discontinued Wacom tablets. Pressure, tilt, rotation, button mapping, multi-display.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://mocktab.org/">
+  <meta property="og:title" content="MockTab — native Wacom driver for modern Macs">
+  <meta property="og:description" content="Bring discontinued Wacom tablets back to life on Apple Silicon and Intel Macs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mocktab.org/">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a href="/" class="brand">MockTab</a>
+    <nav>
+      <a href="/hardware.html">Hardware</a>
+      <a href="https://github.com/Cyzor/mocktab-app/releases">Download</a>
+      <a href="https://github.com/Cyzor/mocktab-app">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <h1>Wacom tablets, revived.</h1>
+    <p class="lede">
+      MockTab is a native macOS driver that brings discontinued Wacom drawing tablets
+      back to life on Apple Silicon and Intel Macs. Full pressure, tilt, and rotation
+      &mdash; without the bloat of the official driver.
+    </p>
+    <p>
+      <a class="cta" href="https://github.com/Cyzor/mocktab-app/releases">Download for macOS</a>
+      <a class="cta secondary" href="/hardware.html">See supported tablets</a>
+    </p>
+    <div style="margin-top:48px">
+      <img class="shot light" src="images/ui/tablet-area-light.png" alt="MockTab tablet area settings">
+      <img class="shot dark"  src="images/ui/tablet-area-dark.png"  alt="MockTab tablet area settings (dark)">
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Why MockTab</h2>
+    <p>
+      Wacom makes excellent hardware, but old products eventually fall off the support
+      list. Reliable, perfectly healthy tablets stop working with newer macOS releases.
+      MockTab is a small, focused driver that targets exactly that gap: USB and Bluetooth
+      Wacom tablets from 1996 through the late 2010s, on macOS 13 and newer.
+    </p>
+
+    <div class="feature">
+      <div>
+        <h3>Tablet area mapping</h3>
+        <p>
+          Choose which part of the tablet maps to which part of the screen. Proportional
+          mode keeps circles round on any aspect ratio, so the pen feels like the pen.
+        </p>
+      </div>
+      <div>
+        <img class="shot light" src="images/ui/tablet-area-light.png" alt="">
+        <img class="shot dark"  src="images/ui/tablet-area-dark.png"  alt="">
+      </div>
+    </div>
+
+    <div class="feature flip">
+      <div>
+        <h3>Pressure curve</h3>
+        <p>
+          A two-point B&eacute;zier editor with Linear, Soft, and Firm presets. Works in
+          every pressure-aware app &mdash; Photoshop, Affinity, Krita, Procreate Dreams,
+          Rebelle, Clip Studio.
+        </p>
+      </div>
+      <div>
+        <img class="shot light" src="images/ui/pen-feel-light.png" alt="">
+        <img class="shot dark"  src="images/ui/pen-feel-dark.png"  alt="">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <h3>Buttons &amp; express keys</h3>
+        <p>
+          Remap barrel buttons, touch ring, and express keys to any modifier-plus-key
+          combination. Live capture: click the field, press the shortcut, done.
+        </p>
+      </div>
+      <div>
+        <img class="shot light" src="images/ui/buttons-light.png" alt="">
+        <img class="shot dark"  src="images/ui/buttons-dark.png"  alt="">
+      </div>
+    </div>
+
+    <div class="feature flip">
+      <div>
+        <h3>Display mapping</h3>
+        <p>
+          Route the tablet to any connected display. Useful for multi-monitor setups
+          where you want the pen confined to a single screen.
+        </p>
+      </div>
+      <div>
+        <img class="shot light" src="images/ui/displays-light.png" alt="">
+        <img class="shot dark"  src="images/ui/displays-dark.png"  alt="">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <h3>Live scratchpad</h3>
+        <p>
+          Test pressure, tilt, and button mappings in a built-in scratchpad before
+          you open your real work.
+        </p>
+      </div>
+      <div>
+        <img class="shot light" src="images/ui/scratchpad-light.png" alt="">
+        <img class="shot dark"  src="images/ui/scratchpad-dark.png"  alt="">
+      </div>
+    </div>
+
+    <h2>What's in the box</h2>
+    <ul class="bullets">
+      <li>Pressure, tilt, and pen rotation (where the hardware supports it)</li>
+      <li>Wireless via USB dongle and Bluetooth</li>
+      <li>Multiple tablets connected simultaneously &mdash; pressure-based switching</li>
+      <li>Per-app settings for area, pressure, and buttons</li>
+      <li>Touch ring and touch strip</li>
+      <li>Native AppKit app, signed and notarized, no kernel extensions</li>
+    </ul>
+
+    <h2>What it isn't</h2>
+    <ul class="bullets">
+      <li>A driver for Huion, XP-Pen, Xencelabs, or other vendors</li>
+      <li>Support for new (post-2020) Wacom tablets</li>
+      <li>Available for Windows, Linux, or iPad</li>
+      <li>A touch / gesture driver (touch is detected but disabled)</li>
+    </ul>
+
+    <h2>Get it</h2>
+    <p>
+      <a class="cta" href="https://github.com/Cyzor/mocktab-app/releases">Download latest release</a>
+    </p>
+    <p class="note">
+      Requires macOS 13 or later. On first launch, MockTab asks for Accessibility
+      permission &mdash; that's how it injects pressure into other apps.
+    </p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>
+      MockTab is an independent project, not affiliated with Wacom.
+      &middot; <a href="https://github.com/Cyzor/mocktab-app">Source on GitHub</a>
+      &middot; <a href="/hardware.html">Hardware</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
