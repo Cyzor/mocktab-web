@@ -3,36 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MockTab — native Wacom driver for modern Macs</title>
-  <meta name="description" content="MockTab is a minimal, high-performance macOS driver that revives discontinued Wacom tablets. Pressure, tilt, rotation, button mapping, multi-display.">
+  <title>MockTab — macOS driver for older Wacom tablets</title>
+  <meta name="description" content="MockTab is a macOS driver for discontinued Wacom tablets. Pressure, tilt, rotation, button mapping, multi-display.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="canonical" href="https://mocktab.org/">
-  <meta property="og:title" content="MockTab — native Wacom driver for modern Macs">
-  <meta property="og:description" content="Bring discontinued Wacom tablets back to life on Apple Silicon and Intel Macs.">
+  <meta property="og:title" content="MockTab — macOS driver for older Wacom tablets">
+  <meta property="og:description" content="A macOS driver for Wacom tablets that no longer have official support.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mocktab.org/">
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to main content</a>
+
 <header class="site">
   <div class="wrap">
-    <a href="/" class="brand">MockTab</a>
-    <nav>
+    <a href="/" class="brand" aria-current="page">MockTab</a>
+    <nav aria-label="Primary">
       <a href="/hardware.html">Hardware</a>
+      <a href="/configuration.html">Configuration</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/notes/">Notes</a>
       <a href="https://github.com/Cyzor/mocktab-app/releases">Download</a>
-      <a href="https://github.com/Cyzor/mocktab-app">GitHub</a>
+      <a href="https://github.com/Cyzor/mocktab-app">Source</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="hero wrap">
-    <h1>Wacom tablets, revived.</h1>
+    <h1>A driver for older Wacom tablets.</h1>
     <p class="lede">
-      MockTab is a native macOS driver that brings discontinued Wacom drawing tablets
-      back to life on Apple Silicon and Intel Macs. Full pressure, tilt, and rotation
-      &mdash; without the bloat of the official driver.
+      MockTab is a native macOS driver for Wacom drawing tablets that no longer have
+      official support on modern macOS releases. If your tablet still works fine and
+      you'd rather not replace it, this might be the driver for that. Free and open source.
     </p>
+    <p class="note">
+MockTab testing has covered only a limited set of hardware configurations. Filing an issue with observations and diagnostic detail will help broaden compatibility and support.    </p>
     <p>
       <a class="cta" href="https://github.com/Cyzor/mocktab-app/releases">Download for macOS</a>
       <a class="cta secondary" href="/hardware.html">See supported tablets</a>
@@ -44,12 +51,20 @@
   </section>
 
   <section class="wrap">
-    <h2>Why MockTab</h2>
+    <h2>Purpose</h2>
     <p>
-      Wacom makes excellent hardware, but old products eventually fall off the support
-      list. Reliable, perfectly healthy tablets stop working with newer macOS releases.
+      Wacom hardware tends to outlast its driver support. Functional tablets stop working
+      with newer macOS releases.
       MockTab is a small, focused driver that targets exactly that gap: USB and Bluetooth
       Wacom tablets from 1996 through the late 2010s, on macOS 13 and newer.
+    </p>
+
+    <h2>Approach</h2>
+    <p>
+      Wacom's drivers drop older hardware on every macOS upgrade, and the open-source
+      alternatives ask a lot of their users. MockTab is a smaller answer: a focused
+      driver for people who want their tablet to keep working — configure it once
+      and leave it alone.
     </p>
 
     <div class="feature">
@@ -66,18 +81,19 @@
       </div>
     </div>
 
-    <div class="feature flip">
+    <div class="feature">
       <div>
-        <h3>Pressure curve</h3>
+        <h3>Pen Settings</h3>
         <p>
-          A two-point B&eacute;zier editor with Linear, Soft, and Firm presets. Works in
-          every pressure-aware app &mdash; Photoshop, Affinity, Krita, Procreate Dreams,
-          Rebelle, Clip Studio.
+          Everything that affects how a stylus feels: pressure curve (a two-point
+          B&eacute;zier editor with Linear, Soft, and Firm presets), stroke stabilization,
+          double-click distance, rotation behavior, and cursor motion. Tested with
+          Photoshop, Affinity, Krita, Procreate Dreams, Rebelle, and Clip Studio.
         </p>
       </div>
       <div>
-        <img class="shot light" src="images/ui/pen-feel-light.png" alt="">
-        <img class="shot dark"  src="images/ui/pen-feel-dark.png"  alt="">
+        <img class="shot light" src="images/ui/pen-feel-light.png" alt="Pressure curve editor showing a two-point Bézier curve and Linear, Soft, Firm presets">
+        <img class="shot dark"  src="images/ui/pen-feel-dark.png"  alt="Pressure curve editor showing a two-point Bézier curve and Linear, Soft, Firm presets (dark theme)">
       </div>
     </div>
 
@@ -86,16 +102,51 @@
         <h3>Buttons &amp; express keys</h3>
         <p>
           Remap barrel buttons, touch ring, and express keys to any modifier-plus-key
-          combination. Live capture: click the field, press the shortcut, done.
+          combination. Live capture: click the field, press the shortcut. Cycle between touch ring
+          with a toggle or dedicated button.
         </p>
       </div>
       <div>
-        <img class="shot light" src="images/ui/buttons-light.png" alt="">
-        <img class="shot dark"  src="images/ui/buttons-dark.png"  alt="">
+        <img class="shot light" src="images/ui/buttons-light.png" alt="Button mapping panel for barrel buttons, touch ring, and express keys">
+        <img class="shot dark"  src="images/ui/buttons-dark.png"  alt="Button mapping panel for barrel buttons, touch ring, and express keys (dark theme)">
       </div>
     </div>
 
-    <div class="feature flip">
+    <div class="feature">
+      <div>
+        <h3>Per-app overrides</h3>
+        <p>
+          Override any tablet setting on a per-app basis &mdash; area, pressure curve,
+          button mapping, display routing. Drop an app onto the override bar and the
+          driver auto-switches when that app comes forward. Photoshop gets one pressure
+          curve, Illustrator gets another, the system default holds everywhere else.
+        </p>
+      </div>
+      
+      <div>
+          <img class="shot light" src="images/ui/add-app-light.png" alt="Customize apps by drag and drop or with the drop-down menu">
+          <img class="shot dark"  src="images/ui/add-app-dark.png"  alt="Customize apps by drag and drop or with the drop-down menu (dark theme)">
+        </div>
+      </div>      
+      
+
+    <div class="feature">
+      <div>
+        <h3>Profiles, in and out</h3>
+        <p>
+          Configurations export as structured JSON &mdash; drag straight from the
+          Profiles tab to the Finder, or import to roll a setup back. Per-tablet,
+          per-app, all of it. Useful for backups, sharing presets, or moving between
+          machines.
+        </p>
+      </div>
+      <div>
+        <img class="shot light" src="images/ui/profiles-light.png" alt="">
+        <img class="shot dark"  src="images/ui/profiles-dark.png"  alt="">
+      </div>
+    </div>
+
+    <div class="feature">
       <div>
         <h3>Display mapping</h3>
         <p>
@@ -104,8 +155,8 @@
         </p>
       </div>
       <div>
-        <img class="shot light" src="images/ui/displays-light.png" alt="">
-        <img class="shot dark"  src="images/ui/displays-dark.png"  alt="">
+        <img class="shot light" src="images/ui/displays-light.png" alt="Display mapping panel routing the tablet to a chosen monitor">
+        <img class="shot dark"  src="images/ui/displays-dark.png"  alt="Display mapping panel routing the tablet to a chosen monitor (dark theme)">
       </div>
     </div>
 
@@ -113,23 +164,25 @@
       <div>
         <h3>Live scratchpad</h3>
         <p>
-          Test pressure, tilt, and button mappings in a built-in scratchpad before
-          you open your real work.
+          Test pressure, tilt, and button and input behavior to verify basic functionality.
         </p>
       </div>
       <div>
-        <img class="shot light" src="images/ui/scratchpad-light.png" alt="">
-        <img class="shot dark"  src="images/ui/scratchpad-dark.png"  alt="">
+        <img class="shot light" src="images/ui/scratchpad-light.png" alt="Live scratchpad showing pressure and tilt visualisation">
+        <img class="shot dark"  src="images/ui/scratchpad-dark.png"  alt="Live scratchpad showing pressure and tilt visualisation (dark theme)">
       </div>
     </div>
 
-    <h2>What's in the box</h2>
+    <h2>Features</h2>
     <ul class="bullets">
       <li>Pressure, tilt, and pen rotation (where the hardware supports it)</li>
       <li>Wireless via USB dongle and Bluetooth</li>
-      <li>Multiple tablets connected simultaneously &mdash; pressure-based switching</li>
-      <li>Per-app settings for area, pressure, and buttons</li>
-      <li>Touch ring and touch strip</li>
+      <li>Multiple tablets connected simultaneously, with automatic switching when you pick one up</li>
+      <li>Per-app overrides for area, pressure, buttons, and display routing</li>
+      <li>Touch ring (multi-slot modes) and touch strip</li>
+      <li>Profile import / export as JSON, drag-to-Finder</li>
+      <li>Undo / redo across every settings pane (&#8984;Z)</li>
+      <li>In-app help (&#8984;?) and a menu-bar mode that hides the Dock icon</li>
       <li>Native AppKit app, signed and notarized, no kernel extensions</li>
     </ul>
 
@@ -137,18 +190,137 @@
     <ul class="bullets">
       <li>A driver for Huion, XP-Pen, Xencelabs, or other vendors</li>
       <li>Support for new (post-2020) Wacom tablets</li>
-      <li>Available for Windows, Linux, or iPad</li>
-      <li>A touch / gesture driver (touch is detected but disabled)</li>
+      <li>Available for Linux, iPad, or Windows</li>
+      <li>A touch / gesture driver (MockTab detects touch but disables it)</li>
     </ul>
 
     <h2>Get it</h2>
     <p>
       <a class="cta" href="https://github.com/Cyzor/mocktab-app/releases">Download latest release</a>
     </p>
-    <p class="note">
-      Requires macOS 13 or later. On first launch, MockTab asks for Accessibility
-      permission &mdash; that's how it injects pressure into other apps.
+    <p class="note">Requires macOS 13 or later.</p>
+
+    <h2 id="first-launch">First launch</h2>
+    <p>
+      macOS gates some applications behind two privacy prompts:  Accessibility
+      and Input Monitoring. See <a href="/configuration.html#permissions">Configuration</a>
+      for the walkthrough with screenshots.
     </p>
+
+
+        <img class="shot"  src="images/ui/macos-dock.png" alt="macOS Dock showing running applications">
+
+    <h2 id="faq">Frequently Asked Questions (FAQ)</h2>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <p class="faq-q">What is a drawing tablet?</p>
+        <p class="faq-a">A drawing tablet is a flat surface with a stylus that reports position, pressure, tilt, and rotation.
+        Unlike a mouse, the pen tracks absolute position and reads how hard you press, so drawing apps feel
+        more like drawing on paper.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">What is MockTab?</p>
+        <p class="faq-a">A native macOS driver for Wacom drawing tablets that no longer have official support on modern macOS releases.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How is MockTab different from Wacom's driver or OpenTabletDriver?</p>
+        <p class="faq-a">Wacom keeps its driver closed-source and drops old tablets as macOS evolves. OpenTabletDriver covers
+        many platforms with open source but supports macOS only weakly. MockTab targets one platform by
+        choice &mdash; macOS-only, Wacom-only, native Swift, with no daemon and no kernel extension.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">My tablet works with Wacom's driver or OpenTabletDriver &mdash; why switch?</p>
+        <p class="faq-a">Don't, if you're happy. MockTab exists for hardware the official driver dropped, and for people who
+        prefer a small native Mac app over a broader system service.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">What tablets does MockTab support?</p>
+        <p class="faq-a">Wacom tablets from the Intuos, Cintiq, Bamboo, and Intuos Pro families, spanning roughly
+        1996 through the late 2010s, over USB and Bluetooth. A handful have been confirmed end-to-end on
+        real hardware; the rest are registered based on Linux kernel and OpenTabletDriver sources and may or
+        may not work without testing. The <a href="/hardware.html">Hardware</a> page lists every registered
+        model with its confirmation status. MockTab does not cover tablets from other vendors, nor post-2020
+        Wacom hardware.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Can I use an iPad as a drawing tablet?</p>
+        <p class="faq-a">Yes, but not with MockTab. <a href="https://astropad.com">Astropad Slate</a> and Apple's built-in
+        Sidecar handle the iPad-as-tablet case directly.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">What are the system requirements?</p>
+        <p class="faq-a">macOS 13 (Ventura) or later, on Apple Silicon or Intel. A supported Wacom tablet over USB or
+        Bluetooth. Around 30 MB on disk.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Is there a Linux, Windows, or Haiku version?</p>
+        <p class="faq-a">No. macOS only, by design. The  Human Interface Device (HID) parsing and event-synthesis approach MockTab uses would translate reasonably well to Linux or Haiku, as the platforms are capable, but that work hasn&rsquo;t been done. For Linux and Windows, look at
+        <a href="https://opentabletdriver.net">OpenTabletDriver</a>.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do I install it?</p>
+        <p class="faq-a">Download the latest <code>.dmg</code> from
+        <a href="https://github.com/Cyzor/mocktab-app/releases">Releases</a>, drag <code>MockTab.app</code>
+        into Applications, and launch. The <a href="#first-launch">First launch</a> section above walks
+        through the privacy prompts.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Is this spyware? The privacy prompts sound suspicious.</p>
+        <p class="faq-a">No. MockTab makes no network calls, ships no telemetry, and declares zero data collection in its
+        privacy manifest. MockTab ships under GPL-3 &mdash; read the source on
+        <a href="https://github.com/Cyzor/mocktab-app">GitHub</a> if you want to verify. macOS forces both
+        prompts on every third-party tablet driver: <strong>Accessibility</strong> lets MockTab inject pen
+        pressure into other apps, and <strong>Input Monitoring</strong> lets it read raw HID reports from
+        your tablet.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Can MockTab run alongside Wacom's driver or OpenTabletDriver?</p>
+        <p class="faq-a">No. Two drivers reading the same HID device compete for control and produce erratic input. MockTab
+        detects common offenders on launch and warns you. Quit the conflicting driver first &mdash; and on
+        macOS Sonoma and later, also disable it under
+        System Settings &rarr; General &rarr; Login Items so it doesn't relaunch at boot.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do I remove MockTab?</p>
+        <p class="faq-a">Quit it from the menu bar, drag <code>MockTab.app</code> to the Trash, and optionally delete
+        <code>~/Library/Preferences/com.cyzor.mocktab.plist</code> and revoke its Accessibility and Input
+        Monitoring grants in Privacy &amp; Security. MockTab installs no system extensions, daemons, or
+        login items, so nothing else needs cleanup.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">What does the name mean?</p>
+        <p class="faq-a">The project takes its name from the Mock Turtle in <em>Alice's Adventures in Wonderland</em>, who laments no longer being what he once was.</p>
+      </div>
+      
+      
+      <div class="faq-item">
+        <p class="faq-q">Who developed this?</p>
+        <p class="faq-a">MockTab is an independent project from Jay Petronis, developed using a small set of older Wacom drawing tablets.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How can I get help?</p>
+        <p class="faq-a">Press <kbd>&#8984;?</kbd> in any settings pane for in-app help. The Info pane has a
+        <strong>Copy Diagnostics</strong> button that bundles your driver state into a paste-ready text
+        block for bug reports. Then open an issue at
+        <a href="https://github.com/Cyzor/mocktab-app/issues">GitHub</a>.</p>
+      </div>
+
+    </div>
   </section>
 </main>
 

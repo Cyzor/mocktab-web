@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Notes — MockTab</title>
+  <meta name="description" content="Protocol research, HID decoding notes, and data capture logs gathered during MockTab development.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="canonical" href="https://mocktab.org/notes/">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a href="/" class="brand">MockTab</a>
+    <nav aria-label="Primary">
+      <a href="/hardware.html">Hardware</a>
+      <a href="/configuration.html">Configuration</a>
+      <a href="/#faq">FAQ</a>
+      <a href="https://github.com/Cyzor/mocktab-app/releases">Download</a>
+      <a href="https://github.com/Cyzor/mocktab-app">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap">
+    <h1>Research Notes</h1>
+    <p>
+      Protocol research, HID decoding references, device assessments, and raw data captures
+      gathered during MockTab development. These are working notes, included as supporting evidence for
+      the implementation choices in the source code.
+    </p>
+
+    <h2>Protocol reference</h2>
+    <ul class="bullets">
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Specs-Reference.md">HID Specs Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Family-Reference.md">HID Family Reference</a> — all registry devices by parser family</li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Decoding-Research.md">HID Decoding Research</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Experimental-Reference.md">HID Experimental Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-Input-Decode-Reference.md">Input Decode Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-Prototcol-Specification-Notes.md">Protocol Specification Notes</a></li>
+    </ul>
+
+    <h2>Bluetooth &amp; wireless</h2>
+    <ul class="bullets">
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Bluetooth-Research.md">HID Bluetooth Research</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-Bluetooth-Battery-Reference.md">Bluetooth Battery Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-Wireless-Specification-Notes.md">Wireless Specification Notes</a></li>
+    </ul>
+
+    <h2>Device-specific</h2>
+    <ul class="bullets">
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-PTH-660-Report-Layout-Reference.md">PTH-660 Report Layout Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-PTH-850K-Reference.md">PTH-850K Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-PTH-860-Reference.md">PTH-860 Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Post-2020-Preliminary-Research.md">Post-2020 Tablets — Preliminary Research</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-LED-Reference.md">LED Reference</a></li>
+    </ul>
+
+    <h2>Pen features</h2>
+    <ul class="bullets">
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-Art-Pen-Rotation-Notes.md">Art Pen Rotation Notes</a></li>
+      <li><a href="Wacom-Art-Pen-Rotation-Observations.txt">Art Pen Rotation Observations</a> (raw capture log)</li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Rotation-Reference.md">HID Rotation Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Touch-Reference.md">HID Touch Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-Parallax-Compensation-Reference.md">Parallax Compensation Reference</a></li>
+    </ul>
+
+    <h2>Linux driver comparison</h2>
+    <ul class="bullets">
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-HID-Linux-Report-Reference.md">Linux HID Report Reference</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/OTD-MT-Linux-Implementation-Comparison.md">OpenTabletDriver / MacTablet Implementation Comparison</a></li>
+    </ul>
+
+    <h2>Device assessments</h2>
+    <p class="note">Cross-checks of protocol captures against multiple AI research tools, used to validate implementation decisions.</p>
+    <ul class="bullets">
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-DTK-2400-Claude-Assessment-2026-03-27.md">DTK-2400 — Claude assessment</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-DTK-2400-Grok-Assessment-2026-03-27.md">DTK-2400 — Grok assessment</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-PTH-660-Mouse-Assessment-2026-03-27.md">PTH-660 Mouse — assessment</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-PTH-860-Bluetooth-Assessment-2026-03-27.md">PTH-860 Bluetooth — assessment</a></li>
+      <li><a href="https://github.com/Cyzor/mocktab-app/blob/main/Notes/Wacom-PTH-860-850-Grok-Assessment-2026-03-27.md">PTH-860 / PTH-850 — Grok assessment</a></li>
+    </ul>
+
+    <h2>Data capture logs</h2>
+    <p class="note">Raw HID report captures from hardware on the bench. Recorded with the built-in Collect Device Data tool.</p>
+    <ul class="bullets">
+      <li><a href="DataCaptureLogs/Wacom-PTH-850-Pen-USB-Works-2026-03-27.txt">PTH-850 — Pen, USB (works)</a></li>
+      <li><a href="DataCaptureLogs/Wacom-PTH-850-Pen-Wireless-Pen-Works-2026-03-27.txt">PTH-850 — Pen, Wireless (works)</a></li>
+      <li><a href="DataCaptureLogs/Wacom-PTH-850-KC-100-00-USB-Mouse-Almost-Works-2026-03-27.txt">PTH-850 — KC-100-00 Mouse, USB (almost works)</a></li>
+      <li><a href="DataCaptureLogs/Wacom-PTH-850-Pen-Wireless-KC-100-00-Mouse-Mostly-Works-2026-03-27.txt">PTH-850 — KC-100-00 Mouse, Wireless (mostly works)</a></li>
+      <li><a href="DataCaptureLogs/Wacom-PTH-860-USB-Pen-Works-2026-03-27.txt">PTH-860 — Pen, USB (works)</a></li>
+      <li><a href="DataCaptureLogs/Wacom-PTH-860-KC-100-00-Mouse-USB-Broken-2026-03-27.txt">PTH-860 — KC-100-00 Mouse, USB (broken)</a></li>
+      <li><a href="DataCaptureLogs/Wacom-PTH-860-Bluetooth-Broken-2026-03-27.txt">PTH-860 — Bluetooth (broken)</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>
+      MockTab is an independent project, not affiliated with Wacom.
+      &middot; <a href="https://github.com/Cyzor/mocktab-app">Source on GitHub</a>
+      &middot; <a href="/hardware.html">Hardware</a>
+      &middot; <span style="unicode-bidi:bidi-override;direction:rtl">moc.rozyc@ofni</span>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
