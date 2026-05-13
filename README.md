@@ -26,4 +26,4 @@ python3 -m http.server 8000
 
 ## App repo
 
-The driver itself lives in [mocktab-app](https://github.com/Cyzor/mocktab-app) (internal name: `tablet-driver`).
+The driver itself lives in [tablet-driver](https://github.com/Cyzor/tablet-driver).
