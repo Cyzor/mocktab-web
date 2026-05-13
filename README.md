@@ -13,7 +13,7 @@ index.html        Landing page
 hardware.html     Supported tablets matrix
 css/style.css     Styles
 images/ui/        UI screenshots (light + dark variants)
-images/compat/    App-compatibility reference shots
+images/config/    App-compatibility reference shots
 CNAME             mocktab.org
 ```
 

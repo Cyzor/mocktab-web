@@ -215,18 +215,21 @@ p.lede {
     color: var(--fg);
 }
 
+.shot-wrap {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .shot {
+    display: block;
     max-width: 100%;
-    width: auto;
     height: auto;
     border-radius: 10px;
     border: 1px solid var(--border);
-    display: block;
 }
 
-.shot.light {
-    display: block;
-}
 .shot.dark {
     display: none;
 }
@@ -235,6 +238,7 @@ p.lede {
     .shot.light {
         display: none;
     }
+
     .shot.dark {
         display: block;
     }
@@ -247,6 +251,18 @@ p.lede {
     align-items: center;
     margin: 48px 0;
 }
+
+.feature > :first-child {
+    min-width: 0;
+}
+
+.feature > :last-child {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @media (max-width: 720px) {
     .feature {
@@ -317,6 +333,10 @@ table.matrix td {
 table.matrix th {
     background: var(--card);
     font-weight: 600;
+}
+
+table.matrix tbody tr:nth-child(even) {
+    background: var(--card);
 }
 
 table.matrix code {
