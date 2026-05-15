@@ -47,42 +47,42 @@
 
       <h2>Protocol reference</h2>
       <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Specs-Reference.md">HID Specs Reference</a></li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Specs-Reference.md">HID Specs Reference</a> — transport layer, descriptors, and init sequences</li>
         <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Family-Reference.md">HID Family Reference</a> — all registry devices by parser family</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Decoding-Research.md">HID Decoding Research</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Experimental-Reference.md">HID Experimental Reference</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Input-Decode-Reference.md">Input Decode Reference</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Protocol-Specification-Notes.md">Protocol Specification Notes</a></li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Decoding-Research.md">HID Decoding Research</a> — Art Pen rotation packet decoding across USB and BLE</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Experimental-Reference.md">HID Experimental Reference</a> — IntuosV2 layouts not yet verified against live hardware</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Input-Decode-Reference.md">Input Decode Reference</a> — packet structures and field decoding, 2003–2017 devices</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Protocol-Specification-Notes.md">Protocol Specification Notes</a> — design spec for a user-mode macOS driver</li>
       </ul>
 
       <h2>Bluetooth &amp; wireless</h2>
       <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Bluetooth-Research.md">HID Bluetooth Research</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Bluetooth-Battery-Reference.md">Bluetooth Battery Reference</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Wireless-Specification-Notes.md">Wireless Specification Notes</a></li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Bluetooth-Research.md">HID Bluetooth Research</a> — BLE HOGP report structures for IntuosV2 and WL devices</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Bluetooth-Battery-Reference.md">Bluetooth Battery Reference</a> — battery byte offsets and decode tables by kernel type</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Wireless-Specification-Notes.md">Wireless Specification Notes</a> — WAK dongle encapsulation and proprietary RF formats</li>
       </ul>
 
       <h2>Device-specific</h2>
       <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-660-Report-Layout-Reference.md">PTH-660 Report Layout Reference</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-850K-Reference.md">PTH-850K Reference</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-860-Reference.md">PTH-860 Reference</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Post-2020-Preliminary-Research.md">Post-2020 Tablets — Preliminary Research</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-LED-Reference.md">LED Reference</a></li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-660-Report-Layout-Reference.md">PTH-660 Report Layout Reference</a> — full 192-byte USB report layout for Intuos Pro M</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-850K-Reference.md">PTH-850K Reference</a> — Korean SKU; identical protocol to the global PTH-850</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-860-Reference.md">PTH-860 Reference</a> — Intuos Pro L gen2 USB and BT, including the dual-Bluetooth identity quirk</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Post-2020-Preliminary-Research.md">Post-2020 Tablets — Preliminary Research</a> — families and report layouts for newer devices</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-LED-Reference.md">LED Reference</a> — <code>wacom_led_control()</code> dispatch and per-family feature reports</li>
       </ul>
 
       <h2>Pen features</h2>
       <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Art-Pen-Rotation-Notes.md">Art Pen Rotation Notes</a></li>
-        <li><a href="Wacom-Art-Pen-Rotation-Observations.txt">Art Pen Rotation Observations</a> (raw capture log)</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Rotation-Reference.md">HID Rotation Reference</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Touch-Reference.md">HID Touch Reference</a></li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Parallax-Compensation-Reference.md">Parallax Compensation Reference</a></li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Art-Pen-Rotation-Notes.md">Art Pen Rotation Notes</a> — how barrel rotation is encoded and scaled to 0–360°</li>
+        <li><a href="Wacom-Art-Pen-Rotation-Observations.txt">Art Pen Rotation Observations</a> — raw capture log</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Rotation-Reference.md">HID Rotation Reference</a> — how Krita, Photoshop, and Rebelle interpret macOS NSEvent rotation</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Touch-Reference.md">HID Touch Reference</a> — capacitive and strip touch support across Cintiq and Intuos</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Parallax-Compensation-Reference.md">Parallax Compensation Reference</a> — affine and perspective correction for Cintiq calibration</li>
       </ul>
 
       <h2>Linux driver comparison</h2>
       <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Linux-Report-Reference.md">Linux HID Report Reference</a></li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Linux-Report-Reference.md">Linux HID Report Reference</a> — verbatim <code>wacom_features</code> table from the kernel</li>
       </ul>
 
       <h2>Data capture logs</h2>
