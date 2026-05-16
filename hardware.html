@@ -33,25 +33,20 @@
   <section class="hero wrap">
     <h1>Supported hardware</h1>
     <p class="lede">
-      MockTab targets Wacom USB and Bluetooth tablets from 1996 through the
-      late 2010s. Around ninety-five product IDs are registered across nine
-      hardware generations. The tables below break that down family by family,
-      with the pressure range, button complement, transport, and confirmation
-      status for each model.
-    </p>
+MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 2020. These devices span nearly a hundred product numbers across a dozen hardware generations. The tables below break that down by family, noting pressure range, button arrangment, transport, and confirmation status for each model.</p>
   </section>
 
   <section class="wrap">
     <h2>Status legend</h2>
     <ul class="bullets">
       <li><strong>&#10003; Confirmed</strong> &mdash; tested end-to-end on the actual hardware in this project.</li>
-      <li><strong>&#9888; Generic-decoder</strong> &mdash; the report parser for this family is implemented and the model is registered, but it has not been confirmed on a live unit. Coordinates and pressure come from the Linux <code>wacom_wac.c</code> driver and OpenTabletDriver configs.</li>
+      <li><strong>&#9888; Generic-decoder</strong> &mdash; the report parser covers this family and the model appears in the registry, but no live unit has verified the implementation. Coordinates and pressure come from the Linux <code>wacom_wac.c</code> driver and OpenTabletDriver configs.</li>
       <li><strong>&#10007; Pending</strong> &mdash; the model is registered for future support; its pen decoder is not yet implemented.</li>
     </ul>
     <p class="note">
       Product IDs are USB PIDs. Bluetooth Classic and wireless-dongle variants
-      enumerate under their own PIDs and are unified internally to the
-      canonical USB entry, so a single tablet does not appear three times.
+      enumerate under their own PIDs; MockTab unifies them to the canonical
+      USB entry, so a single tablet does not appear three times.
       The Info tab in the app includes a capture tool you can run on an
       unrecognised tablet to send back a compact report of what it advertises.
     </p>
@@ -64,8 +59,8 @@
       No tilt, no rotation, no express keys (a couple of Bamboo-branded
       successors added a few buttons). Pressure tops out at 511 levels (9-bit)
       across the entire generation; the original PenPartner was 8-bit at 256
-      levels. The <em>GraphireDecoder</em> exists in the codebase but has not
-      been validated on live hardware, so every entry here is marked pending.
+      levels. The <em>GraphireDecoder</em> exists in the codebase but lacks
+      live-hardware validation, so every entry here carries pending status.
     </p>
 <div class="table-scroll"><table class="matrix">
       <thead>
@@ -92,9 +87,9 @@
     <p>
       The original Intuos professional line. 10-byte reports, 1024 pressure
       levels (10-bit), tilt support, no express keys, no touch ring. All five
-      sizes share one parser and a single-stage feature init. None have been
-      hand-tested in this project, but the kernel and OpenTabletDriver agree
-      on the report layout, so they should enumerate via the generic decoder.
+      sizes share one parser and a single-stage feature init. No unit here
+      has had live testing, but the kernel and OpenTabletDriver agree on the
+      report layout, so the generic decoder covers them.
     </p>
 <div class="table-scroll"><table class="matrix">
       <thead>
@@ -130,7 +125,7 @@
     <h2>Intuos 3 <span class="muted-h">&middot; 2003–2006</span></h2>
     <p>
       The PTZ-series introduced express keys and dual touch strips on the
-      widescreen models, and was the first family to support the rotating
+      widescreen models, and first supported the rotating
       Art Pen barrel (ZP-600). 10-byte reports with a different status-byte
       layout from Intuos 1/2, and a two-stage feature init (<code>0x02 0x02</code>
       followed by <code>0x04 0x00</code> after 150&nbsp;ms). All entries support
@@ -202,8 +197,8 @@
       (8192 levels), Bluetooth Classic in addition to USB, and an optional
       wireless dongle. MockTab seizes the standard-HID-mouse interface to
       keep macOS from consuming pen events. The Pro Pen 2 pairs with all three
-      sizes; the Pro Pen 3 ships with the L. Both M and L are confirmed live
-      over USB; the L is also confirmed over Bluetooth Classic.
+      sizes; the Pro Pen 3 ships with the L. Testing confirms both M and L
+      live over USB; Bluetooth Classic testing also confirms the L.
     </p>
 <div class="table-scroll"><table class="matrix">
       <thead>
@@ -216,15 +211,38 @@
       </tbody>
 </table></div>
 
+    <h2>Intuos Pro Gen 3 <span class="muted-h">&middot; 2022–present</span></h2>
+    <p>
+      The current Intuos Pro generation (PTK-series). Same 192-byte LE24 report
+      format and 13-bit pressure as Gen 2, but with a different byte layout:
+      pen status at byte&nbsp;[2] (not [1]), pressure at bytes [7&ndash;8] (not
+      [8&ndash;9]). Two physical rotary scroll wheels replace the touch ring,
+      one per side of the tablet; MockTab routes them through the
+      ring-slot bindings in the Settings pane. The S has five express keys; M
+      and L have ten. No Bluetooth in this generation. All entries are
+      experimental &mdash; the decoder ports from OTD&rsquo;s
+      <code>IntuosV3ReportParser</code> but lacks hardware validation.
+    </p>
+<div class="table-scroll"><table class="matrix">
+      <thead>
+        <tr><th scope="col"><span class="visually-hidden">Status</span></th><th scope="col">Model</th><th scope="col">PID</th><th scope="col">Year</th><th scope="col">Pressure</th><th scope="col">Buttons / wheels</th><th scope="col">Transport</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro S (PTK-470)</td><td><code>0x03F5</code></td><td>2022</td><td>8191 (13-bit)</td><td>5 keys + 2 wheels</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro M (PTK-670)</td><td><code>0x03F7</code></td><td>2022</td><td>8191 (13-bit)</td><td>10 keys + 2 wheels</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro L (PTK-870)</td><td><code>0x03F9</code></td><td>2022</td><td>8191 (13-bit)</td><td>10 keys + 2 wheels</td><td>USB</td></tr>
+      </tbody>
+</table></div>
+
     <h2>Bamboo &amp; CTL/CTH consumer <span class="muted-h">&middot; 2009–2019</span></h2>
     <p>
       A long, regionally-confusing line marketed as "Bamboo", "Intuos", and
       "Wacom One" depending on year and territory. Pressure ranges from 1024
       to 4096 levels; no tilt, no rotation. Models that retained the original
-      Bamboo pen format (parsed by the unfinished bamboo decoder) remain
-      pending; mid-cycle revisions that switched to the IntuosV1 or IntuosV2
-      formats route through the existing generic decoders and should
-      enumerate. The BambooDecoder is registered for future work.
+      Bamboo pen format remain pending — the BambooDecoder covers the format
+      but is incomplete; mid-cycle revisions that switched to the IntuosV1 or
+      IntuosV2 formats route through the existing generic decoders and should
+      enumerate.
     </p>
 <div class="table-scroll"><table class="matrix">
       <thead>
@@ -277,20 +295,18 @@
       switched to the same 192-byte IntuosV2 format as Intuos Pro Gen 2.
       The 24HD has dual touch rings &mdash; one per bezel &mdash; with three
       independently assignable mode slots each. The first-generation 21UX
-      uses a distinct PL serial protocol that is not implemented.
+      uses a distinct PL serial protocol that MockTab does not implement.
     </p>
 <div class="table-scroll"><table class="matrix">
       <thead>
         <tr><th scope="col"><span class="visually-hidden">Status</span></th><th scope="col">Model</th><th scope="col">PID</th><th scope="col">Year</th><th scope="col">Pressure</th><th scope="col">Buttons / ring</th><th scope="col">Transport</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Cintiq 21UX (DTZ-2100, 1st rev)</td><td><code>0x003F</code></td><td>2002</td><td>1023 (10-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 21UX (DTZ-2100, 1st rev)</td><td><code>0x003F</code></td><td>2002</td><td>1023 (10-bit)</td><td>8 keys</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 21UX (DTZ-2100, 2nd rev)</td><td><code>0x00CC</code></td><td>2006</td><td>1023 (10-bit)</td><td>8 keys</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 12WX</td><td><code>0x00C6</code></td><td>2007</td><td>1023 (10-bit)</td><td>8 keys</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 20WSX</td><td><code>0x00C0</code></td><td>2008</td><td>1023 (10-bit)</td><td>4 keys</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 21UX 2 (DTZ-2100B)</td><td><code>0x00FB</code></td><td>2010</td><td>1023 (10-bit)</td><td>8 keys</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 22HD (DTK-2200)</td><td><code>0x00FA</code>, <code>0x00F9</code></td><td>2012</td><td>2047 (11-bit)</td><td>8 keys + ring</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 13HD (DTK-1300)</td><td><code>0x00C4</code>, <code>0x0304</code></td><td>2012</td><td>2047 (11-bit)</td><td>8 keys</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 13HD (DTK-1300)</td><td><code>0x0304</code></td><td>2012</td><td>2047 (11-bit)</td><td>8 keys</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Confirmed</span><span aria-hidden="true">&#10003;</span></td><td>Cintiq 24HD (DTK-2400)</td><td><code>0x00F4</code></td><td>2012</td><td>2047 (11-bit)</td><td>8 keys + 2 rings</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 24HD Touch (DTH-2400)</td><td><code>0x00F8</code></td><td>2013</td><td>2047 (11-bit)</td><td>8 keys + 2 rings</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTH-1320</td><td><code>0x034F</code></td><td>~2014</td><td>8191 (13-bit)</td><td>&mdash;</td><td>USB</td></tr>
@@ -301,21 +317,56 @@
       </tbody>
 </table></div>
 
+    <h2>DTU &amp; DTUS small pen displays <span class="muted-h">&middot; 2009–2016</span></h2>
+    <p>
+      Entry-level pen displays from two related but distinct kernel families.
+      Neither supports tilt, rotation, or hover distance.
+    </p>
+    <p>
+      <strong>DTUS</strong> (<code>wacom_dtus_irq</code>) uses big-endian
+      coordinates, a 10-bit pressure split across the status byte and a
+      dedicated pressure byte, and an optional pad report (four express keys)
+      on a separate report ID. Covers the DTK-1651, DTU-1031, DTU-1031X, and
+      DTU-1141.
+    </p>
+    <p>
+      <strong>DTU</strong> (<code>wacom_dtu_irq</code>) uses little-endian
+      coordinates and 9-bit pressure packed into two bytes. No pad report &mdash;
+      pen only. Covers the DTU-1631 and DTU-2231.
+    </p>
+    <p>
+      All entries are experimental &mdash; the decoders port from
+      <code>input-wacom 4.18</code> but lack hardware validation.
+    </p>
+<div class="table-scroll"><table class="matrix">
+      <thead>
+        <tr><th scope="col"><span class="visually-hidden">Status</span></th><th scope="col">Model</th><th scope="col">PID</th><th scope="col">Year</th><th scope="col">Pressure</th><th scope="col">Buttons</th><th scope="col">Transport</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTK-1651 (Cintiq 16)</td><td><code>0x0343</code></td><td>2016</td><td>1023 (10-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTU-1031</td><td><code>0x00FB</code></td><td>2012</td><td>511 (9-bit)</td><td>4</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTU-1031X</td><td><code>0x032F</code></td><td>~2014</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTU-1141</td><td><code>0x0336</code></td><td>~2014</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTU-1631</td><td><code>0x00F0</code></td><td>2010</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTU-2231</td><td><code>0x00CE</code></td><td>2009</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+      </tbody>
+</table></div>
+
     <h2>Wireless</h2>
     <ul class="bullets">
       <li><strong>USB dongle (ACK-40401, PID <code>0x0084</code>):</strong> works as a generic device once paired. The driver auto-detects the paired tablet's report format on connection.</li>
-      <li><strong>Bluetooth Classic:</strong> supported on tablets that ship with BT (PTH-460/660/860). Pairing is done in macOS System Settings; MockTab picks them up automatically and unifies them with the matching USB entry.</li>
-      <li><strong>Wireless receivers (Intuos4/5/Pro Gen 1 WL):</strong> the WL receiver dongles (PIDs <code>0x009D</code>, <code>0x009A</code>) enumerate as HID and forward the paired tablet's report format. Experimental, not yet hardware-tested.</li>
-      <li><strong>BLE / HOGP:</strong> Intuos Pro Gen 2 also advertises a BLE pen profile, but macOS's <code>AppleBluetoothMultitouch</code> kext claims the connection in trackpad mode. Not currently used.</li>
+      <li><strong>Bluetooth Classic:</strong> supported on tablets that ship with BT (PTH-460/660/860). Pair in macOS System Settings; MockTab picks them up automatically and unifies them with the matching USB entry.</li>
+      <li><strong>Wireless receivers (Intuos4/5/Pro Gen 1 WL):</strong> the WL receiver dongles (PIDs <code>0x009D</code>, <code>0x009A</code>) enumerate as HID and forward the paired tablet's report format. Experimental; hardware testing pending.</li>
+      <li><strong>BLE / HOGP:</strong> Intuos Pro Gen 2 also advertises a BLE pen profile, but macOS's <code>AppleBluetoothMultitouch</code> kext claims the connection in trackpad mode. MockTab does not currently use this path.</li>
     </ul>
 
     <h2>Not supported</h2>
     <ul class="bullets">
       <li>Tablets from Huion, XP-Pen, Xencelabs, Gaomon, and other vendors.</li>
-      <li>Wacom tablets newer than ~2020 not listed above (Intuos Pro Gen 3 and later, recent Cintiq Pro lineup).</li>
-      <li>Serial- and ADB-era Wacom tablets, including the original Cintiq 21UX (DTZ-2100, 2002 revision) which uses the PL protocol.</li>
+      <li>Wacom tablets not listed above from the most recent product cycles (Cintiq Pro 2023 refresh, Intuos Pro with USB-C, etc.).</li>
+      <li>Serial- and ADB-era Wacom tablets. Note: the earliest Cintiq 21UX (DTZ-2100, pre-2006) uses the PL serial protocol, which MockTab does not support; the later USB revision at <code>0x003F</code> and the DTZ-2100B at <code>0x00CC</code> use the standard CintiqV1 HID format and appear in the registry.</li>
       <li>Bluetooth-only tablets that use SPP/RFCOMM rather than HID (CTE-630BT, XD-0608-BT) &mdash; these need a serial-port driver, not an HID one.</li>
-      <li>Touch and multitouch input &mdash; detected on the wire but not surfaced.</li>
+      <li>Touch and multitouch input &mdash; the driver detects it on the wire but does not surface it.</li>
       <li>macOS older than 13 (Ventura).</li>
     </ul>
 
