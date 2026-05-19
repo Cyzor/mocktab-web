@@ -24,6 +24,7 @@
       <nav aria-label="Primary">
         <a href="/hardware.html">Hardware</a>
         <a href="/configuration.html" aria-current="page">Configuration</a>
+        <a href="/guide.html">Guide</a>
         <a href="/#faq">FAQ</a>
         <a href="/notes/">Notes</a>
         <a href="https://github.com/Cyzor/tablet-driver/releases">Download</a>
@@ -39,7 +40,7 @@
         MockTab needs two macOS privacy grants on first launch, and a few drawing
         apps expose driver-side switches that affect how stylus input arrives.
         This page walks through the system prompts you will encounter, then
-        collects per-application notes &mdash; mostly about stylus rotation, which
+        collects per-application notes, mostly about stylus rotation, which
         is the one input axis whose support varies app to app.
       </p>
     </section>
@@ -49,15 +50,15 @@
       <p>
         macOS gates tablet drivers behind two privacy prompts. Grant both, then
         relaunch MockTab. If a toggle won't stick, remove MockTab from the pane
-        and re-add it &mdash; macOS binds grants to the binary's path, so moving
+        and re-add it. macOS binds grants to the binary's path, so moving
         or reinstalling can invalidate a previous grant.
       </p>
 
       <h3 id="accessibility">Accessibility</h3>
       <p>
-        Accessibility is the grant that lets MockTab synthesize the pointer and
-        modifier events your drawing app actually receives. Always grant it.
-        Without it, MockTab can detect your tablet but cannot drive the cursor.
+        Accessibility lets MockTab synthesize the pointer and modifier events your
+        drawing app receives. Always grant it. Without it, MockTab can detect your
+        tablet but cannot drive the cursor.
       </p>
       <div class="shot-wrap">
         <img class="shot light" src="images/config/accessibility-request-light.png" width="461" height="177" alt="macOS prompt asking to allow MockTab to control the computer using accessibility features">
@@ -98,18 +99,17 @@
     <section class="wrap">
       <h2 id="apps">Application notes</h2>
       <p>
-        Pressure and tilt are well-standardised and arrive in every macOS drawing
-        app without configuration. Stylus rotation is the outlier: only a handful
-        of pen models &mdash; chiefly Wacom's Art Pen &mdash; report a true barrel
-        rotation axis, and host apps treat it inconsistently. The screenshots
-        below show where each app exposes its rotation control. Background on the
-        hardware axis itself lives in
+        Every macOS drawing app receives pressure and tilt without configuration.
+        Stylus rotation is the outlier: only a handful of pen models (chiefly
+        Wacom's Art Pen) report a true barrel rotation axis, and host apps treat
+        it inconsistently. The screenshots below show where each app exposes its
+        rotation control. Background on the hardware axis itself lives in the
         <a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Art-Pen-Rotation-Notes.md">Wacom Art Pen rotation notes</a>.
       </p>
 
       <h3 id="affinity">Affinity Photo / Designer</h3>
       <p>
-        Affinity 2 picks up rotation automatically for brushes that have a
+        Affinity 3 picks up rotation automatically for brushes that have a
         rotation-driven dynamic enabled. The brush editor's dynamics panel is
         where you bind rotation to nib angle, size, or other parameters.
       </p>
@@ -120,8 +120,8 @@
 
       <h3 id="illustrator">Adobe Illustrator</h3>
       <p>
-        Illustrator's brush options dialog has a per-brush <strong>Angle</strong>
-        variation set to <em>Stylus Wheel</em> for rotation-driven nib angle.
+        In Illustrator's brush options dialog, set the per-brush <strong>Angle</strong>
+        variation to <em>Stylus Wheel</em> for rotation-driven nib angle.
         The control name is the same in every localisation; only the surrounding
         labels translate.
       </p>
@@ -143,10 +143,11 @@
 
       <h3 id="photoshop">Adobe Photoshop</h3>
       <p>
-        Photoshop is the outlier &mdash; it does not consume rotation through the
-        standard macOS tablet path the way the other apps do. MockTab includes a
-        driver-side option that adapts rotation for Photoshop; enabling it may
-        improve stylus behavior when working with rotation-driven brushes.
+        Photoshop does not consume rotation through the standard macOS tablet path.
+        MockTab includes a driver-side option, <strong>Art Pen: Swap Tilt with
+        Rotation</strong> (in <a href="/guide.html#rotation">Pen Feel</a>), that
+        feeds barrel rotation into Photoshop's Pen Tilt control instead. Enable
+        it when working with rotation-driven brushes in Photoshop.
       </p>
       <div class="shot-wrap">
         <img class="shot light" src="images/config/photoshop-27-brush-rotation-warning-2026.png" width="376" height="539" alt="Photoshop brush settings showing rotation behavior warning">
@@ -164,14 +165,16 @@
       </div>
 
       <p>
-        Application preferences in Rebelle > Tablet > Tablet Options also provide a built-in means to invert rotation behavior.
+        Rebelle &gt; Tablet &gt; Tablet Options also offers a built-in rotation invert.
       </p>
       <div class="shot-wrap">
         <img class="shot light" src="images/config/rebelle-8-tablet-options-2026.png" width="369" height="169" alt="Rebelle application settings for tablet behavior">
+        <img class="shot dark" src="images/config/rebelle-8-tablet-options-2026.png" width="369" height="169" alt="Rebelle application settings for tablet behavior (dark)">
       </div>
+    </section>
 
-
-      <h3>Panning</h3>
+    <section class="wrap">
+      <h2 id="panning">Panning</h2>
       <p>
         To map a button to a panning action (like the hand tool in many drawing apps), consider <a href="https://www.marcmoini.com/sx_en.html">Smart Scroll</a> or <a href="https://smooze.co/">Smooze Pro</a>.
       </p>

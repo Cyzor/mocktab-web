@@ -21,6 +21,7 @@
     <nav aria-label="Primary">
       <a href="/hardware.html" aria-current="page">Hardware</a>
       <a href="/configuration.html">Configuration</a>
+      <a href="/guide.html">Guide</a>
       <a href="/#faq">FAQ</a>
       <a href="/notes/">Notes</a>
       <a href="https://github.com/Cyzor/tablet-driver/releases">Download</a>
@@ -33,15 +34,15 @@
   <section class="hero wrap">
     <h1>Supported hardware</h1>
     <p class="lede">
-MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 2020. These devices span nearly a hundred product numbers across a dozen hardware generations. The tables below break that down by family, noting pressure range, button arrangment, transport, and confirmation status for each model.</p>
+MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 2020. These devices span nearly a hundred product numbers across a dozen hardware generations. The tables below break that down by family, noting pressure range, button arrangement, transport, and confirmation status for each model.</p>
   </section>
 
   <section class="wrap">
     <h2>Status legend</h2>
     <ul class="bullets">
-      <li><strong>&#10003; Confirmed</strong> &mdash; tested end-to-end on the actual hardware in this project.</li>
-      <li><strong>&#9888; Generic-decoder</strong> &mdash; the report parser covers this family and the model appears in the registry, but no live unit has verified the implementation. Coordinates and pressure come from the Linux <code>wacom_wac.c</code> driver and OpenTabletDriver configs.</li>
-      <li><strong>&#10007; Pending</strong> &mdash; the model is registered for future support; its pen decoder is not yet implemented.</li>
+      <li><strong>&#10003; Confirmed</strong>: tested end-to-end on the actual hardware in this project.</li>
+      <li><strong>&#9888; Generic-decoder</strong>: the report parser covers this family and the model appears in the registry, but no live unit has verified the implementation. Coordinates and pressure come from the Linux <code>wacom_wac.c</code> driver and OpenTabletDriver configs.</li>
+      <li><strong>&#10007; Pending</strong>: the model is registered for future support; its pen decoder is not yet implemented.</li>
     </ul>
     <p class="note">
       Product IDs are USB PIDs. Bluetooth Classic and wireless-dongle variants
@@ -220,7 +221,7 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       one per side of the tablet; MockTab routes them through the
       ring-slot bindings in the Settings pane. The S has five express keys; M
       and L have ten. No Bluetooth in this generation. All entries are
-      experimental &mdash; the decoder ports from OTD&rsquo;s
+      experimental: the decoder ports from OTD&rsquo;s
       <code>IntuosV3ReportParser</code> but lacks hardware validation.
     </p>
 <div class="table-scroll"><table class="matrix">
@@ -239,8 +240,8 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       A long, regionally-confusing line marketed as "Bamboo", "Intuos", and
       "Wacom One" depending on year and territory. Pressure ranges from 1024
       to 4096 levels; no tilt, no rotation. Models that retained the original
-      Bamboo pen format remain pending — the BambooDecoder covers the format
-      but is incomplete; mid-cycle revisions that switched to the IntuosV1 or
+      Bamboo pen format remain pending (the BambooDecoder covers the format but
+      is incomplete). Mid-cycle revisions that switched to the IntuosV1 or
       IntuosV2 formats route through the existing generic decoders and should
       enumerate.
     </p>
@@ -293,9 +294,9 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       keys and touch rings, and require device seizure to keep the kernel
       from grabbing the tip-switch interface. Newer models (Cintiq 16 onward)
       switched to the same 192-byte IntuosV2 format as Intuos Pro Gen 2.
-      The 24HD has dual touch rings &mdash; one per bezel &mdash; with three
-      independently assignable mode slots each. The first-generation 21UX
-      uses a distinct PL serial protocol that MockTab does not implement.
+      The 24HD has dual touch rings (one per bezel), each with three independently
+      assignable mode slots. The first-generation 21UX uses a distinct PL serial
+      protocol that MockTab does not implement.
     </p>
 <div class="table-scroll"><table class="matrix">
       <thead>
@@ -331,11 +332,11 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
     </p>
     <p>
       <strong>DTU</strong> (<code>wacom_dtu_irq</code>) uses little-endian
-      coordinates and 9-bit pressure packed into two bytes. No pad report &mdash;
-      pen only. Covers the DTU-1631 and DTU-2231.
+      coordinates and 9-bit pressure packed into two bytes. No pad report; pen
+      only. Covers the DTU-1631 and DTU-2231.
     </p>
     <p>
-      All entries are experimental &mdash; the decoders port from
+      All entries are experimental: the decoders port from
       <code>input-wacom 4.18</code> but lack hardware validation.
     </p>
 <div class="table-scroll"><table class="matrix">
@@ -365,8 +366,8 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       <li>Tablets from Huion, XP-Pen, Xencelabs, Gaomon, and other vendors.</li>
       <li>Wacom tablets not listed above from the most recent product cycles (Cintiq Pro 2023 refresh, Intuos Pro with USB-C, etc.).</li>
       <li>Serial- and ADB-era Wacom tablets. Note: the earliest Cintiq 21UX (DTZ-2100, pre-2006) uses the PL serial protocol, which MockTab does not support; the later USB revision at <code>0x003F</code> and the DTZ-2100B at <code>0x00CC</code> use the standard CintiqV1 HID format and appear in the registry.</li>
-      <li>Bluetooth-only tablets that use SPP/RFCOMM rather than HID (CTE-630BT, XD-0608-BT) &mdash; these need a serial-port driver, not an HID one.</li>
-      <li>Touch and multitouch input &mdash; the driver detects it on the wire but does not surface it.</li>
+      <li>Bluetooth-only tablets that use SPP/RFCOMM rather than HID (CTE-630BT, XD-0608-BT): these need a serial-port driver, not an HID one.</li>
+      <li>Touch and multitouch input: the driver detects it on the wire but does not surface it.</li>
       <li>macOS older than 13 (Ventura).</li>
     </ul>
 
