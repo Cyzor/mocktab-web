@@ -185,6 +185,34 @@ p.lede {
 .hero {
     padding-top: 64px;
     padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-logo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+}
+
+.hero-logo.dark {
+    display: block;
+}
+
+.hero-logo.light {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-logo.dark {
+        display: none;
+    }
+
+    .hero-logo.light {
+        display: block;
+    }
 }
 
 .cta {
@@ -262,7 +290,6 @@ p.lede {
     justify-content: center;
     align-items: center;
 }
-
 
 @media (max-width: 720px) {
     .feature {
