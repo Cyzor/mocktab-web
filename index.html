@@ -342,6 +342,7 @@
                     </li>
                     <li>Wireless via USB dongle and Bluetooth</li>
                     <li>Touch ring (multi-slot modes) and touch strip</li>
+                    <li>Capacitive touch support on some models (two-finger scroll, tap-to-click, adjustable touch area)</li>
                     <li>Profile import / export as JSON, drag-to-Finder</li>
                     <li>Undo / redo across every settings pane (&#8984;Z)</li>
                     <li>
@@ -360,7 +361,6 @@
                         Huion, XP-Pen, Xencelabs, and other non-Wacom vendors
                     </li>
                     <li>Post-2020 Wacom devices</li>
-                    <li>Touch and gesture input</li>
                     <li>
                         Linux, Windows, iPad, and
                         <a href="https://www.haiku-os.org/">Haiku</a> (macOS
@@ -508,12 +508,11 @@
                         <p class="faq-a">
                             No. MockTab makes no network calls, ships no
                             telemetry, and declares zero data collection in its
-                            privacy manifest. MockTab ships under GPL-3; read
-                            the source on
+                            privacy manifest. MockTab ships under GPL-3; with its source available from
                             <a href="https://github.com/Cyzor/tablet-driver"
                                 >GitHub</a
                             >
-                            if you want to verify. macOS forces both prompts on
+                            . macOS forces both prompts on
                             every third-party tablet driver:
                             <strong>Accessibility</strong> lets MockTab inject
                             pen pressure into other apps, and
@@ -530,9 +529,9 @@
                         <p class="faq-a">
                             No. Two drivers reading the same HID device compete
                             for control and produce erratic input. MockTab
-                            notifies you of potential conflicts with a note
+                            warns of potential conflicts with a note
                             about how to resolve them.
-                            <a href="https://www.stclairsoft.com/AppTamer/"
+                           However, utilities like  <a href="https://www.stclairsoft.com/AppTamer/"
                                 >App Tamer</a
                             >
                             or
@@ -577,7 +576,7 @@
                         <p class="faq-q">Who developed this?</p>
                         <p class="faq-a">
                             MockTab is an independent project from Jay Petronis,
-                            developed using a small set of older Wacom drawing
+                            developed with a set of aging but reliable Wacom drawing
                             tablets.
                         </p>
                     </div>

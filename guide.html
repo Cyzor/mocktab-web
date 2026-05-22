@@ -43,9 +43,8 @@
     <section class="wrap">
       <h2 id="getting-started">Getting started</h2>
       <p>
-        Open <a href="#devices">Devices</a> to confirm MockTab sees the tablet, then
-        <a href="#tablet-area">Tablet Area</a> to set the active region and orientation.
-        Most users won't need the other panes. The settings window contains eight panes:
+        Open the <a href="#devices">Devices</a> pane to confirm MockTab sees the tablet, then
+        <a href="#tablet-area">Tablet Area</a> to set the active region and orientation. The settings window contains multiple panes:
       </p>
       <ul>
         <li><strong><a href="#devices">Devices</a></strong>: connected tablet status, battery level, connection type.</li>
@@ -54,6 +53,7 @@
         <li><strong><a href="#tablet-area">Tablet Area</a></strong>: active area crop and orientation.</li>
         <li><strong><a href="#display">Display Mapping</a></strong>: target display and calibration offsets.</li>
         <li><strong><a href="#pen-feel">Pen Feel</a></strong>: pressure response, smoothing, double-click behaviour, rotation handling.</li>
+        <li><strong><a href="#touch">Touch</a></strong>: finger-touch scrolling, tap-to-click, and active touch area (on supported models).</li>
         <li><strong><a href="#scratchpad">Scratchpad</a></strong>: empty canvas for testing input quality.</li>
         <li><strong><a href="#info">Info</a></strong>: live tablet state for diagnostics.</li>
       </ul>
@@ -73,7 +73,7 @@
             when a specific application becomes frontmost.</li>
       </ol>
       <p>
-        Changing a setting writes to the most specific active layer. Editing an app override
+        Editing an app override
         changes only that app; the profile beneath stays intact. The status bar at the bottom
         of the window shows the currently-detected app override, if any.
       </p>
@@ -99,15 +99,11 @@
 
       <h2 id="profiles">Profiles</h2>
       <p>
-        A profile captures a device's full configuration state (display mapping, pressure,
+        A profile stores a device's full configuration state (display mapping, pressure,
         button assignments) for instant switching between workflows. Create a profile from
-        the current settings, then switch to it later to restore that state. Profile changes
-        are reversible: switching profiles never overwrites another profile's contents.
+        the current settings, then switch to it later to restore that state.
       </p>
-      <p>
-        Profile resolution sits at layer 3 of the <a href="#layers">settings layers</a>;
-        tool-specific overrides still apply on top.
-      </p>
+
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/profiles-light.png" width="717" height="862" alt="MockTab Profiles pane">
         <img class="shot dark" src="images/ui/profiles-dark.png" width="717" height="862" alt="MockTab Profiles pane (dark theme)">
@@ -115,17 +111,16 @@
 
       <h3 id="app-overrides">Per-app overrides</h3>
       <p>
-        The chip row at the top of the Buttons, Tablet Area, Display, and Pen Feel panes
+        The bar at the top of the Buttons, Tablet Area, Display, and Pen Feel panes
         controls per-app overrides. The <strong>Global</strong> chip edits the underlying
         layer; each per-app chip edits settings that apply only when that app is frontmost.
       </p>
       <p>
-        MockTab creates an app override automatically when a setting changes while a
-        drawing app is frontmost. Drag an app from Finder or the Dock onto the chip row to
-        add one manually.
+        Add apps for customization using the drop-down menu, or drag directly from Finder or Dock onto the app bar to
+        add manually. (Hold down <kbd>⌘</kbd> while dragging an app's icon from the Dock to make it available as a droppable item.)
       </p>
       <p>
-        Each override entry tracks which individual keys have been customized for that app.
+        Each override entry tracks customizations for that app.
         An override with no customized keys does not appear in the chip row. Removing an
         override deletes all its customized keys and restores the underlying layer.
       </p>
@@ -141,16 +136,10 @@
         for an app makes MockTab load the associated profile automatically when that app
         gains focus. Disabling auto-switch stops automatic switching for that app.
       </p>
-      <p>
-        Auto-switch respects the active layer at the time of activation. If the current
-        layer is an app override when auto-switch fires, MockTab applies the new profile
-        as a replacement for the device-default layer, leaving the app override intact
-        beneath it. If the current layer is a named profile, MockTab replaces it.
-      </p>
 
       <h3 id="export-import">Export and import</h3>
       <p>
-        MockTab exports profiles as JSON files containing all settings except per-serial
+        MockTab exports profiles as plain text JavaScript Object Notation (JSON) files containing all settings except per-serial
         tool overrides and app overrides. Use <strong>Export</strong> to save a profile
         to a file. Use <strong>Import</strong> to load a profile from a file. Importing
         merges saved settings into the current configuration without replacing existing
@@ -216,22 +205,22 @@
 
       <h3 id="key-combos">Recording key combinations</h3>
       <p>
-        Click the record button next to a Key Combo binding, then type the shortcut.
+        Click the record button next to a Key Combination binding, then type the shortcut.
         MockTab captures the base key and any modifiers simultaneously. Modifier-only
         combos (e.g. <kbd>⌘</kbd> held alone) send a flagsChanged event rather than a
-        keydown/keyup; Adobe Creative Cloud applications in particular rely on this
+        keydown/keyup; Adobe applications may rely on this
         distinction.
       </p>
       <p>
         Key combos persist the full modifier state at capture time. If the keyboard layout
-        changes (such as <a href="https://dvorak-keyboard.com/">Dvorak</a> while holding
+        changes (such as <a href="https://dvorak-keyboard.com/">Qwerty-Control for Dvorak</a> while holding
         <kbd>⌘</kbd>), the stored keycode still produces the correct character because
         macOS applies layout switching to the captured keycode at post time.
       </p>
 
       <h3 id="pen-buttons">Pen buttons</h3>
       <p>
-        Most Wacom pens have two barrel buttons below the grip. Button 1 (the lower button)
+        Most Wacom pens have one or more barrel buttons. Button 1 (the lower button)
         defaults to <kbd>Right Click</kbd>; Button 2 defaults to <kbd>Middle Click</kbd>.
         Some pens carry additional buttons (3, 4, 5) on grip-mounted accessories or cordless mice.
       </p>
@@ -239,11 +228,6 @@
         Button 1 also drives <strong>hover drag</strong>: holding Button 1 while the pen
         hovers above the tablet surface causes the cursor to drag without requiring tip
         contact. This enables click-and-drag gestures without setting the pen down.
-      </p>
-      <p>
-        On cordless mouse accessories, button assignments differ from pen defaults: Button 1
-        becomes the primary click (left button), and Button 2 becomes right click. MockTab
-        detects mouse accessories and applies the correct defaults automatically.
       </p>
 
       <h3 id="express-keys">Express keys</h3>
@@ -302,7 +286,7 @@
       </p>
       <p>
         Bind <strong>Ring: Cycle</strong> to a pen button or express key to switch ring
-        modes without looking at the screen. <strong>Ring: Mode N</strong> jumps directly
+        modes without looking at the screen. <strong>Ring: Mode</strong> jumps directly
         to a specific slot.
       </p>
 
@@ -310,9 +294,7 @@
       <p>
         The Tablet Area pane defines the portion of the tablet surface that maps to the
         target display. The visual editor shows the full digitizer area with a draggable
-        crop rectangle. The number fields below show raw values: X and Y origin, then
-        Width and Height, all expressed as fractions of the full tablet surface
-        (0.000 to 1.000).
+        crop rectangle.
       </p>
       <p>
         <strong>Proportional mapping</strong> enables letterboxing that matches the target
@@ -474,11 +456,39 @@
         it can reach any corner of any display.
       </p>
 
+      <h2 id="touch">Touch</h2>
+      <p>
+        The Touch pane controls finger-touch behavior on tablets with a capacitive surface. Touch input operates independently from pen input and
+        has its own enable toggle, sensitivity, and active area.
+      </p>
+      <p>
+        <strong>Enable finger touch</strong> activates touch processing. On some models, the physical touch toggle on the tablet body must also be on;
+        MockTab cannot override that switch.
+      </p>
+      <p>
+        <strong>Two-finger scroll</strong> sends smooth trackpad-style scroll events when
+        two fingers move together. Apps treat these the same as Magic Trackpad scrolling,
+        including rubber-banding in Safari and Preview.
+        <strong>Reverse direction</strong> inverts the scroll axis for a classic
+        mouse-wheel feel. <strong>Sensitivity</strong> scales the cursor movement speed
+        in pointer mode.
+      </p>
+      <p>
+        The <strong>Touch Area</strong> editor works like the Tablet Area editor: drag the
+        handles in the visual preview to crop the active touch region. Contacts outside the
+        rectangle have no effect. The touch area is independent from the pen active area;
+        most users leave the full surface enabled for touch and crop only the pen area.
+      </p>
+      <div class="shot-wrap section-shot">
+        <img class="shot light" src="images/ui/touch-light.png" width="672" height="1080" alt="MockTab Touch pane with two-finger scroll controls and touch area crop editor">
+        <img class="shot dark" src="images/ui/touch-dark.png" width="672" height="1080" alt="MockTab Touch pane with two-finger scroll controls and touch area crop editor (dark theme)">
+      </div>
+
       <h2 id="scratchpad">Scratchpad</h2>
       <p>
         The Scratchpad pane is an empty canvas for testing input quality without launching
         a drawing application. It visualizes pressure, tilt, and rotation in real time.
-        Strokes are not saved; closing the pane discards the contents.
+        MockTab does not save canvas contents when the window closes.
       </p>
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/scratchpad-light.png" width="717" height="692" alt="Live scratchpad showing pressure and tilt visualisation">
@@ -491,9 +501,8 @@
         coordinates, button states, proximity flag, and hover distance.
       </p>
       <p>
-        The <strong>Jitter</strong> readout shows the mean positional delta per report
-        over a rolling 60-sample window. Sustained values that visibly exceed the
-        baseline indicate radio frequency (RF) interference, low battery (on Bluetooth
+        The <strong>Jitter</strong> readout indicates the stability of pen input.  Sustained values that exceed the
+        baseline may indicate interference, low battery (on Bluetooth
         tablets), or a hardware problem with the tablet.
       </p>
       <p>
@@ -506,9 +515,37 @@
         <img class="shot dark" src="images/ui/info-dark.png" width="717" height="1080" alt="MockTab Info pane with live tablet state values (dark theme)">
       </div>
 
+      <h3 id="data-collection">Collecting device data</h3>
+      <p>
+        The <strong>Collect Device Data</strong> button opens a guided capture sheet that
+        records HID activity from the tablet. Two modes exist depending on whether MockTab
+        recognizes the connected device.
+      </p>
+      <p>
+        For <strong>recognized tablets</strong>, the sheet records all incoming reports for
+        up to an hour while you perform whatever action produced the problem. Click
+        <strong>Done</strong> when finished. MockTab writes a compact JSON summary to the
+        Desktop — which byte positions changed and what values they took — then opens a
+        pre-filled GitHub issue with the file attached.
+      </p>
+      <p>
+        For <strong>unrecognized tablets</strong>, the sheet steps through a guided sequence
+        (pen tip, buttons, eraser, express keys, touch ring, and finger touch), capturing one
+        sample per step. Skip any step the device does not have. The same JSON summary and
+        issue flow applies at the end.
+      </p>
+      <div class="shot-wrap section-shot">
+        <img class="shot light" src="images/ui/info-collect-light.png" width="572" height="512" alt="MockTab data collection sheet recording HID activity">
+        <img class="shot dark" src="images/ui/info-collect-dark.png" width="572" height="512" alt="MockTab data collection sheet recording HID activity (dark theme)">
+      </div>
+      <div class="shot-wrap section-shot">
+        <img class="shot light" src="images/ui/info-collect-done-light.png" width="572" height="512" alt="MockTab data collection complete screen with GitHub issue button">
+        <img class="shot dark" src="images/ui/info-collect-done-dark.png" width="572" height="512" alt="MockTab data collection complete screen with GitHub issue button (dark theme)">
+      </div>
+
       <h2 id="support">Getting Help</h2>
       <p>
-        MockTab is open-source and maintained in the
+        MockTab is an open-source project with further detail available from its
         <a href="https://github.com/Cyzor/tablet-driver/issues">GitHub Issues</a> tracker.
       </p>
     </section>

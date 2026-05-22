@@ -199,7 +199,8 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       wireless dongle. MockTab seizes the standard-HID-mouse interface to
       keep macOS from consuming pen events. The Pro Pen 2 pairs with all three
       sizes; the Pro Pen 3 ships with the L. Testing confirms both M and L
-      live over USB; Bluetooth Classic testing also confirms the L.
+      over USB and Bluetooth Classic. The M and L include a capacitive
+      touch surface; MockTab supports it over both USB and Bluetooth.
     </p>
 <div class="table-scroll"><table class="matrix">
       <thead>
@@ -367,7 +368,6 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       <li>Wacom tablets not listed above from the most recent product cycles (Cintiq Pro 2023 refresh, Intuos Pro with USB-C, etc.).</li>
       <li>Serial- and ADB-era Wacom tablets. Note: the earliest Cintiq 21UX (DTZ-2100, pre-2006) uses the PL serial protocol, which MockTab does not support; the later USB revision at <code>0x003F</code> and the DTZ-2100B at <code>0x00CC</code> use the standard CintiqV1 HID format and appear in the registry.</li>
       <li>Bluetooth-only tablets that use SPP/RFCOMM rather than HID (CTE-630BT, XD-0608-BT): these need a serial-port driver, not an HID one.</li>
-      <li>Touch and multitouch input: the driver detects it on the wire but does not surface it.</li>
       <li>macOS older than 13 (Ventura).</li>
     </ul>
 
