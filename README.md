@@ -29,4 +29,4 @@ python3 -m http.server 8000
 
 ## App repo
 
-The driver itself lives in [tablet-driver](https://github.com/cyzor/tablet-driver).
+The driver itself lives in [tablet-driver](https://github.com/Cyzor/tablet-driver).
