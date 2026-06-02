@@ -22,6 +22,7 @@
       <a href="/hardware.html" aria-current="page">Hardware</a>
       <a href="/configuration.html">Configuration</a>
       <a href="/guide.html">Guide</a>
+      <a href="/troubleshooting.html">Troubleshooting</a>
       <a href="/#faq">FAQ</a>
       <a href="/notes/">Notes</a>
       <a href="https://github.com/Cyzor/tablet-driver/releases">Download</a>
@@ -40,9 +41,9 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
   <section class="wrap">
     <h2>Status legend</h2>
     <ul class="bullets">
-      <li><strong>&#10003; Confirmed</strong>: tested end-to-end on the actual hardware in this project.</li>
-      <li><strong>&#9888; Generic-decoder</strong>: the report parser covers this family and the model appears in the registry, but no live unit has verified the implementation. Coordinates and pressure come from the Linux <code>wacom_wac.c</code> driver and OpenTabletDriver configs.</li>
-      <li><strong>&#10007; Pending</strong>: the model is registered for future support; its pen decoder is not yet implemented.</li>
+      <li><strong>&#10003; Confirmed</strong>: tested this model end-to-end on real hardware.</li>
+      <li><strong>&#9888; Generic-decoder</strong>: decoder covers this device family; coordinates and pressure come from cross-referenced Linux <code>wacom_wac.c</code> and OpenTabletDriver sources, but this project has not tested this unit directly.</li>
+      <li><strong>&#8230; Pending</strong>: device is in the registry with a decoder, but this project has not tested the decoder or device parameters on real hardware. May work — please report results.</li>
     </ul>
     <p class="note">
       Product IDs are USB PIDs. Bluetooth Classic and wireless-dongle variants
@@ -68,19 +69,19 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
         <tr><th scope="col"><span class="visually-hidden">Status</span></th><th scope="col">Model</th><th scope="col">PID</th><th scope="col">Year</th><th scope="col">Pressure</th><th scope="col">Buttons</th><th scope="col">Transport</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>PenPartner</td><td><code>0x0003</code></td><td>1996</td><td>255 (8-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Graphire</td><td><code>0x0004</code>, <code>0x0010</code></td><td>1998</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Graphire 2 (4&times;5)</td><td><code>0x0011</code></td><td>2001</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Graphire 2 (5&times;7)</td><td><code>0x0012</code></td><td>2001</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Graphire 3 (4&times;5)</td><td><code>0x0013</code></td><td>2003</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Graphire 3 (6&times;8)</td><td><code>0x0014</code></td><td>2003</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Graphire 4 (4&times;5)</td><td><code>0x0015</code></td><td>2004</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Graphire 4 (6&times;8)</td><td><code>0x0016</code></td><td>2004</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Volito</td><td><code>0x0060</code></td><td>2003</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Volito 2</td><td><code>0x0062</code></td><td>~2004</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>PenStation</td><td><code>0x0061</code></td><td>~2003</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo One (CTF-430)</td><td><code>0x0065</code></td><td>2007</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo Fun (MTE-450)</td><td><code>0x0017</code></td><td>2007</td><td>511 (9-bit)</td><td>4</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>PenPartner</td><td><code>0x0003</code></td><td>1996</td><td>255 (8-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Graphire</td><td><code>0x0004</code>, <code>0x0010</code></td><td>1998</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Graphire 2 (4&times;5)</td><td><code>0x0011</code></td><td>2001</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Graphire 2 (5&times;7)</td><td><code>0x0012</code></td><td>2001</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Graphire 3 (4&times;5)</td><td><code>0x0013</code></td><td>2003</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Graphire 3 (6&times;8)</td><td><code>0x0014</code></td><td>2003</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Graphire 4 (4&times;5)</td><td><code>0x0015</code></td><td>2004</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Graphire 4 (6&times;8)</td><td><code>0x0016</code></td><td>2004</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Volito</td><td><code>0x0060</code></td><td>2003</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Volito 2</td><td><code>0x0062</code></td><td>~2004</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>PenStation</td><td><code>0x0061</code></td><td>~2003</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo One (CTF-430)</td><td><code>0x0065</code></td><td>2007</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo Fun (MTE-450)</td><td><code>0x0017</code></td><td>2007</td><td>511 (9-bit)</td><td>4</td><td>USB</td></tr>
       </tbody>
 </table></div>
 
@@ -213,7 +214,7 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       </tbody>
 </table></div>
 
-    <h2>Intuos Pro Gen 3 <span class="muted-h">&middot; 2022–present</span></h2>
+    <h2>Intuos Pro Gen 3 <span class="muted-h">&middot; 2025–present</span></h2>
     <p>
       The current Intuos Pro generation (PTK-series). Same 192-byte LE24 report
       format and 13-bit pressure as Gen 2, but with a different byte layout:
@@ -221,7 +222,7 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       [8&ndash;9]). Two physical rotary scroll wheels replace the touch ring,
       one per side of the tablet; MockTab routes them through the
       ring-slot bindings in the Settings pane. The S has five express keys; M
-      and L have ten. No Bluetooth in this generation. All entries are
+      and L have ten. Bluetooth is not yet implemented in MockTab for this generation. All entries are
       experimental: the decoder ports from OTD&rsquo;s
       <code>IntuosV3ReportParser</code> but lacks hardware validation.
     </p>
@@ -230,9 +231,9 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
         <tr><th scope="col"><span class="visually-hidden">Status</span></th><th scope="col">Model</th><th scope="col">PID</th><th scope="col">Year</th><th scope="col">Pressure</th><th scope="col">Buttons / wheels</th><th scope="col">Transport</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro S (PTK-470)</td><td><code>0x03F5</code></td><td>2022</td><td>8191 (13-bit)</td><td>5 keys + 2 wheels</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro M (PTK-670)</td><td><code>0x03F7</code></td><td>2022</td><td>8191 (13-bit)</td><td>10 keys + 2 wheels</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro L (PTK-870)</td><td><code>0x03F9</code></td><td>2022</td><td>8191 (13-bit)</td><td>10 keys + 2 wheels</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro S (PTK-470)</td><td><code>0x03F5</code></td><td>2025</td><td>8191 (13-bit)</td><td>5 keys + 2 wheels</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro M (PTK-670)</td><td><code>0x03F7</code></td><td>2025</td><td>8191 (13-bit)</td><td>10 keys + 2 wheels</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro L (PTK-870)</td><td><code>0x03F9</code></td><td>2025</td><td>8191 (13-bit)</td><td>10 keys + 2 wheels</td><td>USB</td></tr>
       </tbody>
 </table></div>
 
@@ -251,19 +252,19 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
         <tr><th scope="col"><span class="visually-hidden">Status</span></th><th scope="col">Model</th><th scope="col">PID</th><th scope="col">Year</th><th scope="col">Pressure</th><th scope="col">Buttons</th><th scope="col">Transport</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo Touch (CTT-460)</td><td><code>0x00D0</code></td><td>2009</td><td>&mdash; (touch only)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo Pen &amp; Touch (CTH-460)</td><td><code>0x00D1</code></td><td>2009</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo Pen (CTL-460)</td><td><code>0x00D6</code></td><td>2009</td><td>1023 (10-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo Pen (CTL-660)</td><td><code>0x00D7</code></td><td>2009</td><td>1023 (10-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo Capture (CTH-470)</td><td><code>0x00D4</code></td><td>2011</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo Pen &amp; Touch 2 (CTH-461)</td><td><code>0x00DA</code></td><td>2011</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Bamboo Connect (CTL-470)</td><td><code>0x00DB</code></td><td>2011</td><td>1023 (10-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo Touch (CTT-460)</td><td><code>0x00D0</code></td><td>2009</td><td>&mdash; (touch only)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo Pen &amp; Touch (CTH-460)</td><td><code>0x00D1</code></td><td>2009</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo Pen (CTL-460)</td><td><code>0x00D6</code></td><td>2009</td><td>1023 (10-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo Pen (CTL-660)</td><td><code>0x00D7</code></td><td>2009</td><td>1023 (10-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo Capture (CTH-470)</td><td><code>0x00D4</code></td><td>2011</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo Pen &amp; Touch 2 (CTH-461)</td><td><code>0x00DA</code></td><td>2011</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Bamboo Connect (CTL-470)</td><td><code>0x00DB</code></td><td>2011</td><td>1023 (10-bit)</td><td>2</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom CTE-460</td><td><code>0x006A</code></td><td>~2009</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Wacom CTE-650</td><td><code>0x0018</code></td><td>~2009</td><td>511 (9-bit)</td><td>4</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Wacom CTE-660</td><td><code>0x006B</code></td><td>~2009</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Wacom CTF-430</td><td><code>0x0069</code></td><td>~2007</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Wacom CTH-300</td><td><code>0x0319</code></td><td>~2013</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#10007;</span></td><td>Wacom CTH-301</td><td><code>0x0318</code></td><td>~2013</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Wacom CTE-650</td><td><code>0x0018</code></td><td>~2009</td><td>511 (9-bit)</td><td>4</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Wacom CTE-660</td><td><code>0x006B</code></td><td>~2009</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Wacom CTF-430</td><td><code>0x0069</code></td><td>~2007</td><td>511 (9-bit)</td><td>&mdash;</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Wacom CTH-300</td><td><code>0x0319</code></td><td>~2013</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Pending</span><span aria-hidden="true">&#8230;</span></td><td>Wacom CTH-301</td><td><code>0x0318</code></td><td>~2013</td><td>511 (9-bit)</td><td>2</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom CTH-461</td><td><code>0x00D2</code></td><td>~2011</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom CTH-470</td><td><code>0x00DE</code></td><td>~2012</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom CTH-480</td><td><code>0x0302</code></td><td>~2013</td><td>1023 (10-bit)</td><td>4</td><td>USB</td></tr>
@@ -314,7 +315,7 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTH-1320</td><td><code>0x034F</code></td><td>~2014</td><td>8191 (13-bit)</td><td>&mdash;</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq 16 (DTK-1660)</td><td><code>0x0390</code>, <code>0x03AE</code></td><td>2018</td><td>8191 (13-bit)</td><td>&mdash;</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Wacom DTC-133</td><td><code>0x03A6</code></td><td>~2019</td><td>4095 (12-bit)</td><td>&mdash;</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq Pro 27 (DTH-271)</td><td><code>0x03C0</code></td><td>2022</td><td>8191 (13-bit)</td><td>4 keys</td><td>USB</td></tr>
+        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Cintiq Pro 27 (DTH-271)</td><td><code>0x03C0</code></td><td>2025</td><td>8191 (13-bit)</td><td>4 keys</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Movink 13 (DTH-135)</td><td><code>0x03F0</code></td><td>2024</td><td>8191 (13-bit)</td><td>&mdash;</td><td>USB</td></tr>
       </tbody>
 </table></div>
@@ -365,7 +366,7 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
     <h2>Not supported</h2>
     <ul class="bullets">
       <li>Tablets from Huion, XP-Pen, Xencelabs, Gaomon, and other vendors.</li>
-      <li>Wacom tablets not listed above from the most recent product cycles (Cintiq Pro 2023 refresh, Intuos Pro with USB-C, etc.).</li>
+      <li>Wacom tablets not listed above from the most recent product cycles (Cintiq Pro 2023 refresh, etc.).</li>
       <li>Serial- and ADB-era Wacom tablets. Note: the earliest Cintiq 21UX (DTZ-2100, pre-2006) uses the PL serial protocol, which MockTab does not support; the later USB revision at <code>0x003F</code> and the DTZ-2100B at <code>0x00CC</code> use the standard CintiqV1 HID format and appear in the registry.</li>
       <li>Bluetooth-only tablets that use SPP/RFCOMM rather than HID (CTE-630BT, XD-0608-BT): these need a serial-port driver, not an HID one.</li>
       <li>macOS older than 13 (Ventura).</li>
