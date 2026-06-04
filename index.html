@@ -38,6 +38,102 @@
             href="/images/favicon/safari-pinned-tab.svg"
             color="#00696f"
         />
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Wacom says my tablet is no longer supported. What now?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Wacom periodically drops older hardware from its driver, usually alongside a macOS update. The Troubleshooting page at mocktab.org/troubleshooting.html covers common symptoms, which device families are affected, and how to switch. Check the Hardware page to confirm your model is supported, then uninstall Wacom's driver and install MockTab."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is MockTab?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "MockTab is a native macOS driver for Wacom drawing tablets that no longer have official support on modern macOS releases. It is free and open source."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How is MockTab different from Wacom's driver or OpenTabletDriver?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Wacom's software is closed-source and drops older hardware with each macOS release. OpenTabletDriver is a capable open-source project with broad hardware and platform coverage. MockTab takes a narrower approach: one platform, one vendor, native Swift, no background daemons, no kernel extensions. The smaller scope means a simpler configuration surface and no background services."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "My tablet works with Wacom's driver or OpenTabletDriver. Why would I need MockTab?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "If your device already works, then you have no need to change. MockTab exists for hardware the official driver dropped, and for people who prefer a small native Mac app over a broader system service."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What tablets does MockTab support?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 2020, including Intuos, Intuos Pro, Cintiq, Bamboo, and Graphire families. A handful are confirmed on real hardware; the rest rely on Linux kernel and OpenTabletDriver references and may need further testing. MockTab does not cover tablets from other vendors, nor post-2020 Wacom hardware. See mocktab.org/hardware.html for the full list."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What are the system requirements?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "macOS 13 (Ventura) or later, on Apple Silicon or Intel. A supported Wacom tablet over USB or Bluetooth. Around 30 MB on disk."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I install MockTab?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Download the latest disk image (.dmg) from github.com/Cyzor/tablet-driver/releases, drag MockTab.app into Applications, and launch. macOS will prompt for Accessibility and Input Monitoring permissions, both of which are required for the driver to function."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is MockTab spyware? The privacy prompts sound suspicious.",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. MockTab makes no network calls, ships no telemetry, and declares zero data collection in its privacy manifest. It is open source under GPL-3. macOS forces both prompts on every third-party tablet driver: Accessibility lets MockTab inject pen pressure into other apps, and Input Monitoring lets it read raw HID reports from your tablet."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can MockTab run alongside Wacom's driver or OpenTabletDriver?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. Two drivers reading the same HID device compete for control and produce erratic input. Uninstall the other driver before using MockTab, or use a process manager to pause it while MockTab is running."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I remove MockTab?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Quit it from the menu bar, drag MockTab.app to the Trash, and optionally delete ~/Library/Preferences/com.cyzor.mocktab.plist and revoke its Accessibility and Input Monitoring grants in Privacy & Security. MockTab installs no system extensions, daemons, or login items, so nothing else needs cleanup."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is there a Linux or Windows version of MockTab?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. MockTab is macOS only. For Linux and Windows, use OpenTabletDriver at opentabletdriver.net."
+                    }
+                }
+            ]
+        }
+        </script>
     </head>
 
     <body>
