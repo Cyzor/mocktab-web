@@ -2,7 +2,7 @@
     --bg: #ffffff;
     --fg: #1a1a1a;
     --muted: #5f6368;
-    --accent: #0a66ff;
+    --accent: #4b7ccd;
     --accent-hover: #084bcc;
     --border: #e5e7eb;
     --card: #f7f8fa;
@@ -464,7 +464,7 @@ kbd {
 
 /* ─── Callout boxes ─── */
 .callout {
-    border-left: 3px solid var(--accent);
+/*     border-left: 3px solid var(--accent); */
     background: var(--surface, var(--card));
     border-radius: 0 6px 6px 0;
     padding: 0.8rem 1rem;

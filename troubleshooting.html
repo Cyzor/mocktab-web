@@ -1,676 +1,584 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Troubleshooting &mdash; MockTab</title>
-        <meta
-            name="description"
-            content="Common problems when a Wacom tablet stops working after a macOS update, and what to do about them."
-        />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="canonical" href="https://mocktab.org/troubleshooting.html" />
-        <!-- Favicon -->
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/images/favicon/favicon-light.svg"
-            media="(prefers-color-scheme: light)"
-        />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/images/favicon/favicon-dark.svg"
-            media="(prefers-color-scheme: dark)"
-        />
-    </head>
 
-    <body>
-        <a href="#main" class="skip-link">Skip to main content</a>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Troubleshooting &mdash; MockTab</title>
+    <meta name="description" content="Common problems when a Wacom tablet stops working after a macOS update, and what to do about them." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="canonical" href="https://mocktab.org/troubleshooting.html" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon-light.svg" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+</head>
 
-        <header class="site">
-            <div class="wrap">
-                <a href="/" class="brand">MockTab</a>
-                <nav aria-label="Primary">
-                    <a href="/hardware.html">Hardware</a>
-                    <a href="/configuration.html">Configuration</a>
-                    <a href="/guide.html">Guide</a>
-                    <a href="/troubleshooting.html" aria-current="page"
-                        >Troubleshooting</a
-                    >
-                    <a href="/#faq">FAQ</a>
-                    <a href="/notes/">Notes</a>
-                    <a href="https://github.com/Cyzor/tablet-driver/releases"
-                        >Download</a
-                    >
-                    <a href="https://github.com/Cyzor/tablet-driver">Source</a>
-                </nav>
-            </div>
-        </header>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-        <main id="main">
-            <section class="hero wrap">
-                <h1>Troubleshooting</h1>
-                <p class="lede">
-                    Common problems when a Wacom tablet stops working after a
-                    macOS update, and what to do about them.
-                </p>
-            </section>
-
-            <section class="wrap">
-                <nav class="toc">
-                    <h2>Contents</h2>
-                    <ol>
-                        <li><a href="#symptoms">Symptoms</a></li>
-                        <li><a href="#hardware">Affected hardware</a></li>
-                        <li>
-                            <a href="#wacom-driver"
-                                >Staying on Wacom's driver</a
-                            >
-                        </li>
-                        <li>
-                            <a href="#permissions">macOS permission setup</a>
-                        </li>
-                        <li><a href="#mocktab">Switching to MockTab</a></li>
-                        <li>
-                            <a href="#post-install"
-                                >Common post-install issues</a
-                            >
-                        </li>
-                        <li>
-                            <a href="#outside-tools">Outside tools to try</a>
-                        </li>
-                    </ol>
-                </nav>
-
-                <!-- ─── SYMPTOMS ─── -->
-                <h2 id="symptoms">Symptoms</h2>
-                <p>
-                    These situations may indicate that macOS is no longer
-                    compatible with your Wacom driver.
-                </p>
-                <ul class="bullets">
-                    <li>
-                        The tablet's light is on and the pen moves the cursor,
-                        but Wacom Center displays
-                        <strong>"No device connected."</strong>
-                    </li>
-                    <li>
-                        Wacom's installer says
-                        <strong>"Supported tablet not found."</strong>
-                    </li>
-                    <li>
-                        Wacom Center shows
-                        <strong>"The tablet driver is not responding."</strong>
-                    </li>
-                    <li>
-                        Wacom Center opens but the tablet panel is blank or
-                        crashes immediately.
-                    </li>
-                    <li>
-                        An older driver version worked, but reinstalling after a
-                        macOS upgrade produces no connection.
-                    </li>
-                    <li>
-                        Installing a newer Wacom driver produces a popup stating
-                        the tablet is no longer supported.
-                    </li>
-                    <li>
-                        Pressure sensitivity works intermittently, or not at
-                        all, despite the cursor responding.
-                    </li>
-                </ul>
-
-                <!-- ─── AFFECTED HARDWARE ─── -->
-                <h2 id="hardware">Affected hardware</h2>
-                <p>
-                    Wacom removes older models from its supported device list
-                    with each major driver release. Families that Wacom has
-                    dropped on macOS 14 (Sonoma), 15 (Sequoia), and 26 (Tahoe)
-                    include:
-                </p>
-                <ul class="bullets">
-                    <li>
-                        <strong>Intuos 1–3</strong> — PTZ, CTE, and early PTK
-                        series
-                    </li>
-                    <li>
-                        <strong>Intuos 4</strong> — PTK-440, PTK-640, PTK-840,
-                        PTK-1240
-                    </li>
-                    <li>
-                        <strong>Intuos 5</strong> — PTH-450, PTH-650, PTH-850
-                    </li>
-                    <li>
-                        <strong>Intuos Pro Gen 1</strong> — PTH-451, PTH-651,
-                        PTH-851 (K1 editions)
-                    </li>
-                    <li>
-                        <strong>Bamboo and consumer Intuos</strong> — CTL, CTH,
-                        and CTP series (CTL-480, CTH-480, and similar)
-                    </li>
-                    <li>Some older <strong>Cintiq</strong> pen displays</li>
-                </ul>
-                <p>
-                    Intuos Pro Gen 2 (PTH-460, PTH-660, PTH-860) and Gen 3
-                    (PTK-470, PTK-670, PTK-870) retain official support at the
-                    time of writing. Wacom's driver release notes, accessible
-                    via the
-                    <a
-                        href="https://www.wacom.com/en-us/support/product-support/drivers"
-                        target="_blank"
-                        rel="noopener"
-                        >Wacom driver download page</a
-                    >
-                    , are the authoritative source for current compatibility;
-                    check the "compatible products" link inside each release's
-                    notes before installing.
-                </p>
-
-                <!-- ─── STAYING ON WACOM ─── -->
-                <h2 id="wacom-driver">Staying on Wacom's driver</h2>
-                <p>
-                    If your model still appears in Wacom's supported device
-                    list, rolling back to an older driver version sometimes
-                    restores connectivity. Wacom publishes previous releases on
-                    its support site, with notes about which hardware each
-                    version covers. Back up your current pen and ExpressKey
-                    settings in Wacom Center <em>before</em> uninstalling, as
-                    the process erases your configuration.
-                </p>
-
-                <div class="callout warn">
-                    <div class="callout-label">
-                        Important — Wacom's official guidance
-                    </div>
-                    Run a clean uninstall before installing an older or
-                    newer driver version. Use the
-                    <strong>Wacom Tablet Utility</strong> (included inside the
-                    driver package) rather than simply deleting the application
-                    folder. Most driver files live outside
-                    <code>/Applications</code>; a manual drag-to-trash misses
-                    them. Wacom also provides a
-                    <a
-                        href="https://support.wacom.com/hc/en-us/articles/1500006264581"
-                        target="_blank"
-                        rel="noopener"
-                        >standalone Wacom File Utility</a
-                    >
-                    for a more complete removal. Restart after uninstalling.
-                </div>
-
-                <div class="callout warn">
-                    <div class="callout-label">
-                        macOS Ventura 13 and later — Background access
-                    </div>
-                    On macOS 13 (Ventura) and later, you must explicitly allow
-                    the Wacom driver to run in the background. After
-                    installation go to
-                    <strong
-                        >System Settings → General → Login Items → Allow in the
-                        Background</strong
-                    >
-                    and toggle <strong>Wacom</strong> to ON, then reboot.
-                    Skipping this step produces the "tablet driver is not
-                    responding" error even when all other permissions look
-                    correct.
-                </div>
-
-                <div class="callout warn">
-                    <div class="callout-label">Missed the permission prompts?</div>
-                    Permission prompts fire the first time the driver exercises
-                    each protected capability. If they never appeared, uninstall
-                    and reinstall the driver to trigger them again.
-                </div>
-
-                <p>
-                    If Wacom removed your model from the supported list
-                    entirely, no version of the current driver will recognize
-                    it. MockTab addresses this case directly, as do the
-                    <a href="#outside-tools">outside tools</a> described below.
-                </p>
-
-                <!-- ─── PERMISSIONS ─── -->
-                <h2 id="permissions">macOS permission setup</h2>
-                <p>
-                    macOS security settings frequently block a correctly
-                    installed driver. Grant the Wacom driver permissions in
-                    <strong>System Settings → Privacy & Security</strong>:
-                </p>
-
-                <div class="table-scroll">
-                    <table class="matrix">
-                        <thead>
-                            <tr>
-                                <th>Permission</th>
-                                <th>What to enable</th>
-                                <th>What breaks without it</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Accessibility</strong></td>
-                                <td><code>com.wacom.IOManager</code></td>
-                                <td>
-                                    Pen input events cannot be posted; security
-                                    error appears
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Input Monitoring</strong></td>
-                                <td>
-                                    <code>WacomTabletDriver</code>,
-                                    <code>WacomTouchDriver</code>
-                                </td>
-                                <td>
-                                    Tablet not detected; cursor doesn't move
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong
-                                        >Login Items → Allow in
-                                        Background</strong
-                                    >
-                                </td>
-                                <td><code>Wacom</code> (toggle on)</td>
-                                <td>
-                                    "Tablet driver is not responding" on Ventura
-                                    13+
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3 id="resetting-permissions">Resetting stuck permissions</h3>
-                <p>
-                    After a major macOS upgrade, the OS can lose track of
-                    previously granted permissions even though the toggle
-                    appears enabled. The fix is to remove and add each entry again:
-                </p>
-                <ol class="step-list">
-                    <li>Disconnect the tablet.</li>
-                    <li>
-                        Open
-                        <strong
-                            >System Settings → Privacy & Security →
-                            Accessibility</strong
-                        >. Select <code>com.wacom.IOManager</code> and click
-                        <strong>–</strong> to remove it.
-                    </li>
-                    <li>
-                        Repeat in <strong>Input Monitoring</strong> for
-                        <code>WacomTabletDriver</code> and
-                        <code>WacomTouchDriver</code>.
-                    </li>
-                    <li>Restart the Mac.</li>
-                    <li>
-                        After rebooting, manually add the entries back using the
-                        <strong>+</strong> button. The driver files live at:
-                        <ul>
-                            <li>
-                                <code
-                                    >/Library/PrivilegedHelperTools/com.wacom.IOManager.app</code
-                                >
-                                → Accessibility
-                            </li>
-                            <li>
-                                <code
-                                    >/Applications/Wacom
-                                    Tablet/.Tablet/WacomTabletDriver</code
-                                >
-                                → Input Monitoring
-                            </li>
-                            <li>
-                                <code
-                                    >/Applications/Wacom
-                                    Tablet/.Tablet/WacomTouchDriver</code
-                                >
-                                → Input Monitoring
-                            </li>
-                        </ul>
-                        <p>
-                            Press <kbd>Command+Shift+.</kbd> in Finder to reveal
-                            hidden folders like <code>.Tablet</code>.
-                        </p>
-                    </li>
-                    <li>Reconnect the tablet and test.</li>
-                </ol>
-
-                <h3>System maintenance tools</h3>
-                <p>
-                    System-cleaning utilities can silently delete Wacom
-                    background services and preference files. If the driver
-                    stops working after running one of these tools, do a full
-                    clean uninstall with the Wacom Tablet Utility and reinstall
-                    fresh. Wacom publishes a dedicated guide for
-                    <a
-                        href="https://support.wacom.com/hc/en-us/articles/9255930218903"
-                        target="_blank"
-                        rel="noopener"
-                        >CleanMyMac interference</a
-                    >
-                    on its support site.
-                </p>
-
-                <!-- ─── MOCKTAB ─── -->
-                <h2 id="mocktab">Switching to MockTab</h2>
-                <p>
-                    MockTab communicates directly with the macOS Human Interface
-                    Device (HID) subsystem and does not depend on Wacom Center,
-                    <code>com.wacom.IOManager</code>, or any background
-                    services. The Hardware page lists every device MockTab
-                    recognizes and its confirmation status.
-                </p>
-
-                <h3>1. Check hardware compatibility</h3>
-                <p>
-                    Confirm your model appears on the Hardware page.
-                    <em>Confirmed</em> entries reflect models the project has
-                    tested on real hardware. Entries based on protocol
-                    references have reasonable confidence, but some details
-                    (express key counts, touch behavior, LED ring) may need
-                    further validation. File an issue with observations if
-                    something doesn't match.
-                </p>
-
-                <h3>2. Remove Wacom's driver</h3>
-                <p>
-                    Running two tablet drivers simultaneously causes input
-                    conflicts. Both try to claim the same HID device, which
-                    produces erratic behavior. MockTab will show a conflict
-                    warning when it detects a competing driver. Use Wacom's
-                    uninstall utility or the standalone
-                    <strong>Wacom File Utility</strong> for a complete removal;
-                    simply deleting the app leaves service files behind. Restart
-                    after removal.
-                </p>
-                <p>
-                    If full removal isn't practical, utilities such as App Tamer
-                    or LaunchControl can suspend the Wacom background process
-                    without uninstalling the driver.
-                </p>
-
-                <h3>3. Install MockTab</h3>
-                <p>
-                    Download the latest disk image from Releases, open it, and
-                    drag MockTab to Applications. Launch it from there; macOS
-                    requires the app to run from its final location before
-                    granting permissions.
-                </p>
-
-                <h3>4. Grant permissions</h3>
-                <p>
-                    MockTab requires Accessibility and Input Monitoring grants.
-                    The Configuration page walks through both prompts with
-                    screenshots. If a toggle doesn't take effect, remove MockTab
-                    from the privacy pane and it again; macOS binds grants to
-                    the app's path, so a previous grant from a different
-                    location doesn't carry over.
-                </p>
-
-                <!-- ─── POST-INSTALL ─── -->
-                <h2 id="post-install">Common post-install issues</h2>
-
-                <h3>Pen moves the cursor but pressure doesn't work</h3>
-                <p>
-                    Pen pressure requires the Accessibility permission. Open
-                    <strong
-                        >System Settings → Privacy & Security →
-                        Accessibility</strong
-                    >, confirm MockTab is listed and toggled on, then quit and
-                    relaunch MockTab. If the toggle is already on, try removing
-                    and re-adding it.
-                </p>
-
-                <div class="callout">
-                    <div class="callout-label">Also check</div>
-                    Many creative applications (Photoshop, Krita, Clip Studio
-                    Paint) have their own internal pressure settings that you
-                    must enable independently of the driver. Check each app's
-                    brush or stylus settings if pressure works in one app but
-                    not another.
-                </div>
-
-                <h3>Conflict warning in the Devices pane</h3>
-                <p>
-                    MockTab shows a notice when it detects another tablet driver
-                    running at the same time. Quit or suspend the competing
-                    driver, then replug the tablet. The Devices pane status
-                    updates when the conflict clears.
-                </p>
-
-                <h3>Tablet not showing up</h3>
-                <p>
-                    If the Devices pane is empty after connecting the tablet,
-                    the device may not be in MockTab's registry yet. The Info
-                    pane's <strong>Collect Device Data</strong> button runs a
-                    guided capture session that records raw HID traffic and
-                    produces a compact summary file. Attach it to a GitHub issue for
-                    potential adoption.
-                </p>
-
-                <h3>Bluetooth not connecting</h3>
-                <p>
-                    Bluetooth-capable Wacom tablets (Intuos Pro Gen 2: PTH-460,
-                    PTH-660, PTH-860) use Bluetooth Classic, not BLE. Pairing
-                    requires a specific sequence. See the Bluetooth pairing
-                    section of the Configuration page.
-                </p>
-
-                <!-- ─── OUTSIDE TOOLS ─── -->
-                <h2 id="outside-tools">Outside tools to try</h2>
-                <p>
-                    If the Wacom driver and MockTab don't resolve your
-                    situation, two well-established tools cover a broad range of
-                    older hardware and can serve as next steps.
-                </p>
-
-                <div class="tool-grid">
-                    <div class="tool-card">
-                        <h4>
-                            Connect my tablet
-                            <span class="badge badge-paid"
-                                >Paid · App Store</span
-                            >
-                        </h4>
-                        <p>
-                            An expert-system Mac app that walks you through
-                            driver and permission setup step by step for legacy
-                            Wacom hardware. Version 5.7
-                            covers Tahoe, Sequoia, Sonoma, and back to El
-                            Capitan. Supports Bamboo, Graphire, Intuos 1–5,
-                            Intuos Pro, and many Cintiq models, essentially
-                            every Wacom tablet <em>not</em> still on the
-                            official driver.
-                        </p>
-                        <a
-                            href="https://wptrnpt.co.uk/wp/connect-my-tablet/"
-                            target="_blank"
-                            rel="noopener"
-                            >wptrnpt.co.uk →</a
-                        >
-                    </div>
-                    <div class="tool-card">
-                        <h4>
-                            OpenTabletDriver
-                            <span class="badge badge-open">Open source</span>
-                            <span class="badge badge-free">Free</span>
-                        </h4>
-                        <p>
-                            A cross-platform (Windows, Linux, macOS),
-                            low-latency, user-mode tablet driver. Version 0.6.5
-                            introduced pressure and tilt support on macOS after
-                            four years of development; v0.6.7 (latest) adds
-                            pad-wheel support and full range output for all
-                            axes. Supports Intel and Apple Silicon Macs.
-                            Uninstall the Wacom driver first. Check
-                            the
-                            <a
-                                href="https://opentabletdriver.net/Tablets"
-                                target="_blank"
-                                rel="noopener"
-                                >supported tablet list</a
-                            >
-                            by model number before installing.
-                        </p>
-                        <a
-                            href="https://opentabletdriver.net/"
-                            target="_blank"
-                            rel="noopener"
-                            >opentabletdriver.net →</a
-                        >
-                    </div>
-                </div>
-
-                <h3>When to choose which tool</h3>
-                <div class="table-scroll">
-                    <table class="matrix">
-                        <thead>
-                            <tr>
-                                <th>Situation</th>
-                                <th>Recommended path</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Model still on Wacom's supported list but
-                                    driver won't load
-                                </td>
-                                <td>
-                                    Fix permissions per the
-                                    <a href="#permissions"
-                                        >macOS permission setup</a
-                                    >
-                                    section; reinstall the Wacom driver
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Model dropped from Wacom's list; want
-                                    macOS-native settings UI
-                                </td>
-                                <td>
-                                    <strong>MockTab</strong> or
-                                    <strong>Connect my tablet</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Dropped model; want free, cross-platform,
-                                    highly configurable driver
-                                </td>
-                                <td><strong>OpenTabletDriver</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Tablet not yet in MockTab's registry</td>
-                                <td>
-                                    Use Collect Device Data to file an issue,
-                                    then try
-                                    <strong>OpenTabletDriver</strong> as interim
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Need step-by-step guided setup with human
-                                    support contact
-                                </td>
-                                <td>
-                                    <strong>Connect my tablet</strong> (includes
-                                    email support at enquiry@wptrnpt.co.uk)
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Installing OpenTabletDriver on macOS</h3>
-                <ol class="step-list">
-                    <li>
-                        Uninstall the Wacom driver completely using the Wacom
-                        Tablet Utility and restart.
-                    </li>
-                    <li>
-                        Download the latest release from
-                        <a
-                            href="https://opentabletdriver.net/"
-                            target="_blank"
-                            rel="noopener"
-                            >opentabletdriver.net</a
-                        >
-                        — choose <code>osx-x64</code> for Intel or
-                        <code>osx-arm64</code> for Apple Silicon.
-                    </li>
-                    <li>
-                        Extract the archive and drag
-                        <code>OpenTabletDriver.app</code> to your Applications
-                        folder.
-                    </li>
-                    <li>
-                        Launch it from Applications (not from the download
-                        location).
-                    </li>
-                    <li>
-                        Grant Accessibility and Input Monitoring permissions
-                        when prompted.
-                    </li>
-                    <li>
-                        Confirm your tablet appears in the Tablets list. If it
-                        does not, check the
-                        <a
-                            href="https://opentabletdriver.net/Tablets"
-                            target="_blank"
-                            rel="noopener"
-                            >compatibility table</a
-                        >
-                        by model number and consult the
-                        <a
-                            href="https://opentabletdriver.net/Wiki/FAQ/General"
-                            target="_blank"
-                            rel="noopener"
-                            >OTD FAQ</a
-                        >.
-                    </li>
-                </ol>
-
-                <div class="callout purple">
-                    <div class="callout-label">
-                        Note on macOS 26 (Tahoe) permission bug
-                    </div>
-                    Tahoe 26.1 and 26.2 contain a known macOS bug that prevents
-                    some permission toggles from appearing in the Privacy &
-                    Security pane. Follow all prompts carefully and consult the
-                    current version of <em>Connect my tablet</em> (v5.7+) for
-                    Tahoe-specific workarounds if toggles are missing.
-                </div>
-
-                <hr />
-                <p class="note">
-                    This guide covers macOS-specific troubleshooting. For
-                    Windows driver issues, see
-                    <a
-                        href="https://support.wacom.com/hc/en-us/sections/360011600754-Wacom-Driver-Troubleshooting"
-                        target="_blank"
-                        rel="noopener"
-                        >Wacom's official driver troubleshooting section</a
-                    >. Wacom release notes are the authoritative source for
-                    supported device lists. Verify current status before
-                    installing any driver version.
-                </p>
-            </section>
-        </main>
-
-        <footer class="site">
-            <div class="wrap">
-                <a href="/">MockTab</a> · Free and open source ·
-                <a href="https://github.com/Cyzor/tablet-driver/releases"
-                    >Download</a
-                >
-                ·
+    <header class="site">
+        <div class="wrap">
+            <a href="/" class="brand">MockTab</a>
+            <nav aria-label="Primary">
+                <a href="/hardware.html">Hardware</a>
+                <a href="/configuration.html">Configuration</a>
+                <a href="/guide.html">Guide</a>
+                <a href="/troubleshooting.html" aria-current="page">Troubleshooting</a>
+                <a href="/#faq">FAQ</a>
+                <a href="/notes/">Notes</a>
+                <a href="https://github.com/Cyzor/tablet-driver/releases">Download</a>
                 <a href="https://github.com/Cyzor/tablet-driver">Source</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero wrap">
+            <h1>Troubleshooting</h1>
+            <p class="lede">
+                Common problems when a Wacom tablet stops working after a
+                macOS update, and what to do about them.
+            </p>
+        </section>
+
+        <section class="wrap">
+            <nav class="toc">
+                <h2>Contents</h2>
+                <ol>
+                    <li><a href="#symptoms">Symptoms</a></li>
+                    <li><a href="#hardware">Affected hardware</a></li>
+                    <li>
+                        <a href="#wacom-driver">Staying on Wacom's driver</a>
+                    </li>
+                    <li>
+                        <a href="#permissions">macOS permission setup</a>
+                    </li>
+                    <li><a href="#mocktab">Switching to MockTab</a></li>
+                    <li>
+                        <a href="#post-install">Common post-install issues</a>
+                    </li>
+                    <li>
+                        <a href="#outside-tools">Outside tools to try</a>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- ─── SYMPTOMS ─── -->
+            <h2 id="symptoms">Symptoms</h2>
+            <p>
+                These situations may indicate that macOS is no longer
+                compatible with your Wacom driver.
+            </p>
+            <ul class="bullets">
+                <li>
+                    The tablet's light is on and the pen moves the cursor,
+                    but Wacom Center displays
+                    <strong>"No device connected."</strong>
+                </li>
+                <li>
+                    Wacom's installer says
+                    <strong>"Supported tablet not found."</strong>
+                </li>
+                <li>
+                    Wacom Center shows
+                    <strong>"The tablet driver is not responding."</strong>
+                </li>
+                <li>
+                    Wacom Center opens but the tablet panel is blank or
+                    crashes immediately.
+                </li>
+                <li>
+                    An older driver version worked, but reinstalling after a
+                    macOS upgrade produces no connection.
+                </li>
+                <li>
+                    Installing a newer Wacom driver produces a popup stating
+                    the tablet is no longer supported.
+                </li>
+                <li>
+                    Pressure sensitivity works intermittently, or not at
+                    all, despite the cursor responding.
+                </li>
+            </ul>
+
+            <!-- ─── AFFECTED HARDWARE ─── -->
+            <h2 id="hardware">Affected hardware</h2>
+            <p>
+                Wacom removes older models from its supported device list
+                with each major driver release. Families that Wacom has
+                dropped on macOS 14 (Sonoma), 15 (Sequoia), and 26 (Tahoe)
+                include:
+            </p>
+            <ul class="bullets">
+                <li>
+                    <strong>Intuos 1–3</strong> — PTZ, CTE, and early PTK
+                    series
+                </li>
+                <li>
+                    <strong>Intuos 4</strong> — PTK-440, PTK-640, PTK-840,
+                    PTK-1240
+                </li>
+                <li>
+                    <strong>Intuos 5</strong> — PTH-450, PTH-650, PTH-850
+                </li>
+                <li>
+                    <strong>Intuos Pro Gen 1</strong> — PTH-451, PTH-651,
+                    PTH-851 (K1 editions)
+                </li>
+                <li>
+                    <strong>Bamboo and consumer Intuos</strong> — CTL, CTH,
+                    and CTP series (CTL-480, CTH-480, and similar)
+                </li>
+                <li>Some older <strong>Cintiq</strong> pen displays</li>
+            </ul>
+            <p>
+                Intuos Pro Gen 2 (PTH-460, PTH-660, PTH-860) and Gen 3
+                (PTK-470, PTK-670, PTK-870) retain official support at the
+                time of writing. Wacom's driver release notes, accessible
+                via the
+                <a href="https://www.wacom.com/en-us/support/product-support/drivers" target="_blank" rel="noopener">Wacom driver download page</a>
+                , are the authoritative source for current compatibility;
+                check the "compatible products" link inside each release's
+                notes before installing.
+            </p>
+
+            <!-- ─── STAYING ON WACOM ─── -->
+            <h2 id="wacom-driver">Staying on Wacom's driver</h2>
+            <p>
+                If your model still appears in Wacom's supported device
+                list, reinstalling an older driver version sometimes
+                restores connectivity. Wacom publishes previous releases on
+                its support site, with notes about which hardware each
+                version covers. Back up your current pen and ExpressKey
+                settings in Wacom Center <em>before</em> uninstalling, as
+                the process erases your configuration.
+            </p>
+
+            <div class="callout warn">
+                <div class="callout-label">
+                    Important — Wacom's official guidance
+                </div>
+                Run a clean uninstall before installing an older or
+                newer driver version. Use the
+                <strong>Wacom Tablet Utility</strong> (included inside the
+                driver package) rather than simply deleting the application
+                folder. Most driver files live outside
+                <code>/Applications</code>; a manual drag-to-trash misses
+                them. Wacom also provides a
+                <a href="https://support.wacom.com/hc/en-us/articles/1500006264581" target="_blank" rel="noopener">standalone Wacom File Utility</a>
+                for a more complete removal. Full uninstallation may require a reboot.
             </div>
-        </footer>
-    </body>
+
+            <div class="callout warn">
+                <div class="callout-label">
+                    macOS Ventura 13 and later — Background access
+                </div>
+                On macOS 13 (Ventura) and later, you must explicitly allow
+                the Wacom driver to run in the background. After
+                installation go to
+                <strong>System Settings → General → Login Items → Allow in the
+                    Background</strong>
+                and toggle <strong>Wacom</strong> to ON, then reboot.
+                Skipping this step produces the "tablet driver is not
+                responding" error even when all other permissions look
+                correct.
+            </div>
+
+            <div class="callout warn">
+                <div class="callout-label">Missed the permission prompts?</div>
+                Permission prompts fire the first time the driver exercises
+                each protected capability. If they never appeared, uninstall
+                and reinstall the driver to trigger them again.
+            </div>
+
+            <p>
+                If Wacom removed your model from the supported list
+                entirely, no version of the current driver will recognize
+                it. MockTab and the <a href="#outside-tools">outside tools</a>
+                described below address this case directly.
+            </p>
+
+            <!-- ─── PERMISSIONS ─── -->
+            <h2 id="permissions">macOS permission setup</h2>
+            <p>
+                macOS security settings may block a correctly
+                installed driver. Grant the Wacom driver permissions in
+                <strong>System Settings → Privacy & Security</strong>:
+            </p>
+
+            <div class="table-scroll">
+                <table class="matrix">
+                    <thead>
+                        <tr>
+                            <th>Permission</th>
+                            <th>What to enable</th>
+                            <th>What breaks without it</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Accessibility</strong></td>
+                            <td><code>com.wacom.IOManager</code></td>
+                            <td>
+                                Pen input shows no response; security
+                                error appears
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Input Monitoring</strong></td>
+                            <td>
+                                <code>WacomTabletDriver</code>,
+                                <code>WacomTouchDriver</code>
+                            </td>
+                            <td>
+                                Tablet not detected; cursor doesn't move
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Login Items → Allow in
+                                    Background</strong>
+                            </td>
+                            <td><code>Wacom</code> (toggle on)</td>
+                            <td>
+                                "Tablet driver is not responding" on Ventura
+                                13+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 id="resetting-permissions">Resetting stuck permissions</h3>
+            <p>
+                After a major macOS upgrade, the OS can lose track of
+                previously granted permissions even though the toggle
+                appears enabled. Try removing it from the list and adding each entry again:
+            </p>
+            <ol class="step-list">
+                <li>Disconnect the tablet.</li>
+                <li>
+                    Open
+                    <strong>System Settings → Privacy & Security →
+                        Accessibility</strong>. Select <code>com.wacom.IOManager</code> and click
+                    <strong>–</strong> to remove it.
+                </li>
+                <li>
+                    Repeat in <strong>Input Monitoring</strong> for
+                    <code>WacomTabletDriver</code> and
+                    <code>WacomTouchDriver</code>.
+                </li>
+                <li>Restart the Mac.</li>
+                <li>
+                    After rebooting, manually add the entries back using the
+                    <strong>+</strong> button. The driver files live at:
+                    <ul>
+                        <li>
+                            <code>/Library/PrivilegedHelperTools/com.wacom.IOManager.app</code>
+                            → Accessibility
+                        </li>
+                        <li>
+                            <code>/Applications/Wacom
+                                Tablet/.Tablet/WacomTabletDriver</code>
+                            → Input Monitoring
+                        </li>
+                        <li>
+                            <code>/Applications/Wacom
+                                Tablet/.Tablet/WacomTouchDriver</code>
+                            → Input Monitoring
+                        </li>
+                    </ul>
+                    <p>
+                        Press <kbd>Command+Shift+.</kbd> in Finder to reveal
+                        hidden folders like <code>.Tablet</code>.
+                    </p>
+                </li>
+                <li>Reconnect the tablet and test.</li>
+            </ol>
+
+            <h3>System maintenance tools</h3>
+            <p>
+                System-cleaning utilities can silently delete Wacom
+                background services and preference files. If the driver
+                stops working after running one of these tools, do a full
+                clean uninstall with the Wacom Tablet Utility and reinstall
+                fresh. Wacom publishes a dedicated guide for
+                <a href="https://support.wacom.com/hc/en-us/articles/9255930218903" target="_blank" rel="noopener">CleanMyMac interference</a>
+                on its support site.
+            </p>
+
+            <!-- ─── MOCKTAB ─── -->
+            <h2 id="mocktab">Switching to MockTab</h2>
+            <p>
+                MockTab communicates directly with the macOS Human Interface
+                Device (HID) subsystem and does not depend on Wacom Center,
+                <code>com.wacom.IOManager</code>, or any background
+                services. The Hardware page lists every device MockTab
+                recognizes and its confirmation status.
+            </p>
+
+            <h3>1. Check hardware compatibility</h3>
+            <p>
+                Confirm your model appears on the Hardware page.
+                <em>Confirmed</em> entries reflect models the project has
+                tested on real hardware. Entries based on protocol
+                references have reasonable confidence, but some details
+                (express key counts, touch behavior, LED ring) may need
+                further validation. File an issue with observations if
+                something doesn't match.
+            </p>
+
+            <h3>2. Remove Wacom's driver</h3>
+            <p>
+                Running two tablet drivers simultaneously causes input
+                conflicts. Both try to claim the same HID device, which
+                produces erratic behavior. MockTab will show a conflict
+                warning when it detects a competing driver. Use Wacom's
+                uninstall utility or the standalone
+                <strong>Wacom File Utility</strong> for a complete removal;
+                simply deleting the app leaves service files behind. Restart
+                after removal.
+            </p>
+            <p>
+                If full removal isn't practical, utilities such as App Tamer
+                or LaunchControl can suspend the Wacom background process
+                without uninstalling the driver.
+            </p>
+
+            <h3>3. Install MockTab</h3>
+            <p>
+                Download the latest disk image from Releases, open it, and
+                drag MockTab to Applications. Launch it from there; macOS
+                requires the app to run from its final location before
+                granting permissions.
+            </p>
+
+            <h3>4. Grant permissions</h3>
+            <p>
+                MockTab requires Accessibility and Input Monitoring permission approval.
+                The Configuration page describes this process. If a toggle doesn't take effect, try removing MockTab
+                from the privacy pane and adding it again. Moving or reinstalling MockTab may invalidate a previous permission setting
+            </p>
+
+            <!-- ─── POST-INSTALL ─── -->
+            <h2 id="post-install">Common post-install issues</h2>
+
+            <h3>Pen moves the cursor but pressure doesn't work</h3>
+            <p>
+                Pen pressure requires the Accessibility permission. Open
+                <strong>System Settings → Privacy & Security →
+                    Accessibility</strong>, confirm MockTab is listed and toggled on, then quit and
+                relaunch MockTab. If the toggle is already on, try removing
+                and re-adding it.
+            </p>
+
+            <div class="callout">
+                <div class="callout-label">Also check</div>
+                Many creative applications (Photoshop, Krita, Clip Studio
+                Paint) have their own internal pressure settings that you
+                must enable independently of the driver. Check each app's
+                brush or stylus settings if pressure works in one app but
+                not another.
+            </div>
+
+            <h3>Conflict warning in the Devices pane</h3>
+            <p>
+                MockTab shows a notice when it detects another tablet driver
+                running at the same time. Quit or suspend the competing
+                driver, then replug the tablet. The Devices pane status
+                updates when the conflict clears.
+            </p>
+
+            <h3>Tablet not showing up</h3>
+            <p>
+                If the Devices pane is empty after connecting the tablet,
+                the device may not be in MockTab's registry yet. The Info
+                pane's <strong>Collect Device Data</strong> button runs a
+                guided capture session that records raw HID traffic and
+                produces a compact summary file. Attach it to a GitHub issue for
+                potential adoption.
+            </p>
+
+            <h3>Bluetooth not connecting</h3>
+            <p>
+                Bluetooth-capable Wacom tablets (Intuos Pro Gen 2: PTH-460,
+                PTH-660, PTH-860) use Bluetooth Classic, not BLE. Pairing
+                requires a specific sequence. See the Bluetooth pairing
+                section of the Configuration page.
+            </p>
+
+            <!-- ─── OUTSIDE TOOLS ─── -->
+            <h2 id="outside-tools">Outside tools to try</h2>
+            <p>
+                If the Wacom driver and MockTab don't resolve your
+                situation, two well-established tools cover a broad range of
+                older hardware and can serve as next steps.
+            </p>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>
+                        Connect my tablet
+                        <span class="badge badge-paid">Paid · App Store</span>
+                    </h4>
+                    <p>
+                        An expert-system Mac app that provides guidance for
+                        driver and permission setup step by step for legacy
+                        Wacom hardware. Version 5.7
+                        covers Tahoe, Sequoia, Sonoma, and back to El
+                        Capitan. Supports Bamboo, Graphire, Intuos 1–5,
+                        Intuos Pro, and many Cintiq models, essentially
+                        every Wacom tablet <em>not</em> still on the
+                        official driver.
+                    </p>
+                    <a href="https://wptrnpt.co.uk/wp/connect-my-tablet/" target="_blank" rel="noopener">wptrnpt.co.uk →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>
+                        OpenTabletDriver
+                        <span class="badge badge-open">Open source</span>
+                        <span class="badge badge-free">Free</span>
+                    </h4>
+                    <p>
+                        A cross-platform (Windows, Linux, macOS),
+                        low-latency, user-mode tablet driver. Version 0.6.5
+                        introduced pressure and tilt support on macOS after
+                        four years of development; v0.6.7 (latest) adds
+                        pad-wheel support and full range output for all
+                        axes. Supports Intel and Apple Silicon Macs.
+                        Uninstall the Wacom driver first. Check
+                        the
+                        <a href="https://opentabletdriver.net/Tablets" target="_blank" rel="noopener">supported tablet list</a>
+                        by model number before installing.
+                    </p>
+                    <a href="https://opentabletdriver.net/" target="_blank" rel="noopener">opentabletdriver.net →</a>
+                </div>
+            </div>
+
+            <h3>When to choose which tool</h3>
+            <div class="table-scroll">
+                <table class="matrix">
+                    <thead>
+                        <tr>
+                            <th>Situation</th>
+                            <th>Recommended path</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Model still on Wacom's supported list but
+                                driver won't load
+                            </td>
+                            <td>
+                                Fix permissions per the
+                                <a href="#permissions">macOS permission setup</a>
+                                section; reinstall the Wacom driver
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Model dropped from Wacom's list; want
+                                macOS-native settings UI
+                            </td>
+                            <td>
+                                <strong>MockTab</strong> or
+                                <strong>Connect my tablet</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dropped model; want free, cross-platform,
+                                highly configurable driver
+                            </td>
+                            <td><strong>OpenTabletDriver</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Tablet not yet in MockTab's registry</td>
+                            <td>
+                                Use Collect Device Data to file an issue,
+                                then try
+                                <strong>OpenTabletDriver</strong> as interim
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Need step-by-step guided setup with human
+                                support contact
+                            </td>
+                            <td>
+                                <strong>Connect my tablet</strong> (includes
+                                email support at enquiry@wptrnpt.co.uk)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Installing OpenTabletDriver on macOS</h3>
+            <ol class="step-list">
+                <li>
+                    Uninstall the Wacom driver completely using the Wacom
+                    Tablet Utility and restart.
+                </li>
+                <li>
+                    Download the latest release from
+                    <a href="https://opentabletdriver.net/" target="_blank" rel="noopener">opentabletdriver.net</a>
+                    — choose <code>osx-x64</code> for Intel or
+                    <code>osx-arm64</code> for Apple Silicon.
+                </li>
+                <li>
+                    Extract the archive and drag
+                    <code>OpenTabletDriver.app</code> to your Applications
+                    folder.
+                </li>
+                <li>
+                    Launch it from Applications (not from the download
+                    location).
+                </li>
+                <li>
+                    Grant Accessibility and Input Monitoring permissions
+                    when prompted.
+                </li>
+                <li>
+                    Confirm your tablet appears in the Tablets list. If it
+                    does not, check the
+                    <a href="https://opentabletdriver.net/Tablets" target="_blank" rel="noopener">compatibility table</a>
+                    by model number and consult the
+                    <a href="https://opentabletdriver.net/Wiki/FAQ/General" target="_blank" rel="noopener">OTD FAQ</a>.
+                </li>
+            </ol>
+
+            <div class="callout purple">
+                <div class="callout-label">
+                    Note on macOS 26 (Tahoe) permission bug
+                </div>
+                Tahoe 26.1 and 26.2 contain a known macOS bug that prevents
+                some permission toggles from appearing in the Privacy &
+                Security pane. Follow all prompts carefully and consult the
+                current version of <em>Connect my tablet</em> (v5.7+) for
+                Tahoe-specific workarounds if toggles are missing.
+            </div>
+
+            <hr />
+            <p class="note">
+                This guide covers macOS-specific troubleshooting. For
+                Windows driver issues, see
+                <a href="https://support.wacom.com/hc/en-us/sections/360011600754-Wacom-Driver-Troubleshooting" target="_blank" rel="noopener">Wacom's official driver troubleshooting section</a>. Wacom release notes are the authoritative source for
+                supported device lists. Verify current status before
+                installing any driver version.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site">
+        <div class="wrap">
+            <a href="/">MockTab</a> · Free and open source ·
+            <a href="https://github.com/Cyzor/tablet-driver/releases">Download</a>
+            ·
+            <a href="https://github.com/Cyzor/tablet-driver">Source</a>
+        </div>
+    </footer>
+</body>
+
 </html>
