@@ -87,6 +87,37 @@
         </section>
 
         <section class="wrap">
+            <h2 id="bluetooth">Bluetooth pairing</h2>
+            <p>
+                Intuos Pro Gen 2 tablets (PTH-460, PTH-660, PTH-860)
+                support Bluetooth Classic. To pair:
+            </p>
+            <ol class="step-list">
+                <li>Disconnect the USB cable.</li>
+                <li>
+                    Power the tablet on without holding the touch ring's
+                    center button. The small LED near the USB port blinks
+                    while the tablet waits for a connection.
+                </li>
+                <li>
+                    Open <strong>System Settings &rarr; Bluetooth</strong>
+                    and connect to the tablet.
+                </li>
+            </ol>
+            <p class="note">
+                macOS may also list an entry with an "LE" prefix (for
+                example, "LE IntuosPro L"). That is the tablet's
+                low-energy profile, which macOS claims as a trackpad; the
+                pen sends nothing over it. Pair the entry without the
+                "LE" prefix.
+            </p>
+            <p>
+                MockTab detects the Bluetooth connection automatically and
+                treats it as the same tablet as the USB entry.
+            </p>
+        </section>
+
+        <section class="wrap">
             <h2 id="apps">Application notes</h2>
             <p>
                 Most Mac drawing apps receive pressure and tilt without

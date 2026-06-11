@@ -80,7 +80,7 @@
                     "name": "What tablets does MockTab support?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 2020, including Intuos, Intuos Pro, Cintiq, Bamboo, and Graphire families. A handful are confirmed on real hardware; the rest rely on Linux kernel and OpenTabletDriver references and may need further testing. MockTab does not cover tablets from other vendors, nor post-2020 Wacom hardware. See mocktab.org/hardware.html for the full list."
+                        "text": "MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 2020, including Intuos, Intuos Pro, Cintiq, Bamboo, and Graphire families. A handful are confirmed on real hardware; the rest rely on Linux kernel and OpenTabletDriver references and may need further testing. MockTab does not cover tablets from other vendors. A few post-2020 Wacom models have experimental registry entries that need further verification. See mocktab.org/hardware.html for the full list."
                     }
                 },
                 {
@@ -182,8 +182,8 @@
                 </p>
                 <p class="note">
                     MockTab's testing has covered only a limited set of hardware
-                    configurations so far. Open an issue with observations and
-                    diagnostics to help broaden coverage.
+                    configurations so far. Consider filing an issue with observations and
+                    diagnostics to help broaden support.
                 </p>
                 <p>
                     <a
@@ -261,7 +261,7 @@
                             Firm presets), stroke smoothing, double-click
                             distance, rotation handling, and relative cursor
                             movement. Tested with Photoshop, Affinity, Krita,
-                            Procreate Dreams, Rebelle, and Clip Studio.
+                            Rebelle, and Clip Studio.
                         </p>
                     </div>
                     <div>
@@ -457,7 +457,9 @@
                     <li>
                         Huion, XP-Pen, Xencelabs, and other non-Wacom vendors
                     </li>
-                    <li>Post-2020 Wacom devices</li>
+                    <li>
+                        Post-2020 Wacom devices (support requires further testing and verification)
+                    </li>
                     <li>
                         Linux, Windows, iPad, and
                         <a href="https://www.haiku-os.org/">Haiku</a> (Mac
@@ -502,7 +504,7 @@
                             Wacom periodically drops older hardware from its driver,
                             usually alongside a macOS update.
                             The <a href="/troubleshooting.html">Troubleshooting</a> page
-                            covers common symptoms, which device families are affected,
+                            address common symptoms, which device families are affected,
                             and how to switch. Check the <a href="/hardware.html">Hardware</a>
                             page to confirm your model is supported, then uninstall
                             Wacom's driver and install MockTab.
@@ -557,8 +559,9 @@
                             and may need further testing. The
                             <a href="/hardware.html">Hardware</a> page lists
                             every registered model with its confirmation status.
-                            MockTab does not cover tablets from other vendors,
-                            nor post-2020 Wacom hardware.
+                            MockTab does not currenly support tablets from other vendors.
+                            A few post-2020 Wacom models have experimental
+                            registry entries that need further verification.
                         </p>
                     </div>
 
