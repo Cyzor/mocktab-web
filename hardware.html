@@ -187,7 +187,7 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos5 S (PTK-450)</td><td><code>0x0029</code></td><td>2012</td><td>2047 (11-bit)</td><td>6 keys + ring</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos5 M (PTK-650)</td><td><code>0x002A</code></td><td>2012</td><td>2047 (11-bit)</td><td>8 keys + ring</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos5 touch M (PTH-650)</td><td><code>0x0027</code></td><td>2012</td><td>2047 (11-bit)</td><td>8 keys + ring</td><td>USB</td></tr>
-        <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos5 touch L (PTH-850)</td><td><code>0x0028</code></td><td>2012</td><td>2047 (11-bit)</td><td>8 keys + ring</td><td>USB, Wireless</td></tr>
+        <tr><td><span class="visually-hidden">Confirmed</span><span aria-hidden="true">&#10003;</span></td><td>Intuos5 touch L (PTH-850)</td><td><code>0x0028</code></td><td>2012</td><td>2047 (11-bit)</td><td>8 keys + ring</td><td>USB, Wireless</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro S (PTH-451)</td><td><code>0x0314</code></td><td>2013</td><td>2047 (11-bit)</td><td>6 keys + ring</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Generic-decoder</span><span aria-hidden="true">&#9888;</span></td><td>Intuos Pro M (PTH-651)</td><td><code>0x0316</code>, <code>0x0315</code></td><td>2013</td><td>2047 (11-bit)</td><td>8 keys + ring</td><td>USB</td></tr>
         <tr><td><span class="visually-hidden">Confirmed</span><span aria-hidden="true">&#10003;</span></td><td>Intuos Pro L (PTH-851)</td><td><code>0x0317</code></td><td>2013</td><td>2047 (11-bit)</td><td>8 keys + ring</td><td>USB</td></tr>
@@ -373,6 +373,7 @@ MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 
       <li>Tablets from Huion, XP-Pen, Xencelabs, Gaomon, and other vendors.</li>
       <li>Wacom tablets not listed above from the most recent product cycles (Cintiq Pro 2023 refresh, etc.).</li>
       <li>Serial- and ADB-era Wacom tablets, including the serial PL-series pen displays. The USB Cintiq 21UX (<code>0x003F</code>) and 21UX2 (<code>0x00CC</code>) use the standard CintiqV1 HID format and appear in the registry.</li>
+      <li>Wacom STU signature pads (STU-430, STU-500, STU-520, STU-530, STU-540, and similar). These use a different vendor protocol and are outside MockTab's scope.</li>
       <li>Bluetooth-only tablets that use SPP/RFCOMM rather than HID (CTE-630BT, XD-0608-BT): these need a serial-port driver, not an HID one.</li>
       <li>macOS older than 13 (Ventura).</li>
     </ul>
