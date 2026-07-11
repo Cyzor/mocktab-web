@@ -6,7 +6,7 @@
         <title>MockTab — Mac driver for older Wacom tablets</title>
         <meta
             name="description"
-            content="Free Mac driver for unsupported Wacom tablets — Intuos, Intuos Pro, Cintiq, and Bamboo. An alternative to Wacom's driver for hardware dropped from official support."
+            content="Free Mac driver for unsupported Wacom tablets — Intuos, Intuos Pro, Cintiq, and Bamboo — plus the Xencelabs Pen Display bundle. An alternative to Wacom's driver for hardware dropped from official support."
         />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="canonical" href="https://mocktab.org/" />
@@ -80,7 +80,7 @@
                     "name": "What tablets does MockTab support?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 2020, including Intuos, Intuos Pro, Cintiq, Bamboo, and Graphire families. A handful are confirmed on real hardware; the rest rely on Linux kernel and OpenTabletDriver references and may need further testing. MockTab does not cover tablets from other vendors. A few post-2020 Wacom models have experimental registry entries that need further verification. See mocktab.org/hardware.html for the full list."
+                        "text": "MockTab targets Wacom USB and Bluetooth tablets from the early 2000s to roughly 2020, including Intuos, Intuos Pro, Cintiq, Bamboo, and Graphire families, plus some Xencelabs models such as the Pen Display 24. A handful are confirmed on real hardware; the rest rely on Linux kernel and OpenTabletDriver references and may need further testing. A few post-2020 Wacom models also have experimental registry entries that need further verification. See mocktab.org/hardware.html for the full list."
                     }
                 },
                 {
@@ -188,7 +188,7 @@
                 <p>
                     <a
                         class="cta"
-                        href="https://github.com/Cyzor/tablet-driver/releases/download/v0.2.3/MockTab-0.2.3.dmg"
+                        href="https://github.com/Cyzor/tablet-driver/releases/download/v0.3.0/MockTab-0.3.0.dmg"
                         >Download for Mac</a
                     >
                     <a class="cta secondary" href="/hardware.html"
@@ -218,9 +218,7 @@
                 <p>
                     Wacom hardware tends to outlast its driver support, with
                     functional tablets losing compatibility with newer macOS
-                    releases. MockTab is a small, focused driver that targets
-                    USB and Bluetooth Wacom tablets from the early 2000s through
-                    roughly 2020, on macOS 13 and newer.
+                    releases. MockTab targets USB and Bluetooth Wacom tablets from the early 2000s through roughly 2020 on macOS 13 and later, with additional support for recent Xencelabs tablets. See the <a href="/hardware.html">Hardware</a> page for details.
                 </p>
 
                 <div class="feature">
@@ -455,7 +453,8 @@
                 <h2>Unsupported</h2>
                 <ul class="bullets">
                     <li>
-                        Huion, XP-Pen, Xencelabs, and other non-Wacom vendors
+                        Huion, XP-Pen, and other non-Wacom vendors (Xencelabs
+                        is the exception &mdash; see <a href="/hardware.html">Hardware</a>)
                     </li>
                     <li>
                         Post-2020 Wacom devices (support requires further testing and verification)
@@ -554,14 +553,19 @@
                     <div class="faq-item">
                         <p class="faq-q">What tablets does MockTab support?</p>
                         <p class="faq-a">
-                            A handful are confirmed on real hardware. The rest
-                            rely on Linux kernel and OpenTabletDriver references
-                            and may need further testing. The
+                            MockTab targets Wacom USB and Bluetooth tablets
+                            from the early 2000s to roughly 2020, including
+                            Intuos, Intuos Pro, Cintiq, Bamboo, and Graphire
+                            families, plus some Xencelabs models such as the
+                            Pen Display 24. Many have confirmation on real
+                            hardware, but the rest rely on Linux kernel and
+                            OpenTabletDriver references and may need further
+                            testing. A few post-2020 Wacom models also have
+                            experimental registry entries that need further
+                            verification. The
                             <a href="/hardware.html">Hardware</a> page lists
-                            every registered model with its confirmation status.
-                            MockTab does not currenly support tablets from other vendors.
-                            A few post-2020 Wacom models have experimental
-                            registry entries that need further verification.
+                            every registered model with its confirmation
+                            status.
                         </p>
                     </div>
 

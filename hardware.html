@@ -6,7 +6,7 @@
         <title>Supported hardware &mdash; MockTab</title>
         <meta
             name="description"
-            content="Wacom tablet models that work with MockTab — Intuos, Intuos Pro, Cintiq, Bamboo, and Graphire families, with notes on verified and partial support."
+            content="Wacom tablet models that work with MockTab — Intuos, Intuos Pro, Cintiq, Bamboo, and Graphire families, plus the Xencelabs Pen Display bundle, with notes on verified and partial support."
         />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="canonical" href="https://mocktab.org/hardware.html" />
@@ -57,11 +57,11 @@
                     MockTab targets Wacom USB and Bluetooth tablets from the
                     early 2000s to roughly 2020. These devices span nearly a
                     hundred product numbers across a dozen hardware generations.
-                    A few newer models also carry experimental registry entries
-                    and require further verification. The tables below break
-                    that down by family, noting pressure range, button
-                    arrangement, transport, and confirmation status for each
-                    model.
+                    A few newer models carry experimental registry entries
+                    and require further verification. MockTab also supports
+                    some Xencelabs tablet models. The tables specify coverage by
+                    family, noting pressure range, button arrangement,
+                    transport, and confirmation notes.
                 </p>
             </section>
 
@@ -1794,6 +1794,105 @@
                     </table>
                 </div>
 
+<h2>
+    Xencelabs
+    <span class="muted-h">&middot; 2021&ndash;present</span>
+</h2>
+<p>
+    MockTab focuses on Wacom‑family tablets but also supports Xencelabs devices
+    because they share a similar professional workflow and have an accommodating
+    design. Current coverage centers on the Pen Display 24 bundle &mdash; screen,
+    pen, and Quick Keys puck &mdash; confirmed end‑to‑end on real hardware,
+    including over the wireless USB dongle. The standalone Pen Tablet Medium and
+    Small use the same wire protocol and should also work, but require further
+    verification.
+</p>                <div class="table-scroll">
+                    <table class="matrix">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span class="visually-hidden">Status</span>
+                                </th>
+                                <th scope="col">Model</th>
+                                <th scope="col">PID</th>
+                                <th scope="col">Pressure</th>
+                                <th scope="col">Buttons / dial</th>
+                                <th scope="col">Transport</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="visually-hidden"
+                                        >Confirmed</span
+                                    ><span aria-hidden="true">&#10003;</span>
+                                </td>
+                                <td>Xencelabs Pen Display 24</td>
+                                <td><code>0x520D</code></td>
+                                <td>8191 (13-bit)</td>
+                                <td>3</td>
+                                <td>USB</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="visually-hidden"
+                                        >Confirmed</span
+                                    ><span aria-hidden="true">&#10003;</span>
+                                </td>
+                                <td>Xencelabs Quick Keys</td>
+                                <td><code>0x5202</code></td>
+                                <td>&mdash;</td>
+                                <td>8 keys + dial</td>
+                                <td>USB</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="visually-hidden"
+                                        >Confirmed</span
+                                    ><span aria-hidden="true">&#10003;</span>
+                                </td>
+                                <td>Quick Keys wireless dongle</td>
+                                <td><code>0x5203</code></td>
+                                <td>&mdash;</td>
+                                <td>8 keys + dial</td>
+                                <td>USB (relay)</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="visually-hidden"
+                                        >Generic-decoder</span
+                                    ><span aria-hidden="true">&#9888;</span>
+                                </td>
+                                <td>Xencelabs Pen Tablet Medium</td>
+                                <td><code>0x5201</code></td>
+                                <td>8191 (13-bit)</td>
+                                <td>3</td>
+                                <td>USB</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="visually-hidden"
+                                        >Generic-decoder</span
+                                    ><span aria-hidden="true">&#9888;</span>
+                                </td>
+                                <td>Xencelabs Pen Tablet Small</td>
+                                <td><code>0x5204</code></td>
+                                <td>8191 (13-bit)</td>
+                                <td>3</td>
+                                <td>USB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="note">
+                    Quick Keys' 8 express keys, mode button, and dial work the
+                    same whether the puck connects directly or through its
+                    wireless dongle; MockTab treats both as one device. The
+                    wire protocol can't distinguish the bundle's 3-button pen
+                    from the thinner 2-button pen Xencelabs also ships, so both
+                    show up simply as &ldquo;Xencelabs Pen.&rdquo;
+                </p>
+
                 <h2>Wireless</h2>
                 <ul class="bullets">
                     <li>
@@ -1834,8 +1933,8 @@
                 <h2>Not supported</h2>
                 <ul class="bullets">
                     <li>
-                        Tablets from Huion, XP-Pen, Xencelabs, Gaomon, and other
-                        vendors.
+                        Tablets from Huion, XP-Pen, Gaomon, and other vendors
+                        (Xencelabs is the exception &mdash; see above).
                     </li>
                     <li>
                         Wacom tablets not listed above from the most recent
