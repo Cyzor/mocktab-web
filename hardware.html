@@ -893,13 +893,12 @@
                                 <td>Intuos Pro M (PTH-660)</td>
                                 <td>
                                     <code>0x0357</code> (USB),
-                                    <code>0x0360</code> (BT),
-                                    <code>0x0359</code> (RF)
+                                    <code>0x0360</code> (BT)
                                 </td>
                                 <td>2017</td>
                                 <td>8191 (13-bit)</td>
                                 <td>8 keys + ring</td>
-                                <td>USB, BT, Wireless</td>
+                                <td>USB, BT</td>
                             </tr>
                             <tr>
                                 <td>
@@ -910,13 +909,12 @@
                                 <td>Intuos Pro L (PTH-860)</td>
                                 <td>
                                     <code>0x0358</code> (USB),
-                                    <code>0x0361</code> (BT),
-                                    <code>0x035A</code> (RF)
+                                    <code>0x0361</code> (BT)
                                 </td>
                                 <td>2017</td>
                                 <td>8191 (13-bit)</td>
                                 <td>8 keys + ring</td>
-                                <td>USB, BT, Wireless</td>
+                                <td>USB, BT</td>
                             </tr>
                         </tbody>
                     </table>
@@ -926,6 +924,14 @@
                     PTH-660 tested over Bluetooth Classic enumerated with its
                     USB PID (<code>0x0357</code>) rather than
                     <code>0x0360</code>. MockTab matches either.
+                </p>
+                <p class="note">
+                    <code>0x0359</code> and <code>0x035A</code> were removed
+                    from this family in 2026-07: earlier notes guessed them as
+                    PTH-660/860 wireless-dongle PIDs, but that pairing had no
+                    kernel or libwacom source. libwacom independently assigns
+                    both PIDs elsewhere &mdash; see DTU-1141B and DTH-1152
+                    below. PTH-660/860 wireless is Bluetooth Classic only.
                 </p>
 
                 <h2>
@@ -1790,9 +1796,43 @@
                                 <td>&mdash;</td>
                                 <td>USB</td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <span class="visually-hidden"
+                                        >Generic-decoder</span
+                                    ><span aria-hidden="true">&#9888;</span>
+                                </td>
+                                <td>Wacom DTU-1141B</td>
+                                <td><code>0x0359</code></td>
+                                <td>&mdash;</td>
+                                <td>8191 (13-bit)</td>
+                                <td>4</td>
+                                <td>USB</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="visually-hidden"
+                                        >Generic-decoder</span
+                                    ><span aria-hidden="true">&#9888;</span>
+                                </td>
+                                <td>Wacom DTH-1152</td>
+                                <td><code>0x035A</code></td>
+                                <td>&mdash;</td>
+                                <td>8191 (13-bit)</td>
+                                <td>touch, no pen eraser</td>
+                                <td>USB</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
+                <p class="note">
+                    <strong>DTU-1141B</strong> and <strong>DTH-1152</strong> are
+                    identified by PID from libwacom only &mdash; no hardware
+                    testing has been done. These PIDs were previously (and
+                    incorrectly) attributed to PTH-660/860 wireless dongles;
+                    that guess has been retracted in favor of libwacom's own
+                    identification.
+                </p>
 
 <h2>
     Xencelabs
