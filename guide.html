@@ -203,6 +203,14 @@
           <p class="name">Ring: Mode N</p>
           <p class="desc">Jumps the touch ring directly to a specific slot without cycling through intermediate slots.</p>
         </li>
+        <li>
+          <p class="name">Pan View</p>
+          <p class="desc">Grabs and drags the canvas like a hand tool while held, with momentum after release. Panning locks to the dominant axis to avoid drift. Not available in every application or website; see <a href="/configuration.html#panning">Panning</a> for fallbacks.</p>
+        </li>
+        <li>
+          <p class="name">Toggle Relative Mode</p>
+          <p class="desc">Switches <a href="#relative-mode">relative cursor movement</a> on and off, so it doesn't have to stay enabled at all times.</p>
+        </li>
       </ul>
 
       <h3 id="key-combos">Recording key combinations</h3>
@@ -405,7 +413,18 @@
       <p>
         Smoothing affects only cursor position. It does not alter pressure, tilt, or
         rotation values, and it does not change how strokes appear in the target application.
-        It controls only how the on-screen cursor moves.
+        It controls only how the on-screen cursor moves. Stabilization eases off during
+        fast strokes rather than lagging every stroke by the same fixed amount.
+      </p>
+      <p>
+        <strong>Pressure Smoothing</strong> is a separate control that damps noise in
+        the pressure signal itself, independent of cursor-position smoothing.
+      </p>
+      <p>
+        <strong>Drag Threshold</strong> sets how far the cursor must move before a
+        click-and-hold turns into a drag, useful for pens with jittery tip contact.
+        <strong>Tip-up Assist</strong> is a slider that keeps a brief window open after
+        tip lift-off, so a fast stroke's very end isn't clipped.
       </p>
 
       <h3 id="double-click">Double-click distance</h3>
@@ -454,6 +473,11 @@
         Relative mode ignores display targeting and calibration: the full active area
         maps to the full virtual screen space. The cursor clamps to the screen bounds so
         it can reach any corner of any display.
+      </p>
+      <p>
+        A button can also be bound to <strong>Toggle Relative Mode</strong> (see
+        <a href="#binding-kinds">Binding kinds</a>), so it doesn't have to stay
+        enabled at all times.
       </p>
 
       <h2 id="touch">Touch</h2>
