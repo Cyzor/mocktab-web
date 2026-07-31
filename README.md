@@ -1,6 +1,6 @@
 # mocktab-web
 
-Source for [mocktab.org](https://mocktab.org) — the project website for **MockTab**, a native macOS driver that revives discontinued Wacom tablets on Apple Silicon and Intel Macs.
+Source for [mocktab.org](https://mocktab.org) — the project website for **MockTab**, a macOS driver that revives discontinued Wacom tablets on Apple Silicon and Intel Macs.
 
 Plain HTML/CSS, no build step. Push to `main` and GitHub Pages serves it.
 

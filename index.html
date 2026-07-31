@@ -64,7 +64,7 @@
                     "name": "How is MockTab different from Wacom's driver or OpenTabletDriver?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Wacom's software is closed-source and drops older hardware with each macOS release. OpenTabletDriver is a capable open-source project with broad hardware and platform coverage. MockTab takes a narrower approach: one platform, one vendor, native Swift, no background daemons, no kernel extensions. The smaller scope means a simpler configuration surface and no background services."
+                        "text": "Wacom's software is closed-source and drops older hardware with each macOS release. OpenTabletDriver is a capable open-source project with broad hardware and platform coverage. MockTab takes a narrower approach: one platform, one vendor, one self-contained app bundle with no background services. Pen input runs on a real-time thread at audio-grade scheduling priority. The smaller scope means a simpler configuration surface."
                     }
                 },
                 {
@@ -88,7 +88,7 @@
                     "name": "What are the system requirements?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "macOS 13 (Ventura) or later, on Apple Silicon or Intel. A supported Wacom tablet over USB or Bluetooth. Around 30 MB on disk."
+                        "text": "macOS 13 (Ventura) or later, on Apple Silicon or Intel. A supported Wacom tablet over USB or Bluetooth. About 10 MB on disk."
                     }
                 },
                 {
@@ -175,10 +175,12 @@
                 />
                 <h1>A replacement driver for unsupported Wacom tablets.</h1>
                 <p class="lede">
-                    MockTab is a native Mac driver for Wacom drawing tablets
-                    (pressure-sensitive input devices used in digital art and
-                    illustration) that no longer have official support on modern
-                    macOS releases. Free and open source.
+                    MockTab is a Mac driver for Wacom drawing tablets
+                    that no longer have official support. Free and open source.
+                </p>
+                <p class="lede">
+                    One self-contained app bundle. Pen input runs on a
+                    real-time thread at audio-grade scheduling priority.
                 </p>
                 <p class="note">
                     MockTab's testing has covered only a limited set of hardware
@@ -225,11 +227,7 @@
                     <div>
                         <h3>Tablet area</h3>
                         <p>
-                            Defines the portion of the tablet surface that maps
-                            to the target display, with a visual crop editor and
-                            raw numeric fields. Proportional mode matches the
-                            display's aspect ratio so round shapes stay round
-                            regardless of the tablet's dimensions.
+                            Maps a region of the tablet to a region of a display. Proportional mode keeps circles round whatever the tablet&rsquo;s shape.
                         </p>
                     </div>
                     <div>
@@ -254,12 +252,7 @@
                     <div>
                         <h3>Pen feel</h3>
                         <p>
-                            Controls pressure response (a two-point
-                            B&eacute;zier curve editor with Linear, Soft, and
-                            Firm presets), stroke smoothing, double-click
-                            distance, rotation handling, and relative cursor
-                            movement. Tested with Photoshop, Affinity, Krita,
-                            Rebelle, and Clip Studio.
+                            Pressure curve, stroke smoothing, double-click distance, rotation, and relative cursor mode. Supports Photoshop, Affinity, Krita, Rebelle, Clip Studio, ZBrush, Blender, Nomad, and more.
                         </p>
                     </div>
                     <div>
@@ -284,10 +277,7 @@
                     <div>
                         <h3>Button mapping</h3>
                         <p>
-                            Assigns actions to barrel buttons, express keys, and
-                            touch ring. Actions include key combinations
-                            (recorded live), mouse clicks, eraser toggle,
-                            display cycling, and touch ring mode switching.
+                            Binds barrel buttons, express keys, and the touch ring to key combinations, clicks, eraser toggle, or display cycling. Shortcuts record live.
                         </p>
                     </div>
                     <div>
@@ -312,11 +302,7 @@
                     <div>
                         <h3>Per-app overrides</h3>
                         <p>
-                            Override settings on a per-application basis: tablet
-                            area, pressure curve, button mapping, and display
-                            routing. MockTab switches to the active override
-                            automatically when that application becomes
-                            frontmost.
+                            Separate area, pressure, buttons, and display routing per application, applied the moment it comes forward.
                         </p>
                     </div>
                     <div>
@@ -341,11 +327,7 @@
                     <div>
                         <h3>Profiles</h3>
                         <p>
-                            Capture the full device configuration with named
-                            profiles. Profiles export and import as JSON; the
-                            Profiles pane supports drag-to-Finder export and
-                            merge-on-import so existing profiles are not
-                            overwritten.
+                            Named snapshots of a device&rsquo;s whole configuration, exported as JSON with a drag to the Finder. Importing merges rather than overwrites.
                         </p>
                     </div>
                     <div>
@@ -370,10 +352,7 @@
                     <div>
                         <h3>Display mapping</h3>
                         <p>
-                            Routes the tablet to a specific display or spans it
-                            across all connected displays. A toggle mode cycles
-                            through a configurable set of monitors via a button
-                            press.
+                            Routes the tablet to one display or spans every connected one. A button can cycle a chosen set.
                         </p>
                     </div>
                     <div>
@@ -398,9 +377,7 @@
                     <div>
                         <h3>Scratchpad</h3>
                         <p>
-                            A canvas for testing pen input without launching a
-                            drawing application. Visualizes pressure, tilt,
-                            rotation, and button response in real time.
+                            Tests pen input without opening an art app. Shows pressure, tilt, rotation, and buttons as they happen.
                         </p>
                     </div>
                     <div>
@@ -424,29 +401,30 @@
                 <h2>Features</h2>
                 <ul class="bullets">
                     <li>
-                        Pressure, tilt, and pen rotation (where the hardware
-                        supports it)
+                        Pressure, tilt, and pen rotation
                     </li>
                     <li>
                         Per-app overrides for area, pressure, buttons, and
                         display routing
                     </li>
                     <li>
-                        Multiple tablet generations connected simultaneously,
-                        with automatic switching when you pick one up
+                        Multiple tablet generations connected simultaneously
                     </li>
-                    <li>Wireless via USB dongle and Bluetooth</li>
-                    <li>Touch ring (multi-slot modes) and touch strip</li>
-                    <li>Capacitive touch support on some models (two-finger scroll, tap-to-click, adjustable touch area)</li>
-                    <li>Profile import / export as JSON, drag-to-Finder</li>
-                    <li>Undo / redo across every settings pane (&#8984;Z)</li>
+                    <li>Wireless operation over Bluetooth and USB dongle </li>
+                    <li>Touch ring and touch strip</li>
+                    <li>Capacitive touch, including two-finger scroll, tap-to-click</li>
+                    <li>Profile import/export as JSON using drag and drop</li>
+                    <li>Undo/redo across every settings pane (&#8984;Z)</li>
                     <li>
                         In-app help (&#8984;?) and a menu-bar mode that hides
                         the Dock icon
                     </li>
                     <li>
-                        Native AppKit app, signed and notarized, no kernel
-                        extensions
+                        Pen input on a real-time thread at audio-grade
+                        scheduling priority
+                    </li>
+                    <li>
+                        One self-contained app bundle
                     </li>
                 </ul>
 
@@ -530,10 +508,11 @@
                             hardware with each macOS release. OpenTabletDriver
                             is a capable open-source project with broad hardware
                             and platform coverage. MockTab takes a narrower
-                            approach: one platform, one vendor, native Swift, no
-                            background daemons, no kernel extensions. The
-                            smaller scope means a simpler configuration surface
-                            and no background services.
+                            approach: one platform, one vendor, one
+                            self-contained app bundle with no background
+                            services. Pen input runs on a real-time thread at
+                            audio-grade scheduling priority. The smaller scope
+                            means a simpler configuration surface.
                         </p>
                     </div>
 
@@ -586,7 +565,7 @@
                         <p class="faq-a">
                             macOS 13 (Ventura) or later, on Apple Silicon or
                             Intel. A supported Wacom tablet over USB or
-                            Bluetooth. Around 30 MB on disk.
+                            Bluetooth. About 10 MB on disk.
                         </p>
                     </div>
 
@@ -628,8 +607,7 @@
                             privacy manifest. MockTab ships under GPL-3, with its source available on
                             <a href="https://github.com/Cyzor/tablet-driver"
                                 >GitHub</a
-                            >
-                            . macOS forces both prompts on
+                            >. macOS forces both prompts on
                             every third-party tablet driver:
                             <strong>Accessibility</strong> lets MockTab inject
                             pen pressure into other apps, and
