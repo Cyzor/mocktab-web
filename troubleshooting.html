@@ -92,8 +92,9 @@
                 <!-- ─── SYMPTOMS ─── -->
                 <h2 id="symptoms">Symptoms</h2>
                 <p>
-                    These situations may indicate that macOS is no longer
-                    compatible with your Wacom driver.
+                    These situations usually mean one of two things: Wacom's
+                    driver has dropped your tablet, or the driver no longer
+                    works on your version of macOS.
                 </p>
                 <ul class="bullets">
                     <li>
@@ -137,8 +138,7 @@
                 </p>
                 <ul class="bullets">
                     <li>
-                        <strong>Intuos 1–3</strong> — PTZ, CTE, and early PTK
-                        series
+                        <strong>Intuos 1–3</strong> — GD, XD, and PTZ series
                     </li>
                     <li>
                         <strong>Intuos 4</strong> — PTK-440, PTK-640, PTK-840,
@@ -152,8 +152,8 @@
                         PTH-851 (K1 editions)
                     </li>
                     <li>
-                        <strong>Bamboo and consumer Intuos</strong> — CTL, CTH,
-                        and CTP series (CTL-480, CTH-480, and similar)
+                        <strong>Bamboo and consumer Intuos</strong> — CTE, CTL,
+                        and CTH series (CTL-480, CTH-480, and similar)
                     </li>
                     <li>Some older <strong>Cintiq</strong> pen displays</li>
                 </ul>
@@ -167,8 +167,7 @@
                         target="_blank"
                         rel="noopener"
                         >Wacom driver download page</a
-                    >
-                    , are the authoritative source for current compatibility;
+                    >, are the authoritative source for current compatibility;
                     check the "compatible products" link inside each release's
                     notes before installing.
                 </p>
@@ -249,7 +248,7 @@
                     >
                     maintains patched versions of Wacom's legacy drivers that
                     fix the segfaults, preference-pane crashes, and installer
-                    failures introduced in Catalina. See the project
+                    failures introduced in Catalina. See the
                     <a
                         href="https://github.com/thenickdude/wacom-driver-fix"
                         target="_blank"
@@ -281,7 +280,7 @@
                 <p>
                     macOS security settings may block a correctly installed
                     driver. Grant the Wacom driver permissions in
-                    <strong>System Settings → Privacy & Security</strong>:
+                    <strong>System Settings → Privacy &amp; Security</strong>:
                 </p>
 
                 <div class="table-scroll">
@@ -341,7 +340,7 @@
                     <li>
                         Open
                         <strong
-                            >System Settings → Privacy & Security →
+                            >System Settings → Privacy &amp; Security →
                             Accessibility</strong
                         >. Select <code>com.wacom.IOManager</code> and click
                         <strong>–</strong> to remove it.
@@ -464,7 +463,7 @@
                 <p>
                     Pen pressure requires the Accessibility permission. Open
                     <strong
-                        >System Settings → Privacy & Security →
+                        >System Settings → Privacy &amp; Security →
                         Accessibility</strong
                     >, confirm MockTab is listed and toggled on, then quit and
                     relaunch MockTab. If the toggle is already on, try removing
@@ -528,8 +527,8 @@
                         <p>
                             An expert-system Mac app that provides guidance for
                             driver and permission setup step by step for legacy
-                            Wacom hardware. Version 5.7 covers Tahoe, Sequoia,
-                            Sonoma, and back to El Capitan. Supports Bamboo,
+                            Wacom hardware. Current versions cover Tahoe,
+                            Sequoia, Sonoma, and back to El Capitan. Supports Bamboo,
                             Graphire, Intuos 1–5, Intuos Pro, and many Cintiq
                             models, essentially every Wacom tablet
                             <em>not</em> still on the official driver.
@@ -549,10 +548,9 @@
                         </h4>
                         <p>
                             A cross-platform (Windows, Linux, macOS),
-                            low-latency, user-mode tablet driver. Version 0.6.5
-                            introduced pressure and tilt support on macOS after
-                            four years of development; v0.6.7 (latest) adds
-                            pad-wheel support and full range output for all
+                            low-latency, user-mode tablet driver. Recent
+                            releases added pressure and tilt on macOS, along
+                            with pad-wheel support and full range output on all
                             axes. Supports Intel and Apple Silicon Macs.
                             Uninstall the Wacom driver first. Check the
                             <a
@@ -687,11 +685,12 @@
                     <div class="callout-label">
                         Note on macOS 26 (Tahoe) permission bug
                     </div>
-                    Tahoe 26.1 and 26.2 contain a known macOS bug that prevents
-                    some permission toggles from appearing in the Privacy &
-                    Security pane. Follow all prompts carefully and consult the
-                    current version of <em>Connect my tablet</em> (v5.7+) for
-                    Tahoe-specific workarounds if toggles are missing.
+                    Some Tahoe releases contain a known macOS bug that
+                    prevents certain permission toggles from appearing in the
+                    Privacy &amp; Security pane. Follow all prompts carefully,
+                    and consult a current version of
+                    <em>Connect my tablet</em> for Tahoe-specific workarounds
+                    if toggles are missing.
                 </div>
 
                 <hr />
