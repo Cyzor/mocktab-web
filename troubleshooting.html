@@ -65,6 +65,11 @@
                         <li><a href="#symptoms">Symptoms</a></li>
                         <li><a href="#hardware">Affected hardware</a></li>
                         <li>
+                            <a href="#os-version"
+                                >Newer macOS than the driver knows</a
+                            >
+                        </li>
+                        <li>
                             <a href="#wacom-driver"
                                 >Staying on Wacom's driver</a
                             >
@@ -126,6 +131,12 @@
                         Pressure sensitivity works intermittently, or not at
                         all, despite the cursor responding.
                     </li>
+                    <li>
+                        Everything worked until a macOS upgrade, and your
+                        tablet is <strong>not</strong> on the dropped list
+                        above. See
+                        <a href="#os-version">Newer macOS than the driver knows</a>.
+                    </li>
                 </ul>
 
                 <!-- ─── AFFECTED HARDWARE ─── -->
@@ -170,6 +181,52 @@
                     >, are the authoritative source for current compatibility;
                     check the "compatible products" link inside each release's
                     notes before installing.
+                </p>
+
+                <!-- ─── OS VERSION CEILING ─── -->
+                <h2 id="os-version">Newer macOS than the driver knows</h2>
+                <p>
+                    Wacom Center can stop working after a macOS upgrade even
+                    though your tablet is still supported. Wacom's driver
+                    checks the macOS version against a list built into the
+                    driver, and refuses to start on releases newer than the
+                    ones it knows about. Components report an
+                    <em>undefined OS version</em> and never initialize, so
+                    Wacom Center shows
+                    <strong>"The tablet driver is not responding"</strong> even
+                    with permissions correctly granted.
+                </p>
+                <p>
+                    This is a different problem from a model being dropped, and
+                    it is worth checking first if your hardware is
+                    <strong>not</strong> in the
+                    <a href="#hardware">Affected hardware</a> list. It affects
+                    current tablets on current drivers — the constraint is the
+                    macOS version, not the tablet.
+                </p>
+                <p>
+                    The fix is a driver update from Wacom that adds the new OS
+                    version. Until one ships, the options are to stay on your
+                    previous macOS release, or to use a driver that does not
+                    gate on OS version. Community workarounds that patch the
+                    installed Wacom binaries do circulate; they modify signed
+                    system components, get overwritten by the next driver
+                    update, and are not something this page recommends. For
+                    background on the underlying cause, see
+                    <a
+                        href="https://citrus-rin.jp/?p=1033"
+                        target="_blank"
+                        rel="noopener"
+                        >this independent root-cause analysis</a
+                    >.
+                </p>
+                <p>
+                    MockTab performs no such check. It reads the tablet through
+                    the macOS HID subsystem directly and has only a minimum
+                    requirement (macOS 13), with no upper bound in the code.
+                    Brief testing on the macOS 27 beta shows it running
+                    normally, though that testing is limited so far and a
+                    released version may surface issues.
                 </p>
 
                 <!-- ─── STAYING ON WACOM ─── -->
