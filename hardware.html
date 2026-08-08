@@ -710,7 +710,11 @@
                     identical hardware. Same 10-byte IntuosV1 format as Intuos
                     4, 11-bit pressure, capacitive touch ring, no Bluetooth. The
                     L variant (PTH-851) is the confirmed reference unit for this
-                    generation.
+                    generation. The "touch" L model (PTH-850) also has a
+                    capacitive touch surface; MockTab supports it over USB. The
+                    S and M touch models (PTH-450/650) have the same touch
+                    hardware, but MockTab does not yet decode their touch
+                    reports.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -991,7 +995,7 @@
                                 <td><code>0x03F7</code></td>
                                 <td>2025</td>
                                 <td>8191 (13-bit)</td>
-                                <td>10 keys + 2 wheels</td>
+                                <td>8 keys + 2 wheels</td>
                                 <td>USB</td>
                             </tr>
                             <tr>
@@ -1004,7 +1008,7 @@
                                 <td><code>0x03F9</code></td>
                                 <td>2025</td>
                                 <td>8191 (13-bit)</td>
-                                <td>10 keys + 2 wheels</td>
+                                <td>8 keys + 2 wheels</td>
                                 <td>USB</td>
                             </tr>
                         </tbody>
