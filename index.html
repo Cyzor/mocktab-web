@@ -48,7 +48,7 @@
                     "name": "Wacom says my tablet is no longer supported. What now?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Wacom periodically drops older hardware from its driver, usually alongside a macOS update. The Troubleshooting page at mocktab.org/troubleshooting.html covers common symptoms, which device families are affected, and how to switch. Check the Hardware page to confirm your model is supported, then uninstall Wacom's driver and install MockTab."
+                        "text": "Wacom periodically drops older hardware from its driver, usually alongside a macOS update. The Troubleshooting page at mocktab.org/troubleshooting.html covers common symptoms, which device families it affects, and how to switch. Check the Hardware page to confirm your model is supported, then uninstall Wacom's driver and install MockTab."
                     }
                 },
                 {
@@ -200,14 +200,14 @@
                 <div class="shot-wrap" style="margin-top: 48px">
                     <img
                         class="shot light"
-                        src="images/ui/tablet-area-light.png"
+                        src="images/ui/tablet-area-tall-light.png"
                         width="717"
                         height="1165"
                         alt="MockTab tablet area settings"
                     />
                     <img
                         class="shot dark"
-                        src="images/ui/tablet-area-dark.png"
+                        src="images/ui/tablet-area-tall-dark.png"
                         width="717"
                         height="1165"
                         alt="MockTab tablet area settings (dark)"
@@ -327,7 +327,7 @@
                     <div>
                         <h3>Profiles</h3>
                         <p>
-                            Named snapshots of a device&rsquo;s whole configuration, exported as JSON with a drag to the Finder. Importing merges rather than overwrites.
+                            Named snapshots of a device&rsquo;s whole configuration, exported as JSON via drag and drop. Importing merges rather than overwrites.
                         </p>
                     </div>
                     <div>
@@ -373,6 +373,33 @@
                     </div>
                 </div>
 
+
+			<div class="feature">
+				<div>
+					<h3>Touch</h3>
+					<p>
+						Cursor movement, two-finger scroll, pinch-to-zoom, and two-finger rotate on tablets with a capacitive touch surface.
+					</p>
+				</div>
+				<div>
+					<img
+						class="shot light"
+						src="images/ui/touch-light.png"
+						width="717"
+						height="996"
+						alt="Touch settings panel"
+					/>
+					<img
+						class="shot dark"
+						src="images/ui/touch-dark.png"
+						width="717"
+						height="996"
+						alt="Touch settings panel (dark theme)"
+					/>
+				</div>
+			</div>
+
+
                 <div class="feature">
                     <div>
                         <h3>Scratchpad</h3>
@@ -412,12 +439,12 @@
                     </li>
                     <li>Wireless operation over Bluetooth and USB dongle </li>
                     <li>Touch ring and touch strip</li>
-                    <li>Capacitive touch, including two-finger scroll, tap-to-click</li>
+                    <li>Capacitive touch, including two-finger scroll, pinch-to-zoom, and two-finger rotate</li>
                     <li>Profile import/export as JSON using drag and drop</li>
                     <li>Undo/redo across every settings pane (&#8984;Z)</li>
                     <li>
-                        In-app help (&#8984;?) and a menu-bar mode that hides
-                        the Dock icon
+                        In-app help and a menu-bar mode that runs without
+                        a Dock icon
                     </li>
                     <li>
                         Pen input on a real-time thread at audio-grade
@@ -679,8 +706,8 @@
                     <div class="faq-item">
                         <p class="faq-q">How can I get help?</p>
                         <p class="faq-a">
-                            Press <kbd>&#8984;?</kbd> in any settings pane for
-                            in-app help. The Info pane has a
+                            Choose <strong>MockTab Help</strong> from the
+                            Help menu for in-app help. The Info pane has a
                             <strong>Copy Diagnostics</strong> button that
                             bundles your driver state into a paste-ready text
                             block for bug reports. Then open an issue at

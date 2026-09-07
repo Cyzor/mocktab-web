@@ -86,7 +86,7 @@
         shows the model name, connection status, and battery level if applicable.
       </p>
       <p>
-        When multiple tablets are connected simultaneously, MockTab treats each as an
+        When multiple tablets connect simultaneously, MockTab treats each as an
         independent device with its own settings. The tab bar at the top of the window
         switches between them.
       </p>
@@ -257,7 +257,7 @@
         button on the touch ring carries its own independent binding, separate from the
         rotation slots.
       </p>
-      <p>Each slot operates in one of three modes:</p>
+      <p>Each slot operates in one of the following modes:</p>
       <div class="table-scroll">
         <table class="matrix">
           <thead>
@@ -270,6 +270,16 @@
               <td>Scales scroll lines per physical ring step. Above 1.0 is more responsive; below 1.0 is more deliberate.</td>
             </tr>
             <tr>
+              <td><strong>Zoom</strong></td>
+              <td>Analog pinch-to-zoom, synthesized the same way a real trackpad pinch is — smooth and continuous rather than stepped.</td>
+              <td>Scales zoom sensitivity per physical ring step, up to an 8&times; ceiling.</td>
+            </tr>
+            <tr>
+              <td><strong>Rotate</strong></td>
+              <td>Analog two-finger rotate, synthesized like a real trackpad twist.</td>
+              <td>1.0&times; means one full physical turn of the ring equals one full 360&deg; canvas rotation; lower values scale that down.</td>
+            </tr>
+            <tr>
               <td><strong>Key Press</strong></td>
               <td>A recorded key combo for clockwise rotation and a separate combo for counter-clockwise.</td>
               <td>Higher values produce more key presses per physical step.</td>
@@ -277,6 +287,11 @@
             <tr>
               <td><strong>Off</strong></td>
               <td>The ring produces no events.</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Skip</strong></td>
+              <td>The slot is left out of the mode cycle entirely, so <strong>Ring: Cycle</strong> passes over it. Behaves like Off if somehow active.</td>
               <td>—</td>
             </tr>
           </tbody>
@@ -328,7 +343,7 @@
       <p>
         If the pen maps left-to-right when the tablet sits in portrait orientation, or
         if the active area crop appears on the wrong physical side of the tablet, select
-        the orientation that matches how the tablet is positioned.
+        the orientation that matches how the tablet sits on the desk.
       </p>
 
       <h2 id="display">Display Mapping</h2>
@@ -346,7 +361,7 @@
         <strong>Primary display</strong> maps the tablet to the main screen.
         A numbered display entry maps to a specific secondary monitor.
         <strong>Toggle between displays</strong> cycles through a configurable rotation
-        set each time a button assigned to <em>Toggle Display</em> is pressed.
+        set each time you press a button assigned to <em>Toggle Display</em>.
         <strong>All</strong> spans the tablet across every connected display as one
         continuous surface.
       </p>
@@ -389,12 +404,11 @@
       </p>
       <ul>
         <li><strong>Linear</strong>: pressure maps directly with no modification.
-            Use this when a custom curve is already configured in the target application.</li>
+            Use this when the target application already configures a custom curve.</li>
         <li><strong>Soft</strong>: lighter touch produces more gradual pressure buildup.
-            Suitable for ink and brush work where fine control near zero pressure is needed.</li>
+            Suits ink and brush work that needs fine control near zero pressure.</li>
         <li><strong>Firm</strong>: requires more force before pressure increases noticeably.
-            Useful for felt-tip markers and technical drawing where a crisp minimum mark
-            is preferred.</li>
+            Useful for felt-tip markers and technical drawing that want a crisp minimum mark.</li>
       </ul>
       <p>
         The B&eacute;zier curve editor provides full control over the response shape.
@@ -496,6 +510,13 @@
         <strong>Reverse direction</strong> inverts the scroll axis for a classic
         mouse-wheel feel. <strong>Sensitivity</strong> scales the cursor movement speed
         in pointer mode.
+      </p>
+      <p>
+        <strong>Pinch to Zoom</strong> and <strong>Rotate</strong> read the same two-finger
+        contact independently of scrolling: spreading or pinching two fingers together zooms,
+        and swiveling them about their center rotates, the same as the equivalent trackpad
+        gestures. Scroll, pinch, and rotate are alternate readings of the same gesture and
+        each toggles on or off on its own.
       </p>
       <p>
         The <strong>Touch Area</strong> editor works like the Tablet Area editor: drag the
