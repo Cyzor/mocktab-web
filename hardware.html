@@ -611,9 +611,9 @@
                     The PTK-series replaced Intuos 3's touch strips with a
                     capacitive touch ring and added per-key OLED labels.
                     Pressure jumped to 11-bit (2048 levels), tilt and Art Pen
-                    rotation continue. The wireless WL variant (PTK-540WL) pairs
-                    over a USB receiver dongle (PID <code>0x009D</code>), not
-                    Bluetooth.
+                    rotation continue. The wireless WL variant (PTK-540WL) also
+                    pairs over Bluetooth Classic; MockTab's decoder for that
+                    path is untested on real hardware.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -695,6 +695,18 @@
                                 <td>2047 (11-bit)</td>
                                 <td>8 keys + ring</td>
                                 <td>USB, Wireless</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="visually-hidden">Pending</span
+                                    ><span aria-hidden="true">&#8230;</span>
+                                </td>
+                                <td>Intuos4 WL (PTK-540WL) BT</td>
+                                <td><code>0x00BD</code></td>
+                                <td>2010</td>
+                                <td>2047 (11-bit)</td>
+                                <td>8 keys + ring</td>
+                                <td>Bluetooth Classic</td>
                             </tr>
                         </tbody>
                     </table>
@@ -880,8 +892,8 @@
                                 </td>
                                 <td>Intuos Pro S (PTH-460)</td>
                                 <td>
-                                    <code>0x0352</code> (USB),
-                                    <code>0x035B</code> (BT)
+                                    <code>0x0392</code> (USB),
+                                    <code>0x0393</code> (BT)
                                 </td>
                                 <td>2019</td>
                                 <td>8191 (13-bit)</td>
