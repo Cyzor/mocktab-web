@@ -6,7 +6,7 @@
         <title>MockTab — Mac driver for older Wacom tablets</title>
         <meta
             name="description"
-            content="Free Mac driver for unsupported Wacom tablets — Intuos, Intuos Pro, Cintiq, and Bamboo — plus the Xencelabs Pen Display bundle. An alternative to Wacom's driver for hardware dropped from official support."
+            content="Free Mac driver for unsupported Wacom tablets — Intuos, Intuos Pro, Cintiq, and Bamboo — plus the Xencelabs Pen Display bundle. An alternative to Wacom's driver for hardware removed from official support."
         />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="canonical" href="https://mocktab.org/" />
@@ -48,7 +48,7 @@
                     "name": "Wacom says my tablet is no longer supported. What now?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Wacom periodically drops older hardware from its driver, usually alongside a macOS update. The Troubleshooting page at mocktab.org/troubleshooting.html covers common symptoms, which device families it affects, and how to switch. Check the Hardware page to confirm your model is supported, then uninstall Wacom's driver and install MockTab."
+                        "text": "Wacom periodically removes older hardware from its driver, usually alongside a macOS update. The Troubleshooting page at mocktab.org/troubleshooting.html covers common symptoms, which device families it affects, and how to switch. Check the Hardware page to confirm your model is supported, then uninstall Wacom's driver and install MockTab."
                     }
                 },
                 {
@@ -64,7 +64,7 @@
                     "name": "How is MockTab different from Wacom's driver or OpenTabletDriver?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Wacom's software is closed-source and drops older hardware with each macOS release. OpenTabletDriver is a capable open-source project with broad hardware and platform coverage. MockTab takes a narrower approach: one platform, one vendor, one self-contained app bundle with no background services. Pen input runs on a real-time thread at audio-grade scheduling priority. The smaller scope means a simpler configuration surface."
+                        "text": "Wacom's software is closed-source and removes older hardware with each macOS release. OpenTabletDriver is a capable open-source project with broad hardware and platform coverage. MockTab takes a narrower approach: one platform, one vendor, one self-contained app bundle with no background services. Pen input runs on a real-time thread at audio-grade scheduling priority. The smaller scope means a simpler configuration surface."
                     }
                 },
                 {
@@ -72,7 +72,7 @@
                     "name": "My tablet works with Wacom's driver or OpenTabletDriver. Why would I need MockTab?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "If your device already works, then you have no need to change. MockTab exists for hardware the official driver dropped, and for people who prefer a small native Mac app over a broader system service."
+                        "text": "If your device already works, then you have no need to change. MockTab exists for hardware the official driver no longer supports, and for people who prefer a small native Mac app over a broader system service."
                     }
                 },
                 {
@@ -505,7 +505,7 @@
                     <div class="faq-item">
                         <p class="faq-q">Wacom says my tablet is no longer supported. What now?</p>
                         <p class="faq-a">
-                            Wacom periodically drops older hardware from its driver,
+                            Wacom periodically removes older hardware from its driver,
                             usually alongside a macOS update.
                             The <a href="/troubleshooting.html">Troubleshooting</a> page
                             address common symptoms, which device families are affected,
@@ -531,7 +531,7 @@
                             >?
                         </p>
                         <p class="faq-a">
-                            Wacom's software is closed-source and drops older
+                            Wacom's software is closed-source and removes older
                             hardware with each macOS release. OpenTabletDriver
                             is a capable open-source project with broad hardware
                             and platform coverage. MockTab takes a narrower
@@ -551,7 +551,7 @@
                         <p class="faq-a">
                             If your device already works, then you have no need
                             to change. MockTab exists for hardware the official
-                            driver dropped, and for people who prefer a small
+                            driver no longer supports, and for people who prefer a small
                             native Mac app over a broader system service.
                         </p>
                     </div>
