@@ -1,0 +1,16 @@
+{
+    "release": {
+        "version": "0.4.2",
+        "date": "2026-08-30T19:13Z",
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.4.2/MockTab-0.4.2.dmg",
+        "notes": [
+            "Multitouch gesture behavior",
+            "Bluetooth pen and touch reliability on macOS 27",
+            "Intuos Pro M (PTH-651) touch support"
+        ]
+    },
+    "snapshot": {
+        "date": "2026-09-27T14:32Z",
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg"
+    }
+}

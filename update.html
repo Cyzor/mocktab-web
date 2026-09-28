@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Check for Updates &mdash; MockTab</title>
+        <meta name="robots" content="noindex" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#00696f" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/images/favicon/favicon-light.svg"
+            media="(prefers-color-scheme: light)"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/images/favicon/favicon-dark.svg"
+            media="(prefers-color-scheme: dark)"
+        />
+        <style>
+            .update-card {
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 24px 28px;
+                margin: 8px 0 24px;
+            }
+            .update-card h2 {
+                margin-top: 0;
+            }
+            .update-facts {
+                color: var(--muted);
+            }
+            .update-card ul {
+                margin: 8px 0 20px;
+                padding-left: 20px;
+            }
+            .update-quiet {
+                color: var(--muted);
+                font-size: 15px;
+            }
+            .update-quiet h3 {
+                color: var(--fg);
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+            .update-quiet ul {
+                margin: 4px 0 8px;
+                padding-left: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <a href="#main" class="skip-link">Skip to main content</a>
+
+        <header class="site">
+            <div class="wrap">
+                <a href="/" class="brand">MockTab</a>
+                <nav aria-label="Primary">
+                    <a href="/hardware.html">Hardware</a>
+                    <a href="/configuration.html">Configuration</a>
+                    <a href="/guide.html">Guide</a>
+                    <a href="/troubleshooting.html">Troubleshooting</a>
+                    <a href="/#faq">FAQ</a>
+                    <a href="/notes/">Notes</a>
+                    <a href="https://github.com/Cyzor/tablet-driver/releases"
+                        >Download</a
+                    >
+                    <a href="https://github.com/Cyzor/tablet-driver">Source</a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="hero wrap">
+                <h1>Check for Updates</h1>
+            </section>
+
+            <section class="wrap" aria-live="polite">
+                <div id="result">
+                    <!-- Fallback when JavaScript or latest.json fails. -->
+                    <div class="update-card">
+                        <h2>Latest versions</h2>
+                        <p>
+                            <a class="cta" href="https://github.com/Cyzor/tablet-driver/releases/latest"
+                                >Latest release</a
+                            >
+                            <a class="cta secondary" href="https://github.com/Cyzor/tablet-driver/releases/tag/snapshot"
+                                >Latest snapshot</a
+                            >
+                        </p>
+                    </div>
+                </div>
+
+                <p class="note">
+                    MockTab itself makes no network calls. Your browser opened
+                    this page, and your version number never leaves it. To
+                    install, open the download and drag MockTab to
+                    Applications.
+                </p>
+            </section>
+        </main>
+
+        <footer class="site">
+            <div class="wrap">
+                <p>
+                    MockTab is an independent project, not affiliated with
+                    Wacom. &middot;
+                    <a href="https://github.com/Cyzor/tablet-driver"
+                        >Source on GitHub</a
+                    >
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            // Fragment formats: "0.4.2" (release) or "0.4.2-snapshot-20260927T1432Z"
+            // (snapshot build time, UTC). Fragments never reach the server.
+            function parseRunning(hash) {
+                const m = /^#?(\d+\.\d+\.\d+)(?:-snapshot-(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})Z)?$/.exec(hash);
+                if (!m) return null;
+                const built = m[2] ? `${m[2]}-${m[3]}-${m[4]}T${m[5]}:${m[6]}Z` : null;
+                return { version: m[1], snapshotDate: built };
+            }
+
+            // Build times are UTC; show them in the reader's time zone.
+            function stamp(iso) {
+                const d = new Date(iso), p = (n) => String(n).padStart(2, "0");
+                return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+            }
+
+            const time = (iso) => Date.parse(iso);
+
+            function compareVersions(a, b) {
+                const pa = a.split(".").map(Number), pb = b.split(".").map(Number);
+                for (let i = 0; i < 3; i++) if (pa[i] !== pb[i]) return pa[i] - pb[i];
+                return 0;
+            }
+
+            function el(tag, props, children) {
+                const e = Object.assign(document.createElement(tag), props || {});
+                for (const c of children || []) e.append(c);
+                return e;
+            }
+
+            function noteList(notes) {
+                return el("ul", {}, notes.map((n) => el("li", { textContent: n })));
+            }
+
+            // Headline, one line of installed vs. latest, optional download.
+            function statusCard(title, fact, notes, url, label) {
+                const children = [el("h2", { textContent: title })];
+                if (fact) children.push(el("p", { className: "update-facts", textContent: fact }));
+                if (notes) children.push(noteList(notes));
+                if (url) children.push(el("a", { className: "cta", href: url, textContent: label }));
+                return el("div", { className: "update-card" }, children);
+            }
+
+            function snapshotAside(snap) {
+                return el("div", { className: "update-quiet" }, [
+                    el("h3", { textContent: "Snapshot from " + stamp(snap.date) }),
+                    el("p", {
+                        textContent:
+                            "Newer work between releases. Stable, but some features remain unfinished.",
+                    }),
+                    el("p", {}, [el("a", { href: snap.url, textContent: "Download snapshot" })]),
+                ]);
+            }
+
+            function render(latest) {
+                const running = parseRunning(location.hash);
+                const rel = latest.release, snap = latest.snapshot;
+                const v = (x) => "v" + x;
+                const relDay = rel.date.slice(0, 10);
+                const relLatest = "Latest: " + v(rel.version) + " (" + relDay + ").";
+                const out = [];
+                let showAside = true;
+
+                if (!running) {
+                    out.push(statusCard("MockTab " + v(rel.version), "Released " + relDay + ".", rel.notes, rel.url, "Download"));
+                } else if (running.snapshotDate) {
+                    const installed = "Installed: snapshot from " + stamp(running.snapshotDate) + ". ";
+                    if (compareVersions(rel.version, running.version) > 0 && time(rel.date) >= time(running.snapshotDate)) {
+                        out.push(statusCard("Update available.", installed + relLatest,
+                            ["Includes everything in your snapshot."].concat(rel.notes),
+                            rel.url, "Download"));
+                    } else if (time(snap.date) > time(running.snapshotDate)) {
+                        out.push(statusCard("A newer snapshot is out.",
+                            installed + "Latest: snapshot from " + stamp(snap.date) + ".",
+                            null, snap.url, "Download snapshot"));
+                        showAside = false;
+                    } else {
+                        out.push(statusCard("MockTab is up to date.", installed + "Latest: snapshot from " + stamp(snap.date) + "."));
+                        showAside = false;
+                    }
+                } else {
+                    const installed = "Installed: " + v(running.version) + ". ";
+                    if (compareVersions(rel.version, running.version) > 0) {
+                        out.push(statusCard("Update available.", installed + relLatest,
+                            rel.notes, rel.url, "Download"));
+                    } else {
+                        out.push(statusCard("MockTab is up to date.", installed + relLatest));
+                    }
+                }
+
+                // Snapshots almost always lead the latest release.
+                if (showAside) out.push(snapshotAside(snap));
+                document.getElementById("result").replaceChildren(...out);
+            }
+
+            let latest = null;
+            fetch("/latest.json", { cache: "no-store" })
+                .then((r) => (r.ok ? r.json() : Promise.reject()))
+                .then((j) => { latest = j; render(latest); })
+                .catch(() => {}); // Keep the no-JavaScript fallback.
+            addEventListener("hashchange", () => latest && render(latest));
+        </script>
+    </body>
+</html>
