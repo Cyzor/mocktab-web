@@ -20,38 +20,28 @@
             media="(prefers-color-scheme: dark)"
         />
         <style>
-            .update-card {
-                background: var(--card);
-                border: 1px solid var(--border);
-                border-radius: 10px;
-                padding: 24px 28px;
-                margin: 8px 0 24px;
-            }
-            .update-card h2 {
-                margin-top: 0;
-            }
-            .update-facts {
-                color: var(--muted);
-            }
-            .update-card ul {
-                margin: 8px 0 20px;
-                padding-left: 20px;
-            }
-            .update-quiet {
-                color: var(--muted);
-                font-size: 15px;
-            }
-            .update-quiet h3 {
-                color: var(--fg);
-                font-size: 16px;
-                margin-bottom: 4px;
-            }
-            .update-quiet ul {
-                margin: 4px 0 8px;
-                padding-left: 20px;
-            }
+            .update-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+                           padding: 24px 28px; margin: 8px 0 24px; }
+            .status { margin: 8px 0 20px; }
+            .status h2 { margin: 0 0 4px; }
+            .status p { margin: 0; color: var(--muted); }
+            .channels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+            @media (max-width: 640px) { .channels { grid-template-columns: 1fr; } }
+            .channel { background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+                       padding: 20px 24px; display: flex; flex-direction: column; }
+            .channel.installed { border-color: var(--accent); }
+            .channel h3 { margin: 0; font-size: 18px; }
+            .channel .when { color: var(--muted); margin: 2px 0 12px; font-size: 15px; }
+            .channel .blurb { font-size: 15px; margin: 0 0 8px; }
+            .channel ul { margin: 0 0 16px; padding-left: 20px; font-size: 15px; }
+            .channel .cta { margin-top: auto; align-self: flex-start; }
+            .badges { display: flex; gap: 6px; margin-bottom: 8px; min-height: 22px; }
+            .badge { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+                     border: 1px solid var(--border); color: var(--muted); }
+            .badge.newer { background: var(--accent); border-color: var(--accent); color: #fff; }
         </style>
     </head>
+
 
     <body>
         <a href="#main" class="skip-link">Skip to main content</a>
@@ -94,15 +84,12 @@
                         </p>
                     </div>
                 </div>
-
                 <p class="note">
-                    MockTab itself makes no network calls. Your browser opened
-                    this page, and your version number never leaves it. To
-                    install, open the download and drag MockTab to
-                    Applications.
+                    Open the downloaded file, then drag MockTab to the Applications folder.
                 </p>
             </section>
         </main>
+
 
         <footer class="site">
             <div class="wrap">
@@ -117,104 +104,75 @@
         </footer>
 
         <script>
-            // Fragment formats: "0.4.2" (release) or "0.4.2-snapshot-20260927T1432Z"
-            // (snapshot build time, UTC). Fragments never reach the server.
             function parseRunning(hash) {
                 const m = /^#?(\d+\.\d+\.\d+)(?:-snapshot-(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})Z)?$/.exec(hash);
                 if (!m) return null;
-                const built = m[2] ? `${m[2]}-${m[3]}-${m[4]}T${m[5]}:${m[6]}Z` : null;
-                return { version: m[1], snapshotDate: built };
+                return { version: m[1], snapshotDate: m[2] ? `${m[2]}-${m[3]}-${m[4]}T${m[5]}:${m[6]}Z` : null };
             }
-
-            // Build times are UTC; show them in the reader's time zone.
             function stamp(iso) {
                 const d = new Date(iso), p = (n) => String(n).padStart(2, "0");
-                return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+                return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
             }
-
             const time = (iso) => Date.parse(iso);
-
             function compareVersions(a, b) {
                 const pa = a.split(".").map(Number), pb = b.split(".").map(Number);
                 for (let i = 0; i < 3; i++) if (pa[i] !== pb[i]) return pa[i] - pb[i];
                 return 0;
             }
-
             function el(tag, props, children) {
                 const e = Object.assign(document.createElement(tag), props || {});
                 for (const c of children || []) e.append(c);
                 return e;
             }
 
-            function noteList(notes) {
-                return el("ul", {}, notes.map((n) => el("li", { textContent: n })));
-            }
-
-            // Headline, one line of installed vs. latest, optional download.
-            function statusCard(title, fact, notes, url, label) {
-                const children = [el("h2", { textContent: title })];
-                if (fact) children.push(el("p", { className: "update-facts", textContent: fact }));
-                if (notes) children.push(noteList(notes));
-                if (url) children.push(el("a", { className: "cta", href: url, textContent: label }));
-                return el("div", { className: "update-card" }, children);
-            }
-
-            function snapshotAside(snap) {
-                return el("div", { className: "update-quiet" }, [
-                    el("h3", { textContent: "Snapshot from " + stamp(snap.date) }),
-                    el("p", {
-                        textContent:
-                            "Newer work between releases. Stable, but some features remain unfinished.",
-                    }),
-                    el("p", {}, [el("a", { href: snap.url, textContent: "Download snapshot" })]),
-                ]);
+            function channel(o) {
+                const badges = el("div", { className: "badges" });
+                if (o.installed) badges.append(el("span", { className: "badge", textContent: "Installed" }));
+                if (o.newer) badges.append(el("span", { className: "badge newer", textContent: "Newer" }));
+                const kids = [badges, el("h3", { textContent: o.title }), el("p", { className: "when", textContent: o.when })];
+                if (o.blurb) kids.push(el("p", { className: "blurb", textContent: o.blurb }));
+                if (o.notes) kids.push(el("ul", {}, o.notes.map((n) => el("li", { textContent: n }))));
+                kids.push(el("a", { className: "cta" + (o.primary ? "" : " secondary"), href: o.url, textContent: o.label }));
+                return el("div", { className: "channel" + (o.installed ? " installed" : "") }, kids);
             }
 
             function render(latest) {
-                const running = parseRunning(location.hash);
+                const run = parseRunning(location.hash);
                 const rel = latest.release, snap = latest.snapshot;
-                const v = (x) => "v" + x;
-                const relDay = rel.date.slice(0, 10);
-                const relLatest = "Latest: " + v(rel.version) + " (" + relDay + ").";
-                const out = [];
-                let showAside = true;
+                const snapLeads = time(snap.date) > time(rel.date);
+                const onRel = run && !run.snapshotDate && compareVersions(run.version, rel.version) === 0;
+                const onSnap = run && run.snapshotDate && time(run.snapshotDate) >= time(snap.date);
+                const relAhead = run && compareVersions(rel.version, run.version) > 0 &&
+                    (!run.snapshotDate || time(rel.date) >= time(run.snapshotDate));
+                const snapAhead = run && run.snapshotDate && time(snap.date) > time(run.snapshotDate);
 
-                if (!running) {
-                    out.push(statusCard("MockTab " + v(rel.version), "Released " + relDay + ".", rel.notes, rel.url, "Download"));
-                } else if (running.snapshotDate) {
-                    const installed = "Installed: snapshot from " + stamp(running.snapshotDate) + ". ";
-                    if (compareVersions(rel.version, running.version) > 0 && time(rel.date) >= time(running.snapshotDate)) {
-                        out.push(statusCard("Update available.", installed + relLatest,
-                            ["Includes everything in your snapshot."].concat(rel.notes),
-                            rel.url, "Download"));
-                    } else if (time(snap.date) > time(running.snapshotDate)) {
-                        out.push(statusCard("A newer snapshot is out.",
-                            installed + "Latest: snapshot from " + stamp(snap.date) + ".",
-                            null, snap.url, "Download snapshot"));
-                        showAside = false;
-                    } else {
-                        out.push(statusCard("MockTab is up to date.", installed + "Latest: snapshot from " + stamp(snap.date) + "."));
-                        showAside = false;
-                    }
-                } else {
-                    const installed = "Installed: " + v(running.version) + ". ";
-                    if (compareVersions(rel.version, running.version) > 0) {
-                        out.push(statusCard("Update available.", installed + relLatest,
-                            rel.notes, rel.url, "Download"));
-                    } else {
-                        out.push(statusCard("MockTab is up to date.", installed + relLatest));
-                    }
-                }
+                let title, fact;
+                if (!run) { title = "Download MockTab"; fact = "Two builds are available."; }
+                else if (relAhead) { title = "Update available."; fact = "A new release is out."; }
+                else if (snapAhead) { title = "A newer snapshot is out."; fact = "You're following snapshots."; }
+                else { title = "MockTab is up to date."; fact = snapLeads && onRel
+                    ? "A snapshot of more recent changes is also available." : "Nothing newer is available."; }
 
-                // Snapshots almost always lead the latest release.
-                if (showAside) out.push(snapshotAside(snap));
-                document.getElementById("result").replaceChildren(...out);
+                const status = el("div", { className: "status" }, [el("h2", { textContent: title }), el("p", { textContent: fact })]);
+                const cards = el("div", { className: "channels" }, [
+                    channel({ title: "Release v" + rel.version, when: "Released " + stamp(rel.date),
+                        notes: rel.notes, url: rel.url, label: "Download release",
+                        installed: onRel, newer: !!relAhead, primary: !snapAhead }),
+                    channel({ title: "Snapshot", when: "Built " + stamp(snap.date),
+                        blurb: "Everything in v" + rel.version + (snap.notes ? ", plus:" : ", plus newer work."), notes: snap.notes,
+                        url: snap.url, label: "Download snapshot",
+                        installed: onSnap, newer: !!snapAhead || (onRel && snapLeads), primary: !!snapAhead }),
+                ]);
+                const caveat = el("p", { textContent: "Snapshots are stable, but some features remain unfinished." });
+                document.getElementById("result").replaceChildren(status, cards, caveat);
             }
 
             let latest = null;
             fetch("/latest.json", { cache: "no-store" })
                 .then((r) => (r.ok ? r.json() : Promise.reject()))
-                .then((j) => { latest = j; render(latest); })
+                .then((j) => {
+                    latest = j; render(latest);
+                })
                 .catch(() => {}); // Keep the no-JavaScript fallback.
             addEventListener("hashchange", () => latest && render(latest));
         </script>

@@ -11,6 +11,15 @@
     },
     "snapshot": {
         "date": "2026-09-29T04:43Z",
-        "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg"
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
+        "notes": [
+            "Broadened PTK-series support",
+            "Improved touch for early Intuos and Bamboo series",
+            "Snappier touch ring and dial scrolling",
+            "New controls for display mapping",
+            "Less wireless jitter and chatter",
+            "More comprehensive diagnostics",
+            "Check for Updates command"
+        ]
     }
 }
