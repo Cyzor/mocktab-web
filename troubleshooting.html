@@ -82,7 +82,7 @@
                         <li>
                             <a href="#permissions">macOS permission setup</a>
                         </li>
-                        <li><a href="#mocktab">Giving MockTab a Try</a></li>
+                        <li><a href="#mocktab">Giving MockTab a try</a></li>
                         <li>
                             <a href="#post-install"
                                 >Common post-install issues</a
@@ -138,8 +138,8 @@
                     </li>
                     <li>
                         Everything worked until a macOS upgrade, and your
-                        tablet is <strong>not</strong> on the list of removed
-                        models above. See
+                        tablet is <strong>not</strong> among the
+                        <a href="#hardware">removed models</a>. See
                         <a href="#os-version">Newer macOS than the driver knows</a>.
                     </li>
                 </ul>
@@ -464,7 +464,7 @@
                 </p>
 
                 <!-- ─── MOCKTAB ─── -->
-                <h2 id="mocktab">Giving MockTab a Try</h2>
+                <h2 id="mocktab">Giving MockTab a try</h2>
                 <p>
                     MockTab talks directly to the macOS Human Interface Device
                     (HID) subsystem. It needs no Wacom Center, no
@@ -474,7 +474,8 @@
 
                 <h3>1. Check hardware compatibility</h3>
                 <p>
-                    Find your model on the Hardware page.
+                    Find your model on the
+                    <a href="/hardware.html">Hardware</a> page.
                     <em>Confirmed</em> entries run on real hardware. Entries
                     built from protocol references are reasonably reliable, but
                     details like express key counts, touch behavior, and the LED
@@ -503,8 +504,9 @@
 
                 <h3>4. Grant permissions</h3>
                 <p>
-                    MockTab needs Accessibility and Input Monitoring, which the
-                    Configuration page walks through. If a toggle doesn't take
+                    MockTab needs Accessibility and Input Monitoring. The
+                    <a href="/configuration.html">Configuration</a> page walks
+                    through both. If a toggle doesn't take
                     effect, remove MockTab from the privacy pane and add it
                     again. Moving or reinstalling MockTab can invalidate an
                     earlier permission.
@@ -545,8 +547,11 @@
                     device isn't in MockTab's registry yet. The Info pane's
                     <strong>Collect Device Data</strong> button runs a guided
                     capture that records raw HID traffic into a compact summary
-                    file. Attach it to a GitHub issue and we may be able to add
-                    the device.
+                    file. Attach it to a
+                    <a href="https://github.com/Cyzor/tablet-driver/issues/new"
+                        >GitHub issue</a
+                    >
+                    so we can try to add the device.
                 </p>
 
                 <h3>Bluetooth not connecting</h3>
@@ -577,9 +582,8 @@
                             >
                         </h4>
                         <p>
-                            An expert-system Mac app that provides guidance for
-                            driver and permission setup step by step for legacy
-                            Wacom hardware. Current versions cover Tahoe,
+                            A Mac app that walks you through driver and
+                            permission setup for legacy Wacom hardware. Current versions cover Tahoe,
                             Sequoia, Sonoma, and back to El Capitan. Supports Bamboo,
                             Graphire, Intuos 1–5, Intuos Pro, and many Cintiq
                             models, essentially every Wacom tablet

@@ -11,6 +11,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon-light.svg" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+    <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#00696f" />
 </head>
 
 <body>
@@ -35,17 +36,16 @@
         <section class="hero wrap">
             <h1>Configuration</h1>
             <p class="lede">
-                MockTab requests permissions from the system upon first
-                launch, and drawing apps may need adjustment to take
-                advantage of tablet features. This page describes system
-                prompts that may appear, with per-application notes.
+                MockTab asks for two macOS permissions on first launch.
+                Some drawing apps also need settings changes to use every
+                tablet feature. This page covers both.
             </p>
         </section>
 
         <section class="wrap">
             <h2 id="permissions">System permissions</h2>
             <p>
-                On macOS, apps that read the keyboard, mouse, pen, or screen must first ask you for permission in System Settings before they can work normally. When prompted, grant access and relaunch MockTab. If a toggle will not stay on, remove MockTab from the list and add it again. Moving or reinstalling MockTab may invalidate a previous permission setting.
+                macOS requires your permission before an app can read the keyboard, mouse, pen, or screen. When prompted, grant access and relaunch MockTab. If a toggle will not stay on, remove MockTab from the list and add it again. Moving or reinstalling MockTab can invalidate an earlier permission.
             </p>
 
             <h3 id="accessibility">Accessibility</h3>
@@ -184,7 +184,7 @@
 
             <h3 id="rebelle">Escape Motions Rebelle</h3>
             <p>
-                Rebelle reads rotation automatically upon selecting a
+                Rebelle reads rotation automatically when you select a
                 rotation-aware brush.
             </p>
             <div class="shot-wrap">
@@ -223,6 +223,7 @@
                 Wacom. &middot;
                 <a href="https://github.com/Cyzor/tablet-driver">Source on GitHub</a>
                 &middot; <a href="/hardware.html">Hardware</a> &middot;
+                <a href="/troubleshooting.html">Troubleshooting</a> &middot;
                 <span style="unicode-bidi: bidi-override; direction: rtl">moc.rozyc@ofni</span>
             </p>
         </div>
