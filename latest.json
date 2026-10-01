@@ -1,12 +1,17 @@
 {
     "release": {
-        "version": "0.4.2",
-        "date": "2026-08-30T19:13Z",
-        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.4.2/MockTab-0.4.2.dmg",
+        "version": "0.5.0",
+        "date": "2026-10-01T13:45Z",
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.5.0/MockTab-0.5.0.dmg",
         "notes": [
-            "Multitouch gesture behavior",
-            "Bluetooth pen and touch reliability on macOS 27",
-            "Intuos Pro M (PTH-651) touch support"
+            "Fuller pen input in Pages, Keynote, Numbers, and Photoshop",
+            "A working Intuos Pro eraser and full pressure resolution",
+            "Smoother scrolling and touch",
+            "New display-mapping controls",
+            "Broader PTK, Cintiq, and MobileStudio Pro support",
+            "Less wireless jitter",
+            "Diagnostics sendable by email",
+            "Check for Updates command"
         ]
     },
     "snapshot": {
