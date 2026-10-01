@@ -1,0 +1,1079 @@
+{
+ "exclude": {
+  "0x0000": "placeholder entry",
+  "0x005D": "touch sensor; paired with its pen display",
+  "0x005E": "touch sensor; paired with its pen display",
+  "0x0084": "listed under Wireless",
+  "0x0094": "bootloader (firmware update mode)",
+  "0x009A": "listed under Wireless",
+  "0x009D": "listed under Wireless",
+  "0x00F6": "touch sensor; paired with its pen display",
+  "0x0326": "touch sensor; paired with its pen display",
+  "0x032C": "touch sensor; paired with its pen display",
+  "0x0331": "listed under Wireless",
+  "0x0335": "touch sensor; paired with its pen display",
+  "0x0354": "touch sensor; paired with its pen display",
+  "0x03B3": "touch sensor; paired with its pen display"
+ },
+ "devices": {
+  "0x0003": {
+   "section": "graphire",
+   "year": "1996",
+   "name": "PenPartner",
+   "pressure": "255 (8-bit)",
+   "order": 0
+  },
+  "0x0004": {
+   "section": "graphire",
+   "also": [
+    "0x0010"
+   ],
+   "pidCell": "<code>0x0004</code>, <code>0x0010</code>",
+   "year": "1998",
+   "buttons": "2",
+   "order": 1
+  },
+  "0x0011": {
+   "section": "graphire",
+   "year": "2001",
+   "buttons": "2",
+   "order": 2
+  },
+  "0x0012": {
+   "section": "graphire",
+   "year": "2001",
+   "buttons": "2",
+   "order": 3
+  },
+  "0x0013": {
+   "section": "graphire",
+   "year": "2003",
+   "buttons": "2",
+   "order": 4
+  },
+  "0x0014": {
+   "section": "graphire",
+   "year": "2003",
+   "buttons": "2",
+   "order": 5
+  },
+  "0x0015": {
+   "section": "graphire",
+   "year": "2005",
+   "buttons": "2",
+   "order": 6
+  },
+  "0x0016": {
+   "section": "graphire",
+   "year": "2005",
+   "buttons": "2",
+   "order": 7
+  },
+  "0x0017": {
+   "section": "graphire",
+   "year": "2007",
+   "name": "Bamboo Fun (CTE-450)",
+   "buttons": "4",
+   "order": 12
+  },
+  "0x0018": {
+   "section": "consumer",
+   "year": "~2009",
+   "name": "Wacom CTE-650",
+   "buttons": "4",
+   "order": 8
+  },
+  "0x0019": {
+   "section": "graphire",
+   "order": 13
+  },
+  "0x0020": {
+   "section": "intuos1",
+   "year": "1998",
+   "status": "Generic-decoder",
+   "order": 0
+  },
+  "0x0021": {
+   "section": "intuos1",
+   "year": "1998",
+   "status": "Generic-decoder",
+   "order": 1
+  },
+  "0x0022": {
+   "section": "intuos1",
+   "year": "1998",
+   "status": "Generic-decoder",
+   "order": 2
+  },
+  "0x0023": {
+   "section": "intuos1",
+   "year": "1998",
+   "status": "Generic-decoder",
+   "order": 3
+  },
+  "0x0024": {
+   "section": "intuos1",
+   "year": "1998",
+   "status": "Generic-decoder",
+   "order": 4
+  },
+  "0x0026": {
+   "section": "intuos5",
+   "year": "2012",
+   "name": "Intuos5 touch S (PTH-450)",
+   "buttons": "6 keys + ring",
+   "order": 0
+  },
+  "0x0027": {
+   "section": "intuos5",
+   "year": "2012",
+   "name": "Intuos5 touch M (PTH-650)",
+   "buttons": "8 keys + ring",
+   "order": 3
+  },
+  "0x0028": {
+   "section": "intuos5",
+   "year": "2012",
+   "name": "Intuos5 touch L (PTH-850)",
+   "buttons": "8 keys + ring",
+   "transport": "USB, Wireless",
+   "order": 4
+  },
+  "0x0029": {
+   "section": "intuos5",
+   "year": "2012",
+   "name": "Intuos5 S (PTK-450)",
+   "buttons": "6 keys + ring",
+   "order": 1
+  },
+  "0x002A": {
+   "section": "intuos5",
+   "year": "2012",
+   "name": "Intuos5 M (PTK-650)",
+   "buttons": "8 keys + ring",
+   "order": 2
+  },
+  "0x0030": {
+   "section": "pl",
+   "year": "1999",
+   "order": 0
+  },
+  "0x0031": {
+   "section": "pl",
+   "year": "2001",
+   "order": 1
+  },
+  "0x0032": {
+   "section": "pl",
+   "year": "2001",
+   "order": 2
+  },
+  "0x0033": {
+   "section": "pl",
+   "order": 8
+  },
+  "0x0034": {
+   "section": "pl",
+   "year": "2001",
+   "order": 3
+  },
+  "0x0035": {
+   "section": "pl",
+   "year": "2002",
+   "order": 4
+  },
+  "0x0037": {
+   "section": "pl",
+   "year": "2002",
+   "order": 5
+  },
+  "0x0038": {
+   "section": "pl",
+   "order": 9
+  },
+  "0x0039": {
+   "section": "pl",
+   "year": "2005",
+   "order": 6
+  },
+  "0x003A": {
+   "section": "dtu",
+   "order": 8
+  },
+  "0x003F": {
+   "section": "displays",
+   "year": "2005",
+   "buttons": "8 keys + 2 strips",
+   "order": 0
+  },
+  "0x0041": {
+   "section": "intuos2",
+   "year": "2001",
+   "status": "Generic-decoder",
+   "order": 0
+  },
+  "0x0042": {
+   "section": "intuos2",
+   "year": "2001",
+   "status": "Generic-decoder",
+   "order": 1
+  },
+  "0x0043": {
+   "section": "intuos2",
+   "year": "2001",
+   "status": "Generic-decoder",
+   "order": 2
+  },
+  "0x0044": {
+   "section": "intuos2",
+   "year": "2001",
+   "status": "Generic-decoder",
+   "order": 3
+  },
+  "0x0045": {
+   "section": "intuos2",
+   "year": "2001",
+   "status": "Generic-decoder",
+   "order": 4
+  },
+  "0x0047": {
+   "section": "intuos2",
+   "order": 5
+  },
+  "0x0057": {
+   "section": "displays",
+   "order": 50
+  },
+  "0x0059": {
+   "section": "displays",
+   "order": 51
+  },
+  "0x005B": {
+   "section": "displays",
+   "year": "2013",
+   "order": 13
+  },
+  "0x0060": {
+   "section": "graphire",
+   "year": "2003",
+   "order": 8
+  },
+  "0x0061": {
+   "section": "graphire",
+   "year": "~2003",
+   "name": "PenStation",
+   "pressure": "511 (9-bit)",
+   "order": 10
+  },
+  "0x0062": {
+   "section": "graphire",
+   "year": "~2004",
+   "order": 9
+  },
+  "0x0063": {
+   "section": "graphire",
+   "order": 14
+  },
+  "0x0064": {
+   "section": "graphire",
+   "order": 15
+  },
+  "0x0065": {
+   "section": "graphire",
+   "year": "2007",
+   "buttons": "—",
+   "order": 11
+  },
+  "0x0069": {
+   "section": "consumer",
+   "year": "~2007",
+   "name": "Bamboo One (CTF-430)",
+   "order": 10
+  },
+  "0x006A": {
+   "section": "consumer",
+   "year": "~2009",
+   "name": "Wacom CTE-460",
+   "pressure": "511 (9-bit)",
+   "status": "Generic-decoder",
+   "order": 7
+  },
+  "0x006B": {
+   "section": "consumer",
+   "year": "~2009",
+   "name": "Wacom CTE-660",
+   "pressure": "511 (9-bit)",
+   "order": 9
+  },
+  "0x00B0": {
+   "section": "intuos3",
+   "year": "2004",
+   "buttons": "4 keys + strip",
+   "order": 0
+  },
+  "0x00B1": {
+   "section": "intuos3",
+   "year": "2004",
+   "buttons": "8 keys + 2 strips",
+   "order": 2
+  },
+  "0x00B2": {
+   "section": "intuos3",
+   "year": "2004",
+   "buttons": "8 keys + 2 strips",
+   "order": 4
+  },
+  "0x00B3": {
+   "section": "intuos3",
+   "year": "2005",
+   "buttons": "8 keys + 2 strips",
+   "order": 5
+  },
+  "0x00B4": {
+   "section": "intuos3",
+   "year": "2005",
+   "name": "Intuos3 12×19 WS (PTZ-1231W)",
+   "buttons": "8 keys + 2 strips",
+   "order": 6
+  },
+  "0x00B5": {
+   "section": "intuos3",
+   "year": "2005",
+   "name": "Intuos3 6×8 WS (PTZ-631W)",
+   "buttons": "8 keys + 2 strips",
+   "order": 3
+  },
+  "0x00B7": {
+   "section": "intuos3",
+   "year": "2005",
+   "name": "Intuos3 4×6 WS (PTZ-431W)",
+   "buttons": "4 keys + strip",
+   "order": 1
+  },
+  "0x00B8": {
+   "section": "intuos4",
+   "year": "2009",
+   "buttons": "6 keys + ring",
+   "order": 0
+  },
+  "0x00B9": {
+   "section": "intuos4",
+   "year": "2009",
+   "buttons": "8 keys + ring",
+   "order": 1
+  },
+  "0x00BA": {
+   "section": "intuos4",
+   "year": "2009",
+   "buttons": "8 keys + ring",
+   "order": 2
+  },
+  "0x00BB": {
+   "section": "intuos4",
+   "year": "2009",
+   "buttons": "8 keys + ring",
+   "order": 3
+  },
+  "0x00BC": {
+   "section": "intuos4",
+   "year": "2010",
+   "buttons": "8 keys + ring",
+   "transport": "USB, Wireless",
+   "order": 4
+  },
+  "0x00BD": {
+   "section": "intuos4",
+   "year": "2010",
+   "name": "Intuos4 WL (PTK-540WL) BT",
+   "buttons": "8 keys + ring",
+   "transport": "Bluetooth Classic",
+   "order": 5
+  },
+  "0x00C0": {
+   "section": "pl",
+   "order": 10
+  },
+  "0x00C2": {
+   "section": "pl",
+   "order": 11
+  },
+  "0x00C4": {
+   "section": "pl",
+   "year": "2005",
+   "order": 7
+  },
+  "0x00C5": {
+   "section": "displays",
+   "year": "2007",
+   "order": 12
+  },
+  "0x00C6": {
+   "section": "displays",
+   "year": "2007",
+   "buttons": "10 keys + 2 strips",
+   "order": 2
+  },
+  "0x00C7": {
+   "section": "pl",
+   "order": 12
+  },
+  "0x00CC": {
+   "section": "displays",
+   "year": "2010",
+   "buttons": "16 keys + 2 strips",
+   "order": 1
+  },
+  "0x00CE": {
+   "section": "dtu",
+   "year": "2009",
+   "name": "Wacom DTU-2231",
+   "order": 5
+  },
+  "0x00D0": {
+   "section": "consumer",
+   "year": "2009",
+   "pressure": "— (touch only)",
+   "order": 0
+  },
+  "0x00D1": {
+   "section": "consumer",
+   "year": "2009",
+   "buttons": "4",
+   "order": 1
+  },
+  "0x00D2": {
+   "section": "consumer",
+   "year": "~2010",
+   "name": "Bamboo Craft (CTH-461)",
+   "buttons": "4",
+   "order": 13
+  },
+  "0x00D3": {
+   "section": "consumer",
+   "also": [
+    "0x00D8"
+   ],
+   "pidCell": "<code>0x00D3</code>, <code>0x00D8</code>",
+   "year": "~2011",
+   "name": "Wacom CTH-661",
+   "buttons": "4",
+   "order": 17
+  },
+  "0x00D4": {
+   "section": "consumer",
+   "year": "2011",
+   "buttons": "4",
+   "order": 4
+  },
+  "0x00D5": {
+   "section": "consumer",
+   "year": "2009",
+   "order": 34
+  },
+  "0x00D6": {
+   "section": "consumer",
+   "year": "2009",
+   "buttons": "2",
+   "order": 2
+  },
+  "0x00D7": {
+   "section": "consumer",
+   "year": "2009",
+   "name": "Bamboo Pen (CTL-660)",
+   "buttons": "2",
+   "order": 3
+  },
+  "0x00D9": {
+   "section": "consumer",
+   "order": 44
+  },
+  "0x00DA": {
+   "section": "consumer",
+   "year": "2011",
+   "buttons": "4",
+   "order": 5
+  },
+  "0x00DB": {
+   "section": "consumer",
+   "year": "2011",
+   "buttons": "2",
+   "order": 6
+  },
+  "0x00DC": {
+   "section": "consumer",
+   "order": 45
+  },
+  "0x00DD": {
+   "section": "consumer",
+   "year": "~2012",
+   "name": "Wacom CTL-470",
+   "order": 21
+  },
+  "0x00DE": {
+   "section": "consumer",
+   "year": "~2012",
+   "name": "Wacom CTH-470",
+   "buttons": "4",
+   "order": 14
+  },
+  "0x00DF": {
+   "section": "consumer",
+   "year": "~2012",
+   "name": "Wacom CTH-670",
+   "buttons": "4",
+   "order": 18
+  },
+  "0x00F0": {
+   "section": "dtu",
+   "year": "2010",
+   "name": "Wacom DTU-1631",
+   "order": 4
+  },
+  "0x00F4": {
+   "section": "displays",
+   "year": "2011",
+   "buttons": "10 keys + 2 rings",
+   "order": 5
+  },
+  "0x00F8": {
+   "section": "displays",
+   "year": "2013",
+   "buttons": "10 keys + 2 rings",
+   "order": 6
+  },
+  "0x00FA": {
+   "section": "displays",
+   "also": [
+    "0x00F9"
+   ],
+   "pidCell": "<code>0x00FA</code>, <code>0x00F9</code>",
+   "year": "2012",
+   "buttons": "16 keys + 2 strips",
+   "order": 3
+  },
+  "0x00FB": {
+   "section": "dtu",
+   "year": "2012",
+   "name": "Wacom DTU-1031",
+   "buttons": "4",
+   "order": 1
+  },
+  "0x0100": {
+   "section": "consumer",
+   "year": "2023",
+   "order": 38
+  },
+  "0x0101": {
+   "section": "consumer",
+   "year": "2023",
+   "order": 39
+  },
+  "0x0102": {
+   "section": "consumer",
+   "year": "2023",
+   "order": 41
+  },
+  "0x0103": {
+   "section": "consumer",
+   "year": "2023",
+   "order": 42
+  },
+  "0x0104": {
+   "section": "consumer",
+   "year": "2023",
+   "transport": "USB (Android mode)",
+   "order": 40
+  },
+  "0x0105": {
+   "section": "consumer",
+   "year": "2023",
+   "transport": "USB (Android mode)",
+   "order": 43
+  },
+  "0x0300": {
+   "section": "consumer",
+   "year": "~2013",
+   "name": "Wacom CTL-471",
+   "status": "Generic-decoder",
+   "order": 22
+  },
+  "0x0301": {
+   "section": "consumer",
+   "year": "~2013",
+   "name": "Wacom CTL-671",
+   "status": "Generic-decoder",
+   "order": 26
+  },
+  "0x0302": {
+   "section": "consumer",
+   "year": "~2013",
+   "name": "Wacom CTH-480",
+   "buttons": "4",
+   "order": 15
+  },
+  "0x0303": {
+   "section": "consumer",
+   "year": "~2013",
+   "name": "Wacom CTH-680",
+   "buttons": "4",
+   "order": 19
+  },
+  "0x0304": {
+   "section": "displays",
+   "year": "2013",
+   "buttons": "4 keys + rocker ring",
+   "status": "Generic-decoder",
+   "order": 4
+  },
+  "0x030E": {
+   "section": "consumer",
+   "year": "~2013",
+   "name": "Wacom CTL-480",
+   "buttons": "4",
+   "order": 24
+  },
+  "0x0314": {
+   "section": "intuos5",
+   "year": "2013",
+   "buttons": "6 keys + ring",
+   "order": 5
+  },
+  "0x0316": {
+   "section": "intuos5",
+   "also": [
+    "0x0315"
+   ],
+   "pidCell": "<code>0x0316</code>, <code>0x0315</code>",
+   "year": "2013",
+   "buttons": "8 keys + ring",
+   "status": "Generic-decoder",
+   "order": 6
+  },
+  "0x0317": {
+   "section": "intuos5",
+   "year": "2013",
+   "buttons": "8 keys + ring",
+   "order": 7
+  },
+  "0x0318": {
+   "section": "consumer",
+   "year": "~2013",
+   "name": "Wacom CTH-301",
+   "buttons": "2",
+   "order": 12
+  },
+  "0x0319": {
+   "section": "consumer",
+   "year": "~2013",
+   "name": "Wacom CTH-300",
+   "buttons": "2",
+   "order": 11
+  },
+  "0x0323": {
+   "section": "consumer",
+   "year": "~2013",
+   "name": "Wacom CTL-680",
+   "buttons": "4",
+   "order": 28
+  },
+  "0x0325": {
+   "section": "displays",
+   "year": "2015",
+   "order": 14
+  },
+  "0x032A": {
+   "section": "displays",
+   "year": "2015",
+   "order": 15
+  },
+  "0x032B": {
+   "section": "displays",
+   "year": "2015",
+   "order": 16
+  },
+  "0x032F": {
+   "section": "dtu",
+   "year": "~2014",
+   "name": "Wacom DTU-1031X",
+   "order": 2
+  },
+  "0x0333": {
+   "section": "displays",
+   "year": "2015",
+   "order": 17
+  },
+  "0x0336": {
+   "section": "dtu",
+   "year": "~2014",
+   "name": "Wacom DTU-1141",
+   "buttons": "4",
+   "order": 3
+  },
+  "0x033B": {
+   "section": "consumer",
+   "year": "~2016",
+   "name": "Wacom CTL-490",
+   "buttons": "4",
+   "order": 25
+  },
+  "0x033C": {
+   "section": "consumer",
+   "year": "~2016",
+   "name": "Wacom CTH-490",
+   "buttons": "4",
+   "order": 16
+  },
+  "0x033D": {
+   "section": "consumer",
+   "year": "~2016",
+   "name": "Wacom CTL-690",
+   "buttons": "4",
+   "order": 29
+  },
+  "0x033E": {
+   "section": "consumer",
+   "year": "~2016",
+   "name": "Wacom CTH-690",
+   "buttons": "4",
+   "status": "Confirmed",
+   "order": 20
+  },
+  "0x0343": {
+   "section": "dtu",
+   "year": "2016",
+   "name": "Wacom DTK-1651 (Cintiq 16)",
+   "buttons": "—",
+   "order": 0
+  },
+  "0x034D": {
+   "section": "displays",
+   "year": "2016",
+   "order": 18
+  },
+  "0x034E": {
+   "section": "displays",
+   "year": "2016",
+   "order": 19
+  },
+  "0x034F": {
+   "section": "displays",
+   "year": "2017",
+   "name": "Wacom DTH-1320",
+   "order": 7
+  },
+  "0x0350": {
+   "section": "displays",
+   "year": "2016",
+   "order": 20
+  },
+  "0x0351": {
+   "section": "displays",
+   "year": "2017",
+   "order": 23
+  },
+  "0x0352": {
+   "section": "displays",
+   "year": "2018",
+   "order": 24
+  },
+  "0x0357": {
+   "section": "intuos-pro-gen2",
+   "also": [
+    "0x0360"
+   ],
+   "pidCell": "<code>0x0357</code> (USB), <code>0x0360</code> (BT)",
+   "year": "2017",
+   "buttons": "8 keys + ring",
+   "transport": "USB, BT",
+   "order": 1
+  },
+  "0x0358": {
+   "section": "intuos-pro-gen2",
+   "also": [
+    "0x0361"
+   ],
+   "pidCell": "<code>0x0358</code> (USB), <code>0x0361</code> (BT)",
+   "year": "2017",
+   "buttons": "8 keys + ring",
+   "transport": "USB, BT",
+   "order": 2
+  },
+  "0x0359": {
+   "section": "dtu",
+   "name": "Wacom DTU-1141B",
+   "pressure": "8191 (13-bit)",
+   "buttons": "4",
+   "status": "Generic-decoder",
+   "order": 6
+  },
+  "0x035A": {
+   "section": "dtu",
+   "name": "Wacom DTH-1152",
+   "pressure": "8191 (13-bit)",
+   "buttons": "touch, no pen eraser",
+   "status": "Generic-decoder",
+   "order": 7
+  },
+  "0x0374": {
+   "section": "consumer",
+   "year": "2018",
+   "name": "Wacom CTL-4100",
+   "buttons": "4",
+   "order": 30
+  },
+  "0x0375": {
+   "section": "consumer",
+   "year": "2018",
+   "name": "Wacom CTL-6100",
+   "buttons": "4",
+   "order": 32
+  },
+  "0x0376": {
+   "section": "consumer",
+   "also": [
+    "0x0377",
+    "0x03C5"
+   ],
+   "pidCell": "<code>0x0376</code>, <code>0x0377</code>, <code>0x03C5</code>",
+   "year": "2018",
+   "name": "Wacom CTL-4100WL",
+   "buttons": "4",
+   "transport": "USB, Wireless",
+   "order": 31
+  },
+  "0x0378": {
+   "section": "consumer",
+   "also": [
+    "0x03C7"
+   ],
+   "pidCell": "<code>0x0378</code>, <code>0x03C7</code>",
+   "year": "2018",
+   "name": "Wacom CTL-6100WL",
+   "buttons": "4",
+   "transport": "USB, Wireless",
+   "order": 33
+  },
+  "0x0379": {
+   "section": "consumer",
+   "year": "2018",
+   "name": "Intuos M (CTL-6100WL)",
+   "transport": "Bluetooth",
+   "order": 37
+  },
+  "0x037A": {
+   "section": "consumer",
+   "year": "~2016",
+   "name": "Wacom CTL-472",
+   "order": 23
+  },
+  "0x037B": {
+   "section": "consumer",
+   "year": "~2016",
+   "name": "Wacom CTL-672",
+   "order": 27
+  },
+  "0x037C": {
+   "section": "displays",
+   "year": "2017",
+   "order": 22
+  },
+  "0x037D": {
+   "section": "displays",
+   "order": 46
+  },
+  "0x0390": {
+   "section": "displays",
+   "also": [
+    "0x03AE"
+   ],
+   "pidCell": "<code>0x0390</code>, <code>0x03AE</code>",
+   "year": "2018",
+   "order": 8
+  },
+  "0x0391": {
+   "section": "displays",
+   "year": "2019",
+   "order": 25
+  },
+  "0x0392": {
+   "section": "intuos-pro-gen2",
+   "also": [
+    "0x0393"
+   ],
+   "pidCell": "<code>0x0392</code> (USB), <code>0x0393</code> (BT)",
+   "year": "2019",
+   "buttons": "6 keys + ring",
+   "transport": "USB, BT",
+   "order": 0
+  },
+  "0x0396": {
+   "section": "displays",
+   "order": 42
+  },
+  "0x0398": {
+   "section": "displays",
+   "year": "2019",
+   "order": 26
+  },
+  "0x0399": {
+   "section": "displays",
+   "year": "2019",
+   "order": 27
+  },
+  "0x03A6": {
+   "section": "displays",
+   "year": "~2019",
+   "name": "Wacom One (DTC-133)",
+   "order": 9
+  },
+  "0x03AA": {
+   "section": "displays",
+   "year": "2016",
+   "order": 21
+  },
+  "0x03B0": {
+   "section": "displays",
+   "order": 43
+  },
+  "0x03B2": {
+   "section": "displays",
+   "year": "2021",
+   "order": 29
+  },
+  "0x03BD": {
+   "section": "displays",
+   "year": "2020",
+   "order": 28
+  },
+  "0x03C0": {
+   "section": "displays",
+   "year": "2022",
+   "order": 10
+  },
+  "0x03C4": {
+   "section": "displays",
+   "year": "2023",
+   "order": 32
+  },
+  "0x03C6": {
+   "section": "consumer",
+   "year": "2018",
+   "order": 35
+  },
+  "0x03C8": {
+   "section": "consumer",
+   "year": "2018",
+   "order": 36
+  },
+  "0x03CB": {
+   "section": "displays",
+   "year": "2023",
+   "order": 33
+  },
+  "0x03CE": {
+   "section": "displays",
+   "year": "2023",
+   "order": 30
+  },
+  "0x03CF": {
+   "section": "displays",
+   "year": "2023",
+   "order": 34
+  },
+  "0x03D0": {
+   "section": "displays",
+   "year": "2023",
+   "order": 31
+  },
+  "0x03DC": {
+   "section": "intuos-pro-gen2",
+   "year": "2019",
+   "order": 3
+  },
+  "0x03E6": {
+   "section": "displays",
+   "year": "2025",
+   "order": 38
+  },
+  "0x03E7": {
+   "section": "displays",
+   "year": "2025",
+   "order": 40
+  },
+  "0x03EC": {
+   "section": "displays",
+   "year": "2023",
+   "order": 35
+  },
+  "0x03ED": {
+   "section": "displays",
+   "year": "2023",
+   "order": 36
+  },
+  "0x03EE": {
+   "section": "displays",
+   "order": 44
+  },
+  "0x03EF": {
+   "section": "displays",
+   "order": 45
+  },
+  "0x03F0": {
+   "section": "displays",
+   "year": "2024",
+   "buttons": "—",
+   "order": 11
+  },
+  "0x03F2": {
+   "section": "displays",
+   "year": "2024",
+   "order": 37
+  },
+  "0x03F5": {
+   "section": "intuos-pro-gen3",
+   "year": "2025",
+   "name": "Intuos Pro S (PTK-470)",
+   "buttons": "5 keys + 2 wheels",
+   "transport": "USB, Bluetooth",
+   "order": 0
+  },
+  "0x03F7": {
+   "section": "intuos-pro-gen3",
+   "year": "2025",
+   "name": "Intuos Pro M (PTK-670)",
+   "buttons": "8 keys + 2 wheels",
+   "transport": "USB, Bluetooth",
+   "order": 1
+  },
+  "0x03F9": {
+   "section": "intuos-pro-gen3",
+   "year": "2025",
+   "name": "Intuos Pro L (PTK-870)",
+   "buttons": "8 keys + 2 wheels",
+   "transport": "USB, Bluetooth",
+   "order": 2
+  },
+  "0x03FD": {
+   "section": "displays",
+   "year": "2025",
+   "order": 41
+  },
+  "0x03FF": {
+   "section": "displays",
+   "order": 47
+  },
+  "0x040F": {
+   "section": "displays",
+   "year": "2025",
+   "order": 39
+  },
+  "0x0423": {
+   "section": "displays",
+   "order": 48
+  },
+  "0x0428": {
+   "section": "displays",
+   "order": 49
+  }
+ }
+}
