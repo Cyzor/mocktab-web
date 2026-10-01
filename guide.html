@@ -205,7 +205,7 @@
         </li>
         <li>
           <p class="name">Pan View</p>
-          <p class="desc">Grabs and drags the canvas like a hand tool while held, with momentum after release. Panning locks to the dominant axis to avoid drift. Not available in every application or website; see <a href="/configuration.html#panning">Panning</a> for fallbacks.</p>
+          <p class="desc">Grabs and drags the canvas like a hand tool while held. Turn on <strong>Momentum Scrolling</strong> in Pen Feel to keep it coasting after release. Panning locks to the dominant axis to avoid drift. Not available in every application or website; see <a href="/configuration.html#panning">Panning</a> for fallbacks.</p>
         </li>
         <li>
           <p class="name">Toggle Relative Mode</p>
@@ -453,27 +453,14 @@
       <p>
         <strong>Invert Rotation Direction</strong>: some applications interpret Art Pen
         barrel rotation in the opposite direction from physical expectation. Enable this
-        to reverse the mapping. MockTab stores this preference per-tool, so different
-        pens can have different inversion settings.
+        to reverse the mapping. The setting applies to the whole tablet, and the
+        per-app override bar can change it for individual apps.
       </p>
       <p>
-        <strong>Art Pen: Swap Tilt with Rotation</strong>: Adobe Photoshop does not read
-        the macOS tablet rotation axis through the standard event path. Enabling this
-        option feeds barrel rotation into Photoshop's Pen Tilt control by sending synthetic
-        tilt values instead. MockTab suppresses real tilt while this option is on. In
-        Photoshop, configure Brush Dynamics &rarr; Shape Dynamics &rarr; Angle &rarr; Pen Tilt.
+        Photoshop, Illustrator, Krita, and Rebelle all read Art Pen rotation directly.
+        See <a href="/configuration.html#apps">Application notes</a> for where each app
+        exposes it.
       </p>
-      <p>
-        Enabling rotation-as-tilt reveals two additional controls:
-      </p>
-      <ul>
-        <li><strong>Tilt Offset</strong>: rotates the neutral pen orientation. Set this
-            so that holding the pen at its natural resting angle produces zero tilt in
-            the application.</li>
-        <li><strong>Tilt Magnitude</strong>: scales the effective tilt range. Lower
-            values reduce tilt sensitivity; 100% maps a full barrel rotation to the full
-            tilt range.</li>
-      </ul>
 
       <h3 id="relative-mode">Relative cursor movement</h3>
       <p>
@@ -510,6 +497,12 @@
         <strong>Reverse direction</strong> inverts the scroll axis for a classic
         mouse-wheel feel. <strong>Sensitivity</strong> scales the cursor movement speed
         in pointer mode.
+      </p>
+      <p>
+        <strong>Momentum Scrolling</strong> keeps content coasting after you lift your
+        fingers. It's off by default because some websites and Calendar's Month and Year
+        views only scroll with it off. Pen Feel has the same setting for Pan View, and the
+        per-app override bar can turn either one on just for the apps where it works.
       </p>
       <p>
         <strong>Pinch to Zoom</strong> and <strong>Rotate</strong> read the same two-finger
@@ -562,22 +555,16 @@
 
       <h3 id="data-collection">Collecting device data</h3>
       <p>
-        The <strong>Collect Device Data</strong> button opens a guided capture sheet that
-        records HID activity from the tablet. Two modes exist depending on whether MockTab
-        recognizes the connected device.
+        Choose <strong>Help › Collect Device Data…</strong>, or click
+        <strong>Collect Device Data…</strong> in the Info pane's Diagnostics section. The
+        sheet lists things to try: tap the pen, press its buttons, touch the eraser end,
+        press the tablet's keys, slide a finger around a ring or strip, and drag and pinch
+        on a touch surface. Each item is checked off once the tablet reports it. Do what
+        your tablet supports, then click <strong>Done</strong>.
       </p>
       <p>
-        For <strong>recognized tablets</strong>, the sheet records all incoming reports for
-        up to an hour while you perform whatever action produced the problem. Click
-        <strong>Done</strong> when finished. MockTab writes a compact JSON summary to the
-        Desktop — which byte positions changed and what values they took — then opens a
-        pre-filled GitHub issue with the file attached.
-      </p>
-      <p>
-        For <strong>unrecognized tablets</strong>, the sheet steps through a guided sequence
-        (pen tip, buttons, eraser, express keys, touch ring, and finger touch), capturing one
-        sample per step. Skip any step the device does not have. The same JSON summary and
-        issue flow applies at the end.
+        MockTab saves everything in one zip file on the Desktop. From the finished sheet,
+        open a GitHub issue and drag the file into the form, or send it by email.
       </p>
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/info-collect-light.png" width="572" height="512" alt="MockTab data collection sheet recording HID activity">

@@ -544,25 +544,35 @@
                 <h3>Tablet not showing up</h3>
                 <p>
                     An empty Devices pane after connecting usually means the
-                    device isn't in MockTab's registry yet. The Info pane's
-                    <strong>Collect Device Data</strong> button runs a guided
-                    capture that records raw HID traffic into a compact summary
-                    file. Attach it to a
+                    device isn't in MockTab's registry yet. Choose
+                    <strong>Help › Collect Device Data…</strong> to record what
+                    the tablet sends into a single zip file. Attach it to a
                     <a href="https://github.com/Cyzor/tablet-driver/issues/new"
                         >GitHub issue</a
                     >
-                    so we can try to add the device.
+                    or send it by email from the same sheet, so we can try to
+                    add the device.
                 </p>
 
                 <h3>Bluetooth not connecting</h3>
                 <p>
-                    Bluetooth-capable Wacom tablets (Intuos Pro Gen 2: PTH-460,
-                    PTH-660, PTH-860) use Bluetooth Classic, not BLE, and
-                    pairing takes a specific sequence. See the
+                    The Intuos Pro gen 2 (PTH-460, PTH-660, PTH-860) uses
+                    Bluetooth Classic and needs a specific pairing sequence.
+                    The Intuos Pro gen 3 (PTK-470, PTK-670, PTK-870) uses
+                    Bluetooth LE and pairs normally. See the
                     <a href="/configuration.html#bluetooth"
                         >Bluetooth pairing</a
                     >
                     section of the Configuration page.
+                </p>
+
+                <h3>Some websites or Calendar views won't scroll</h3>
+                <p>
+                    Some websites, and Calendar's Month and Year views, ignore
+                    scrolling that coasts with momentum. Turn off
+                    <strong>Momentum Scrolling</strong> in the Touch pane for
+                    two-finger scrolling and in Pen Feel for Pan View. It's
+                    off by default in new installs.
                 </p>
 
                 <!-- ─── OUTSIDE TOOLS ─── -->
