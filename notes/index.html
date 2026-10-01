@@ -42,59 +42,38 @@
     <section class="wrap">
       <h1>Research Notes</h1>
       <p>
-        Protocol research, HID decoding references, device assessments, and raw data captures
-        gathered during MockTab development. These are working notes, included as supporting evidence for
-        the implementation choices in the source code.
+        What MockTab has learned about how drawing tablets talk to a computer, and how macOS
+        expects a driver to talk to apps. Each claim is marked as seen on hardware, taken from
+        the Linux driver, or unverified. The <a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/README.md">notes index</a> on GitHub
+        explains the labels.
       </p>
 
-      <h2>Protocol reference</h2>
+      <h2>Wacom pen protocols</h2>
       <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Specs-Reference.md">HID Specs Reference</a> — how Wacom tablets talk to the host computer</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Family-Reference.md">HID Family Reference</a> — every supported device grouped by the parser it uses</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Decoding-Research.md">HID Decoding Research</a> — how to read the bytes a tablet sends, with an Art Pen rotation focus</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Experimental-Reference.md">HID Experimental Reference</a> — newer-device layouts not yet confirmed on real hardware</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Input-Decode-Reference.md">Input Decode Reference</a> — how to read tablet input data for devices from 2003 to 2017</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Protocol-Specification-Notes.md">Protocol Specification Notes</a> — a spec for building a Wacom driver on macOS</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Intuos-Pro-Gen3-Protocol.md">Intuos Pro gen 3</a> — PTK-470/670/870 over USB and Bluetooth LE, including edge behavior</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Intuos-Pro-Gen2-Protocol.md">Intuos Pro gen 2</a> — PTH-x60, CTL-x100, and many pen displays over USB and Bluetooth</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Intuos-10-Byte-Protocol.md">Intuos 10-byte format</a> — Intuos 1–5, Intuos Pro gen 1, Intuos3, and the 2015–2018 consumer Intuos</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Consumer-Tablet-Protocols.md">Consumer tablets</a> — Graphire, Bamboo, and the shared touch and key container</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Pen-Display-Protocols.md">Pen displays</a> — Cintiq, DTU, PL, Cintiq touch, and the ExpressKey Remote</li>
       </ul>
 
-      <h2>Bluetooth &amp; wireless</h2>
+      <h2>Across Wacom tablets</h2>
       <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Bluetooth-Research.md">HID Bluetooth Research</a> — how Bluetooth-connected tablets format their data</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Bluetooth-Battery-Reference.md">Bluetooth Battery Reference</a> — where to find the battery level in each model's data</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Wireless-Specification-Notes.md">Wireless Specification Notes</a> — how older RF-dongle tablets wrap their data</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Mode-Switching.md">Switching into full-data mode</a> — the feature report every tablet needs, and where to send it</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Pen-Tool-Codes.md">Pen tool codes</a> — codes seen on hardware, and the eraser, Art Pen, and rotation rules</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Wireless-and-Battery.md">Wireless and battery</a> — transports by model and battery encodings</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-LED-and-OLED-Control.md">LEDs and OLEDs</a> — ring LEDs and Intuos4 key displays</li>
       </ul>
 
-      <h2>Device-specific</h2>
+      <h2>Other</h2>
       <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-660-Report-Layout-Reference.md">PTH-660 Report Layout Reference</a> — what each byte of an Intuos Pro M message means</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-850K-Reference.md">PTH-850K Reference</a> — Korean variant; identical to the global PTH-850</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-PTH-860-Reference.md">PTH-860 Reference</a> — Intuos Pro L (2nd gen), including its odd dual-Bluetooth behavior</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Post-2020-Preliminary-Research.md">Post-2020 Tablets — Preliminary Research</a> — early notes on tablets released after 2020</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-LED-Reference.md">LED Reference</a> — how the driver controls ring and status LEDs</li>
-      </ul>
-
-      <h2>Pen features</h2>
-      <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Art-Pen-Rotation-Notes.md">Art Pen Rotation Notes</a> — how the Art Pen encodes barrel rotation and how MockTab scales it to 0–360°</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Xencelabs-Protocol.md">Xencelabs</a> — Pen Tablet, Pen Display, and Quick Keys: input and host writes</li>
+        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/macOS-Tablet-Event-Synthesis.md">macOS tablet event synthesis</a> — the proximity, pen, click, and scroll fields apps check</li>
         <li><a href="Wacom-Art-Pen-Rotation-Observations.txt">Art Pen Rotation Observations</a> — raw capture log</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Rotation-Reference.md">HID Rotation Reference</a> — how Krita, Photoshop, and Rebelle each handle pen rotation on macOS</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Touch-Reference.md">HID Touch Reference</a> — which tablets support finger touch and how</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-Parallax-Compensation-Reference.md">Parallax Compensation Reference</a> — math for aligning the cursor with where you tap on a Cintiq</li>
-      </ul>
-
-      <h2>Xencelabs</h2>
-      <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Xencelabs-HID-Reference.md">Xencelabs HID Reference</a> — USB enumeration IDs and device identification across the Xencelabs lineup</li>
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Xencelabs-Quick-Keys-Puck-Reference.md">Quick Keys Puck Reference</a> — the Quick Keys remote's report format, controls, and wired/wireless behavior</li>
-      </ul>
-
-      <h2>Linux driver comparison</h2>
-      <ul class="bullets">
-        <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Wacom-HID-Linux-Report-Reference.md">Linux HID Report Reference</a> — the device feature table copied straight from the Linux driver</li>
       </ul>
 
       <h2>Data capture logs</h2>
-      <p class="note">Raw HID report captures from hardware on the bench. The captures come from the built-in Collect Device Data tool.</p>
+      <p class="note">Early raw captures from March 2026, before most of the current decoders. &ldquo;Broken&rdquo; describes MockTab at the time.</p>
       <ul class="bullets">
         <li><a href="DataCaptureLogs/Wacom-PTH-850-Pen-USB-Works-2026-03-27.txt">PTH-850 — Pen, USB (works)</a></li>
         <li><a href="DataCaptureLogs/Wacom-PTH-850-Pen-Wireless-Pen-Works-2026-03-27.txt">PTH-850 — Pen, Wireless (works)</a></li>
