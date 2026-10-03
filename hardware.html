@@ -54,14 +54,12 @@
             <section class="hero wrap">
                 <h1>Supported hardware</h1>
                 <p class="lede">
-                    MockTab targets Wacom USB and Bluetooth tablets from the
-                    early 2000s to roughly 2020. These devices span nearly a
-                    hundred product numbers across a dozen hardware generations.
-                    A few newer models carry experimental registry entries
-                    and require further verification. MockTab also supports
-                    some Xencelabs tablet models. The tables specify coverage by
-                    family, noting pressure range, button arrangement,
-                    transport, and confirmation notes.
+                    MockTab supports Wacom USB and Bluetooth
+                    tablets from the early 2000s to about 2020:
+                    nearly a hundred models across a dozen
+                    generations. A few newer models are still experimental. MockTab also supports some
+                    Xencelabs tablets. Each table lists pressure
+                    range, buttons, connection, and test status.
                 </p>
             </section>
 
@@ -69,33 +67,26 @@
                 <h2>Status legend</h2>
                 <ul class="bullets">
                     <li>
-                        <strong>&#10003; Confirmed</strong>: tested this model
-                        end-to-end on real hardware.
+                        <strong>&#10003; Confirmed</strong>: works on real hardware.
                     </li>
                     <li>
-                        <strong>&#9888; Generic-decoder</strong>: decoder covers
-                        this device family; coordinates and pressure come from
-                        cross-referenced Linux <code>wacom_wac.c</code> and
-                        OpenTabletDriver sources, but this project has not
-                        tested this unit directly.
+                        <strong>&#9888;
+                        Generic-decoder</strong>: the family's decoder, built from the Linux driver and OpenTabletDriver, covers it, but this model needs further testing.
                     </li>
                     <li>
-                        <strong>&#8230; Pending</strong>: device is in the
-                        registry with a decoder, but this project has not tested
-                        the decoder or device parameters on real hardware. May
-                        work, but please report results.
+                        <strong>&#8230; Pending</strong>: MockTab has a decoder for it, but it needs testing on real hardware. It may work; please report results.
                     </li>
                 </ul>
                 <p class="note">
-                    Product IDs are USB PIDs. Bluetooth Classic and
-                    wireless-dongle variants enumerate under their own PIDs;
-                    MockTab unifies them to the canonical USB entry, so a single
-                    tablet does not appear three times. For a tablet that isn't
-                    listed, choose <strong>Help › Collect Device Data…</strong>
-                    in the app and send us the zip file it makes.
+                    Product IDs are USB IDs. Bluetooth and
+                    wireless-dongle versions have their own IDs,
+                    but MockTab merges them into the USB entry,
+                    so each tablet appears once. For a tablet missing here, choose <strong>Help ›
+                    Collect Device Data…</strong> and send the
+                    zip file it makes.
                 </p>
                 <p class="note">
-                    Release years for many models come from SevenPens&rsquo;
+                    Release details from some models come from TheSevenPens&rsquo;
                     <a href="https://github.com/TheSevenPens/DrawTabData">DrawTabData</a>.
                 </p>
             </section>
@@ -106,14 +97,13 @@
                     <span class="muted-h">&middot; 1996–2007</span>
                 </h2>
                 <p>
-                    Compact consumer line built around the 8-byte
-                    <em>Graphire</em> HID report. No tilt, no rotation, no
-                    express keys (a couple of Bamboo-branded successors added a
-                    few buttons). Pressure tops out at 511 (9-bit) across the
-                    entire generation; the original PenPartner reports 8-bit
-                    pressure with a 255 maximum. The decoder follows the Linux
-                    driver; a Bamboo Fun (CTE-650) capture confirmed the pen,
-                    but no model here has been tested end to end.
+                    Compact consumer line using the 8-byte
+                    <em>Graphire</em> report. No tilt, rotation,
+                    or ExpressKeys, though a couple of
+                    Bamboo-branded models added a few buttons.
+                    Pressure tops out at 511 (9-bit); the
+                    original PenPartner tops out at 255. The
+                    decoder follows the Linux driver. A Bamboo Fun (CTE-650) capture confirmed the pen, but these models need further testing.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -349,12 +339,10 @@
                     Intuos 1 <span class="muted-h">&middot; 1998–2002</span>
                 </h2>
                 <p>
-                    The original Intuos professional line. 10-byte reports, 1024
-                    pressure levels (10-bit), tilt support, no express keys, no
-                    touch ring. All five sizes share one parser and a
-                    single-stage feature init. No unit here has had live
-                    testing, but the kernel and OpenTabletDriver agree on the
-                    report layout, so the generic decoder covers them.
+                    The original professional Intuos. 10-byte
+                    reports, 1024 pressure levels, and tilt,
+                    with no ExpressKeys or touch ring. All five
+                    sizes share one decoder. They need further testing, but the Linux driver and OpenTabletDriver agree on the report layout.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -447,9 +435,9 @@
                     Intuos 2 <span class="muted-h">&middot; 2001–2004</span>
                 </h2>
                 <p>
-                    Same HID format and capabilities as Intuos 1, with updated
-                    industrial design and product IDs. 1024-level pressure,
-                    tilt, no express keys.
+                    Same format and features as Intuos 1, with a
+                    new design and product IDs: 1024 pressure
+                    levels, tilt, and no ExpressKeys.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -555,15 +543,11 @@
                     Intuos 3 <span class="muted-h">&middot; 2004–2006</span>
                 </h2>
                 <p>
-                    The PTZ-series introduced express keys and touch strips (one
-                    set on the smallest sizes, two on the rest), and first
-                    supported the rotating Art Pen barrel (ZP-600). 10-byte
-                    reports with a different status-byte layout from Intuos 1/2,
-                    and a two-stage feature init (<code>0x02 0x02</code>
-                    followed by <code>0x04 0x00</code> after 150&nbsp;ms). All
-                    entries support tilt and Art Pen rotation. The widescreen
-                    6&times;8 (PTZ-631W) is the only confirmed unit in this
-                    generation.
+                    The PTZ series added ExpressKeys and touch
+                    strips (one set on the smallest sizes, two
+                    on the rest), and the rotating Art Pen
+                    (ZP-600). Every model supports tilt and Art
+                    Pen rotation. Testing so far covers only the widescreen 6&times;8 (PTZ-631W).
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -682,12 +666,10 @@
                     Intuos 4 <span class="muted-h">&middot; 2009–2012</span>
                 </h2>
                 <p>
-                    The PTK-series replaced Intuos 3's touch strips with a
-                    capacitive touch ring and added per-key OLED labels.
-                    Pressure jumped to 11-bit (2048 levels), tilt and Art Pen
-                    rotation continue. The wireless WL variant (PTK-540WL) also
-                    pairs over Bluetooth Classic; MockTab's decoder for that
-                    path is untested on real hardware.
+                    The PTK series replaced the touch strips
+                    with a touch ring and added OLED key labels.
+                    Pressure rose to 2048 levels, with tilt and
+                    Art Pen rotation. The wireless PTK-540WL also pairs over Bluetooth, which needs further testing.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -794,15 +776,11 @@
                     <span class="muted-h">&middot; 2012–2015</span>
                 </h2>
                 <p>
-                    Mid-cycle rebrand from "Intuos5" (pen-only PTK-x50, "Intuos5
-                    touch" PTH-x50) to "Intuos Pro" (PTH-x51) on otherwise
-                    identical hardware. Same 10-byte IntuosV1 format as Intuos
-                    4, 11-bit pressure, capacitive touch ring, no Bluetooth. The
-                    L variant (PTH-851) is the confirmed reference unit for this
-                    generation. The "touch" L model (PTH-850) also has a
-                    capacitive touch surface; MockTab supports it over USB. The
-                    S and M touch models (PTH-450/650, PTH-451/651) use the
-                    same touch format, though only the L has been tested.
+                    A mid-cycle rename from Intuos5 (pen-only
+                    PTK-x50, Intuos5 touch PTH-x50) to Intuos
+                    Pro (PTH-x51), on the same hardware: Intuos
+                    4's report format, 2048 pressure levels, a
+                    touch ring, and no Bluetooth. Testing covers the L (PTH-851) and the touch L (PTH-850), including finger touch over USB. The S and M touch models use the same touch format.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -935,14 +913,10 @@
                     <span class="muted-h">&middot; 2017–2025</span>
                 </h2>
                 <p>
-                    A complete protocol overhaul: 192-byte LE24 reports with
-                    13-bit pressure (8192 levels), Bluetooth Classic in addition
-                    to USB, and an optional wireless dongle. MockTab seizes the
-                    standard-HID-mouse interface to keep macOS from consuming
-                    pen events. The Pro Pen 2 pairs with all three sizes.
-                    Testing confirms both M and L over USB and Bluetooth
-                    Classic. The M and L include a capacitive touch surface;
-                    MockTab supports it over both USB and Bluetooth.
+                    A new report format with 8192 pressure
+                    levels, Bluetooth alongside USB, and an
+                    optional wireless dongle. The Pro Pen 2
+                    works with all three sizes. The M and L work over USB and Bluetooth, finger touch included.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -1018,18 +992,13 @@
                     </table>
                 </div>
                 <p class="note">
-                    The BT PIDs above come from Wacom's assignments, but a
-                    PTH-660 tested over Bluetooth Classic enumerated with its
-                    USB PID (<code>0x0357</code>) rather than
+                    Wacom assigns the Bluetooth IDs above, but a PTH-660 on Bluetooth reported its USB ID (<code>0x0357</code>) instead of
                     <code>0x0360</code>. MockTab matches either.
                 </p>
                 <p class="note">
-                    <code>0x0359</code> and <code>0x035A</code> were removed
-                    from this family in 2026-07: earlier notes guessed them as
-                    PTH-660/860 wireless-dongle PIDs, but that pairing had no
-                    kernel or libwacom source. libwacom independently assigns
-                    both PIDs elsewhere &mdash; see DTU-1141B and DTH-1152
-                    below. PTH-660/860 wireless is Bluetooth Classic only.
+                    The PTH-660 and 860 connect wirelessly over
+                    Bluetooth only. They have no wireless
+                    dongle.
                 </p>
 
                 <h2>
@@ -1037,12 +1006,11 @@
                     <span class="muted-h">&middot; 2025–present</span>
                 </h2>
                 <p>
-                    The current Intuos Pro generation (PTK-series), with two
-                    rotary dials in place of the touch ring and no touch
-                    surface. Its USB and Bluetooth LE reports differ from Gen 2
-                    and each other. The L (PTK-870) is tested over both; the S
-                    and M share its decoder. The S has five ExpressKeys; the M
-                    and L have eight.
+                    The current Intuos Pro (PTK series), with
+                    two dials instead of a touch ring, and no
+                    finger touch. Its USB and Bluetooth reports
+                    differ from Gen 2 and from each other. The L (PTK-870) works over both; the S and M share its decoder. The S has five
+                    ExpressKeys; the M and L have eight.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -1110,14 +1078,12 @@
                     <span class="muted-h">&middot; 2007–present</span>
                 </h2>
                 <p>
-                    A long, regionally-confusing line marketed as "Bamboo",
-                    "Intuos", and "Wacom One" depending on year and territory.
-                    Pressure ranges from 1024 to 4096 levels; no tilt, no
-                    rotation. The Bamboo Pen (CTL-460) and Bamboo Touch
-                    (CTT-460) are tested; most others share their decoders. The
-                    2023 Wacom One S and M (CTC-x110WL) connect over USB or
-                    Bluetooth, and have an Android mode with its own product
-                    ID.
+                    A long line that Wacom sold as Bamboo, Intuos, or Wacom One, depending on year and region. Pressure
+                    ranges from 1024 to 4096 levels, with no
+                    tilt or rotation. The Bamboo Pen (CTL-460) and Bamboo Touch (CTT-460) work on real hardware, and most others share their decoders. The 2023
+                    Wacom One S and M (CTC-x110WL) connect over
+                    USB or Bluetooth, and have an Android mode
+                    with its own product ID.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -1744,17 +1710,16 @@
                     <span class="muted-h">&middot; 2005–present</span>
                 </h2>
                 <p>
-                    Pen displays with integrated screens. Older models (CintiqV1
-                    family) use a 10-byte report layout with a separate 0x0C aux
-                    report for express keys and touch rings, and require device
-                    seizure to keep the kernel from grabbing the tip-switch
-                    interface. Newer models (Cintiq 16 onward) switched to the
-                    same 192-byte IntuosV2 format as Intuos Pro Gen 2. The 24HD
-                    has dual touch rings (one per bezel), each with three
-                    independently assignable mode slots. On models with touch,
-                    the touch sensor is a separate USB device with its own
-                    product ID; MockTab pairs it with the pen display
-                    automatically, so it isn't listed separately.
+                    Pen displays with built-in screens. Older
+                    models use a 10-byte report, with
+                    ExpressKeys and touch rings in a separate
+                    report. Newer models (Cintiq 16 onward) use
+                    the same format as Intuos Pro Gen 2. The
+                    24HD has a touch ring on each side, each
+                    with three assignable modes. On models with
+                    finger touch, MockTab pairs the separate
+                    touch sensor with its display automatically,
+                    so it has no row of its own.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -2459,26 +2424,13 @@
                     <span class="muted-h">&middot; 2009–2016</span>
                 </h2>
                 <p>
-                    Entry-level pen displays from two related but distinct
-                    kernel families. Neither supports tilt, rotation, or hover
-                    distance.
-                </p>
-                <p>
-                    <strong>DTUS</strong> (<code>wacom_dtus_irq</code>) uses
-                    big-endian coordinates, a 10-bit pressure split across the
-                    status byte and a dedicated pressure byte, and an optional
-                    pad report (four express keys) on a separate report ID.
-                    Covers the DTK-1651, DTU-1031, DTU-1031X, and DTU-1141.
-                </p>
-                <p>
-                    <strong>DTU</strong> (<code>wacom_dtu_irq</code>) uses
-                    little-endian coordinates and 9-bit pressure packed into two
-                    bytes. No pad report; pen only. Covers the DTU-1631 and
-                    DTU-2231.
-                </p>
-                <p>
-                    All entries are experimental: the decoders port from
-                    <code>input-wacom 4.18</code> but lack hardware validation.
+                    Entry-level pen displays in two related
+                    families, DTUS and DTU. Neither supports
+                    tilt, rotation, or hover distance. The DTUS
+                    models (DTK-1651, DTU-1031, DTU-1031X, and
+                    DTU-1141) have four optional ExpressKeys;
+                    the DTU models (DTU-1631 and DTU-2231) are
+                    pen only. All are experimental: their decoders follow the Linux driver, but they need further testing.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -2619,12 +2571,8 @@
                     </table>
                 </div>
                 <p class="note">
-                    <strong>DTU-1141B</strong> and <strong>DTH-1152</strong> are
-                    identified by PID from libwacom only &mdash; no hardware
-                    testing has been done. These PIDs were previously (and
-                    incorrectly) attributed to PTH-660/860 wireless dongles;
-                    that guess has been retracted in favor of libwacom's own
-                    identification.
+                    The <strong>DTU-1141B</strong> and
+                    <strong>DTH-1152</strong> entries rely on libwacom's product IDs alone; they need further testing.
                 </p>
 
 <h2>
@@ -2632,11 +2580,8 @@
                     <span class="muted-h">&middot; 1998–2005</span>
                 </h2>
                 <p>
-                    The LCD pen displays that preceded the Cintiq line; the
-                    PL-550 and PL-800 were sold as the Cintiq 15X and 18SX. No
-                    tilt and no ExpressKeys. The decoder follows the Linux
-                    driver; a PL-800 confirmed that the tablet switches on, but
-                    pen input hasn't been tested on any model.
+                    The pen displays before the Cintiq line; Wacom also sold the PL-550 and PL-800 as the Cintiq 15X and 18SX. No tilt and no ExpressKeys. The
+                    decoder follows the Linux driver. A PL-800 confirmed the display switches on, but pen input needs further testing.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -2833,15 +2778,9 @@
     <span class="muted-h">&middot; 2021&ndash;present</span>
 </h2>
 <p>
-    MockTab focuses on Wacom‑family tablets but also supports Xencelabs devices
-    because they share a similar professional workflow and have an accommodating
-    design. Current coverage centers on the Pen Display 24 bundle &mdash; screen,
-    pen, and Quick Keys puck &mdash; confirmed end‑to‑end on real hardware,
-    including over the wireless USB dongle. The standalone Pen Tablet Medium and
-    Small use the same wire protocol and should also work, but require further
-    verification. The Pen Display 16 is now in the registry too, sharing the
-    24's protocol, but its coordinate range is still an estimate pending a
-    real capture.
+                    MockTab focuses on Wacom, but also supports
+                    Xencelabs, whose tablets suit the same
+                    professional work.
 </p>                <div class="table-scroll">
                     <table class="matrix">
                         <thead>
@@ -2932,12 +2871,13 @@
                     </table>
                 </div>
                 <p class="note">
-                    Quick Keys' 8 express keys, mode button, and dial work the
-                    same whether the puck connects directly or through its
-                    wireless dongle; MockTab treats both as one device. The
-                    wire protocol can't distinguish the bundle's 3-button pen
-                    from the thinner 2-button pen Xencelabs also ships, so both
-                    show up simply as &ldquo;Xencelabs Pen.&rdquo;
+                    Quick Keys' 8 keys, mode button, and dial
+                    work the same directly or through the
+                    wireless dongle; MockTab treats both as one
+                    device. Reports don't distinguish the
+                    bundle's 3-button pen from the thinner
+                    2-button pen, so both appear as
+                    &ldquo;Xencelabs Pen.&rdquo;
                 </p>
 
                 <h2>Wireless</h2>
@@ -2947,18 +2887,19 @@
                             >USB dongle (ACK-40401, PID
                             <code>0x0084</code>):</strong
                         >
-                        works as a generic device once paired. The driver
-                        auto-detects the paired tablet's report format on
+                        works once paired. MockTab detects
+                        the paired tablet's format on
                         connection.
                     </li>
                     <li>
-                        <strong>Bluetooth:</strong> supported on the Intuos Pro
-                        Gen 2 (PTH-460/660/860, Bluetooth Classic), the Intuos Pro
-                        Gen 3 (PTK-470/670/870, Bluetooth LE). The Intuos
-                        CTL-4100WL/6100WL and Wacom One S/M pen tablets also
-                        connect over Bluetooth but are less tested. Pair in
-                        macOS System Settings; MockTab picks them up
-                        automatically and unifies them with the matching USB
+                        <strong>Bluetooth:</strong>
+                        works on the Intuos Pro Gen 2
+                        (PTH-460/660/860) and Gen 3
+                        (PTK-470/670/870). The Intuos
+                        CTL-4100WL/6100WL and Wacom One S/M
+                        also connect over Bluetooth, with less testing. Pair in System
+                        Settings; MockTab finds them and
+                        merges them with the matching USB
                         entry.
                     </li>
                     <li>
@@ -2966,65 +2907,59 @@
                             >Wireless receivers (Intuos4/5/Pro Gen 1
                             WL):</strong
                         >
-                        the WL receiver dongles (PIDs <code>0x009D</code>,
-                        <code>0x009A</code>) enumerate as HID and forward the
-                        paired tablet's report format. Pen input confirmed on an
-                        Intuos5 L (PTH-850) over the wireless kit; other models
-                        remain untested.
+                        the receivers (IDs
+                        <code>0x009D</code> and
+                        <code>0x009A</code>) pass along the
+                        paired tablet's reports. Pen input
+                        works on an Intuos5 L (PTH-850) over
+                        the wireless kit; other models need further testing.
                     </li>
                     <li>
                         <strong>Intuos Pro Gen 2 &ldquo;LE&rdquo; identity:</strong>
-                        these tablets also advertise a Bluetooth LE device,
-                        which serves Wacom's paper-notes mode, not tablet input.
-                        Pair the &ldquo;BT&rdquo; identity instead.
+                        these tablets also show a second
+                        Bluetooth device, which Wacom's paper notes mode uses, not tablet input.
+                        Pair the &ldquo;BT&rdquo; one
+                        instead.
                     </li>
                     <li>
                         <strong>ExpressKey Remote (EKR-100, PID
-                        <code>0x0331</code>):</strong> its 17 keys and touch
-                        ring work through the remote's own USB receiver.
-                        MockTab follows the ring mode the remote selects but
-                        can't change it.
+                        <code>0x0331</code>):</strong> its
+                        17 keys and touch ring work through
+                        the remote's own USB receiver.
+                        MockTab follows the ring mode the
+                        remote selects, but can't change it.
                     </li>
                 </ul>
 
                 <h2>Not supported</h2>
                 <ul class="bullets">
                     <li>
-                        Tablets from Huion, XP-Pen, Gaomon, and other vendors
-                        (Xencelabs is the exception &mdash; see above).
+                        Serial and ADB-era Wacom tablets,
+                        including the serial PL-series
+                        displays. MockTab does support the USB Cintiq 21UX (<code>0x003F</code>) and 21UX2 (<code>0x00CC</code>).
                     </li>
                     <li>
-                        Wacom tablets not listed above from the most recent
-                        product cycles (Cintiq Pro 2023 refresh, etc.).
+                        Wacom STU signature pads (STU-430,
+                        STU-500, STU-520, STU-530, STU-540,
+                        and similar), which use a different
+                        protocol.
                     </li>
                     <li>
-                        Serial- and ADB-era Wacom tablets, including the serial
-                        PL-series pen displays. The USB Cintiq 21UX
-                        (<code>0x003F</code>) and 21UX2 (<code>0x00CC</code>)
-                        use the standard CintiqV1 HID format and appear in the
-                        registry.
-                    </li>
-                    <li>
-                        Wacom STU signature pads (STU-430, STU-500, STU-520,
-                        STU-530, STU-540, and similar). These use a different
-                        vendor protocol and are outside MockTab's scope.
-                    </li>
-                    <li>
-                        Bluetooth-only tablets that use SPP/RFCOMM rather than
-                        HID (CTE-630BT, XD-0608-BT): these need a serial-port
-                        driver, not an HID one.
+                        Bluetooth tablets that act as a
+                        serial port (CTE-630BT and
+                        XD-0608-BT).
                     </li>
                     <li>macOS older than 13 (Ventura).</li>
                 </ul>
 
                 <p class="note">
-                    Have a tablet not listed here, or one in the pending column
-                    that you've tested? Please
-                    <a href="https://github.com/Cyzor/tablet-driver/issues/new"
-                        >open an issue</a
-                    >
-                    with the model number, USB product ID, and what you saw.
-                    Logs from the Info tab help.
+                    Have an unlisted tablet, or a pending one
+                    you've tested? Please <a
+                    href="https://github.com/Cyzor/tablet-driver/issues/new">open
+                    an issue</a> with the model number and what
+                    you saw, and attach the zip file from
+                    <strong>Help › Collect Device
+                    Data…</strong>.
                 </p>
 
                 <p class="note">

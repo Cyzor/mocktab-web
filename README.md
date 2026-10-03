@@ -1,6 +1,6 @@
 # mocktab-web
 
-Source for [mocktab.org](https://mocktab.org) — the project website for **MockTab**, a macOS driver that revives discontinued Wacom tablets on Apple Silicon and Intel Macs.
+Source for [mocktab.org](https://mocktab.org), the website for **MockTab**, a Mac driver that revives discontinued Wacom tablets.
 
 Plain HTML/CSS, no build step. Push to `main` and GitHub Pages serves it.
 
@@ -20,30 +20,23 @@ robots.txt         Crawl directives
 sitemap.xml        Sitemap for search engines
 ```
 
-## Local preview
-
-```sh
-python3 -m http.server 8000
-# open http://localhost:8000
-```
-
 ## Hardware list
 
-The device tables in `hardware.html` are generated from TabletKit's
-`registry.json`. Edit the prose around them by hand; for the tables, edit
+The device tables in `hardware.html` come from TabletKit's `registry.json`.
+Edit the prose around them by hand. For the tables, edit
 `tools/hardware/devices.json` and run:
 
 ```sh
 tools/hardware/build.py
 ```
 
-`devices.json` assigns each device to a table and holds what the registry
-lacks: year, position within that year, and any wording or status that should
-differ from the registry's. A stored status is a floor; a later registry
-upgrade still shows. New registry devices with no table are reported, not
-guessed. `tools/hardware/build.py --check` exits 1 if the page is out of date.
+`devices.json` places each device in a table and holds what the registry
+lacks: year, order within that year, and any wording or status that differs
+from the registry. A stored status is a minimum, so a later registry upgrade
+still shows. The script lists new registry devices that have no table rather
+than guessing. `--check` exits 1 if the page is out of date.
 
-The registry defaults to `../mocktab-app/TabletKit/registry.json`; pass
+By default the script reads `../mocktab-app/TabletKit/registry.json`. Pass
 `--registry` to use another copy.
 
 ## App repo
