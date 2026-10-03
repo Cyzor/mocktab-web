@@ -632,3 +632,14 @@ table.matrix td code {
     border-radius: 4px;
     border: 1px solid var(--border);
 }
+
+/* ─── Annotated report frames ─── */
+pre.frame {
+    background: var(--code-bg, var(--card));
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.5;
+}

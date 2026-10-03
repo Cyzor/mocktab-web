@@ -42,9 +42,8 @@
     <section class="wrap">
       <h1>Research Notes</h1>
       <p>
-        What MockTab has learned about how drawing tablets talk to a computer, and how macOS
-        expects a driver to talk to apps. Each claim is marked as seen on hardware, taken from
-        the Linux driver, or unverified. The <a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/README.md">notes index</a> on GitHub
+        How drawing tablets talk to a computer, and how macOS expects a driver to talk to apps.
+        Each note says where its claims come from. The <a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/README.md">notes index</a> on GitHub
         explains the labels.
       </p>
 
@@ -69,20 +68,65 @@
       <ul class="bullets">
         <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/Xencelabs-Protocol.md">Xencelabs</a> — Pen Tablet, Pen Display, and Quick Keys: input and host writes</li>
         <li><a href="https://github.com/Cyzor/tablet-driver/blob/main/Notes/macOS-Tablet-Event-Synthesis.md">macOS tablet event synthesis</a> — the proximity, pen, click, and scroll fields apps check</li>
-        <li><a href="Wacom-Art-Pen-Rotation-Observations.txt">Art Pen Rotation Observations</a> — raw capture log</li>
       </ul>
 
-      <h2>Data capture logs</h2>
-      <p class="note">Early raw captures from March 2026, before most of the current decoders. &ldquo;Broken&rdquo; describes MockTab at the time.</p>
-      <ul class="bullets">
-        <li><a href="DataCaptureLogs/Wacom-PTH-850-Pen-USB-Works-2026-03-27.txt">PTH-850 — Pen, USB (works)</a></li>
-        <li><a href="DataCaptureLogs/Wacom-PTH-850-Pen-Wireless-Pen-Works-2026-03-27.txt">PTH-850 — Pen, Wireless (works)</a></li>
-        <li><a href="DataCaptureLogs/Wacom-PTH-850-KC-100-00-USB-Mouse-Almost-Works-2026-03-27.txt">PTH-850 — KC-100-00 Mouse, USB (almost works)</a></li>
-        <li><a href="DataCaptureLogs/Wacom-PTH-850-Pen-Wireless-KC-100-00-Mouse-Mostly-Works-2026-03-27.txt">PTH-850 — KC-100-00 Mouse, Wireless (mostly works)</a></li>
-        <li><a href="DataCaptureLogs/Wacom-PTH-860-USB-Pen-Works-2026-03-27.txt">PTH-860 — Pen, USB (works)</a></li>
-        <li><a href="DataCaptureLogs/Wacom-PTH-860-KC-100-00-Mouse-USB-Broken-2026-03-27.txt">PTH-860 — KC-100-00 Mouse, USB (broken)</a></li>
-        <li><a href="DataCaptureLogs/Wacom-PTH-860-Bluetooth-Broken-2026-03-27.txt">PTH-860 — Bluetooth (broken)</a></li>
-      </ul>
+      <h2>What a tablet says</h2>
+      <p>
+        A tablet never tells the computer &ldquo;a pen is here.&rdquo; It sends a short burst of
+        numbers, a hundred or more times a second, and the driver decides what they mean.
+        These four examples come from an Intuos5 L (PTH-850) and an Intuos Pro L (PTH-860),
+        trimmed to the bytes that matter. The pen&rsquo;s serial number appears as <code>xx</code>.
+      </p>
+
+      <h3>An Intuos5 pen touching the surface</h3>
+      <pre class="frame">02 E1 2A 68 22 8C 97 2A D1 3F</pre>
+      <p>
+        Ten bytes carry everything. <code>02</code> names the report, and <code>E1</code> says
+        &ldquo;a pen, in contact.&rdquo; Position comes next: X is about 21,700 and Y about
+        17,700, out of a range twice the tablet&rsquo;s nominal resolution. Pressure spreads
+        across three bytes and reads 1,209 of 2,047, a little over half. The last bytes hold
+        the tilt, about 21&deg; one way and 17&deg; the other.
+      </p>
+
+      <h3>The same pen, pressing a side button</h3>
+      <pre class="frame">02 E2 26 D4 21 FB 00 29 4C 87
+02 E4 2A 12 21 9A 00 29 48 8A</pre>
+      <p>
+        Only the second byte changes. <code>E2</code> means the lower button, and
+        <code>E4</code> the upper one. Pressure reads zero because the pen hovers just above
+        the surface.
+      </p>
+
+      <h3>An Intuos Pro pen hovering, over USB</h3>
+      <pre class="frame">10 60 DF 69 00 94 62 00 00 00 21 0D 00 00 00 00 19 xx xx xx xx 42 08</pre>
+      <p>
+        The newer tablet spends more bytes and saves the driver some arithmetic.
+        <code>60</code> means &ldquo;in range, not touching.&rdquo; X and Y take three bytes
+        each, read from the right: 27,103 and 25,236. Tilt sits in its own bytes,
+        <code>21</code> and <code>0D</code>, or 33&deg; and 13&deg;. <code>19</code> says the
+        tip floats 25 steps above the surface. Every report repeats the pen&rsquo;s serial
+        number and its type code, <code>08 42</code>, so the driver always knows which
+        pen it&rsquo;s reading.
+      </p>
+
+      <h3>The same tablet, over Bluetooth</h3>
+      <pre class="frame">80  E1 AE A8 A3 64 A8 16 15 0D F9 FF 00 00 0F
+    E1 AE A8 A4 64 A8 16 15 0D F9 FF 00 00 0F
+    E1 AF A8 A4 64 A8 16 15 0D F9 FF 00 00 0F
+    &hellip;
+    xx xx xx xx 42 08</pre>
+      <p>
+        Bluetooth sends fewer, larger messages, so the tablet packs several pen samples into
+        each one, oldest first. Each 14-byte sample starts with its own status, here
+        <code>E1</code> for a pen in contact, followed by X, Y, and pressure. These three
+        samples show the pen pressing down steadily at 5,800 of 8,191 while barely moving.
+        Unused slots stay empty, and the pen&rsquo;s identity follows the
+        samples. A driver that reads only the first sample in each message draws a choppy line.
+      </p>
+
+      <p>
+        The protocol notes above give the full layouts.
+      </p>
     </section>
   </main>
 
