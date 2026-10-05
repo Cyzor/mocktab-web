@@ -11,15 +11,23 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-03T21:08Z",
+        "date": "2026-10-05T00:02Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
+            "Cintiq Pro 16 (DTH-167) and similar pen displays get a working pen and keys",
+            "Calibration on the pen display itself, and screen-area overlays on any display",
+            "Mapped displays remembered by identity",
+            "ExpressKey Remote keys in its tablet's Buttons tab",
+            "Cintiq brightness and contrast on links that garble replies",
+            "Touch ignores palms, the pen hand, and typing",
+            "Optional two-finger right-click and three-finger drag",
+            "One identity per pen across Bluetooth and USB",
+            "Rebelle no longer paints at full pressure after switching apps",
+            "Show in New Window in the Devices list",
             "Pen settings survive flipping to the eraser",
             "Xencelabs Thin Pen told apart from the 3 Button Pen",
-            "Calibration and screen-area overlays on any display",
             "Correct pen range for Bamboo One M (CTL-671)",
-            "Display toggle hint names Quick Keys and ExpressKey Remote buttons",
-            "Cintiq Pro 16 (DTH-167) pen startup corrected"
+            "Display toggle hint names Quick Keys and ExpressKey Remote buttons"
         ]
     }
 }
