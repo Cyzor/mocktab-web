@@ -11,7 +11,7 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-05T02:19Z",
+        "date": "2026-10-05T18:30Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
             "Cintiq Pro 16 (DTH-167) and similar pen displays get a working pen and keys",
@@ -27,7 +27,11 @@
             "Pen settings survive flipping to the eraser",
             "Xencelabs Thin Pen told apart from the 3 Button Pen",
             "Correct pen range for Bamboo One M (CTL-671)",
-            "Display toggle hint names Quick Keys and ExpressKey Remote buttons"
+            "Display toggle hint names Quick Keys and ExpressKey Remote buttons",
+            "Full tilt range on Cintiq Pro 16 and similar pen displays",
+            "Span Displays button action, pressed again to restore the previous display setting",
+            "Cintiq touch no longer blocks clicks on macOS 15",
+            "Two-finger right-click over Bluetooth"
         ]
     }
 }
