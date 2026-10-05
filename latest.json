@@ -11,27 +11,18 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-05T20:13Z",
+        "date": "2026-10-05T21:15Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
-            "Cintiq Pro 16 (DTH-167) and similar pen displays get a working pen and keys",
-            "Calibration on the pen display itself, and screen-area overlays on any display",
-            "Mapped displays remembered by identity",
+            "Cintiq Pro 16, Cintiq 13HD, and similar pen displays get a working pen, keys, and full tilt",
+            "Cintiq touch no longer blocks clicks",
+            "Cintiq brightness and contrast on more connections",
+            "Touch ignores palms, the pen hand, and typing, with optional two-finger right-click and three-finger drag",
+            "Calibration on the pen display itself",
             "ExpressKey Remote keys in its tablet's Buttons tab",
-            "Cintiq brightness and contrast on links that garble replies",
-            "Touch ignores palms, the pen hand, and typing",
-            "Optional two-finger right-click and three-finger drag",
-            "One identity per pen across Bluetooth and USB",
-            "Rebelle no longer paints at full pressure after switching apps",
-            "Show in New Window in the Devices list",
-            "Pen settings survive flipping to the eraser",
-            "Xencelabs Thin Pen told apart from the 3 Button Pen",
-            "Correct pen range for Bamboo One M (CTL-671)",
-            "Display toggle hint names Quick Keys and ExpressKey Remote buttons",
-            "Full tilt range on Cintiq Pro 16 and similar pen displays",
-            "Span Displays button action, pressed again to restore the previous display setting",
-            "Cintiq touch no longer blocks clicks on macOS 15",
-            "Two-finger right-click over Bluetooth"
+            "Span Displays button action",
+            "Pen identity and settings kept across Bluetooth, USB, and the eraser",
+            "Fixes for Rebelle pressure, Xencelabs pen recognition, and Bamboo One M range"
         ]
     }
 }
