@@ -11,7 +11,7 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-05T18:30Z",
+        "date": "2026-10-05T20:13Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
             "Cintiq Pro 16 (DTH-167) and similar pen displays get a working pen and keys",
