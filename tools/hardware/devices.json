@@ -30,31 +30,26 @@
    ],
    "pidCell": "<code>0x0004</code>, <code>0x0010</code>",
    "year": "1998",
-   "buttons": "2",
    "order": 1
   },
   "0x0011": {
    "section": "graphire",
    "year": "2001",
-   "buttons": "2",
    "order": 2
   },
   "0x0012": {
    "section": "graphire",
    "year": "2001",
-   "buttons": "2",
    "order": 3
   },
   "0x0013": {
    "section": "graphire",
    "year": "2003",
-   "buttons": "2",
    "order": 4
   },
   "0x0014": {
    "section": "graphire",
    "year": "2003",
-   "buttons": "2",
    "order": 5
   },
   "0x0015": {
