@@ -13,7 +13,9 @@
   "0x0331": "listed under Wireless",
   "0x0335": "touch sensor; paired with its pen display",
   "0x0354": "touch sensor; paired with its pen display",
-  "0x03B3": "touch sensor; paired with its pen display"
+  "0x03B3": "touch sensor; paired with its pen display",
+  "0x03CF": "USB-C display bridge (Billboard), not a tablet",
+  "0x03F2": "USB-C display bridge (Billboard), not a tablet"
  },
  "devices": {
   "0x0003": {
@@ -971,11 +973,6 @@
    "year": "2023",
    "order": 30
   },
-  "0x03CF": {
-   "section": "displays",
-   "year": "2023",
-   "order": 34
-  },
   "0x03D0": {
    "section": "displays",
    "year": "2023",
@@ -1019,11 +1016,6 @@
    "year": "2024",
    "buttons": "—",
    "order": 11
-  },
-  "0x03F2": {
-   "section": "displays",
-   "year": "2024",
-   "order": 37
   },
   "0x03F5": {
    "section": "intuos-pro-gen3",
