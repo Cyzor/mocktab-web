@@ -463,7 +463,8 @@
    "section": "consumer",
    "year": "2011",
    "buttons": "4",
-   "order": 4
+   "order": 4,
+   "status": "Confirmed"
   },
   "0x00D5": {
    "section": "consumer",
@@ -646,7 +647,7 @@
    "pidCell": "<code>0x0316</code>, <code>0x0315</code>",
    "year": "2013",
    "buttons": "8 keys + ring",
-   "status": "Generic-decoder",
+   "status": "Confirmed",
    "order": 6
   },
   "0x0317": {
