@@ -636,12 +636,8 @@
    "buttons": "6 keys + ring",
    "order": 5
   },
-  "0x0316": {
+  "0x0315": {
    "section": "intuos5",
-   "also": [
-    "0x0315"
-   ],
-   "pidCell": "<code>0x0316</code>, <code>0x0315</code>",
    "year": "2013",
    "buttons": "8 keys + ring",
    "status": "Works",
@@ -801,7 +797,6 @@
    "name": "Wacom DTU-1141B",
    "pressure": "8191 (13-bit)",
    "buttons": "4",
-   "status": "Likely works",
    "order": 6
   },
   "0x035A": {
@@ -809,7 +804,6 @@
    "name": "Wacom DTH-1152",
    "pressure": "8191 (13-bit)",
    "buttons": "touch, no pen eraser",
-   "status": "Likely works",
    "order": 7
   },
   "0x0374": {
