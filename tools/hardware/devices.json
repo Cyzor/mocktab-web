@@ -189,7 +189,7 @@
    "order": 9
   },
   "0x0039": {
-   "section": "pl",
+   "section": "dtu",
    "year": "2005",
    "order": 6
   },
@@ -411,7 +411,7 @@
    "order": 2
   },
   "0x00C7": {
-   "section": "pl",
+   "section": "dtu",
    "order": 12
   },
   "0x00CC": {
@@ -876,7 +876,7 @@
    "order": 22
   },
   "0x037D": {
-   "section": "displays",
+   "section": "dtu",
    "order": 46
   },
   "0x0390": {
