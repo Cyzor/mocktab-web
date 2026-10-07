@@ -643,3 +643,36 @@ pre.frame {
     font-size: 14px;
     line-height: 1.5;
 }
+
+/* Status legend: mark, term, and description in aligned columns. */
+dl.legend {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px 16px;
+    margin: 0 0 16px;
+}
+
+dl.legend dt {
+    font-weight: 600;
+}
+
+dl.legend dd {
+    margin: 0;
+}
+
+.legend-mark {
+    display: inline-block;
+    width: 1.5em;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    dl.legend {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    dl.legend dd {
+        margin: 0 0 8px 1.5em;
+    }
+}

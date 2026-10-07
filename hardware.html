@@ -60,11 +60,14 @@
 
             <section class="wrap">
                 <h2>What the symbols mean</h2>
-                <ul class="bullets">
-                    <li><strong>&#10003; Works</strong>: tested on a real tablet.</li>
-                    <li><strong>&#8776; Likely works</strong>: a closely related model already works, but this model may need testing.</li>
-                    <li><strong>&#8230; Untested</strong>: Possibly works, but needs hands-on verification. Please try it and report how it goes.</li>
-                </ul>
+                <dl class="legend">
+                    <dt><span class="legend-mark" aria-hidden="true">&#10003;</span>Works</dt>
+                    <dd>Tested on a real tablet.</dd>
+                    <dt><span class="legend-mark" aria-hidden="true">&#8776;</span>Likely works</dt>
+                    <dd>A closely related model already works, but this model may need testing.</dd>
+                    <dt><span class="legend-mark" aria-hidden="true">&#8230;</span>Untested</dt>
+                    <dd>Possibly works, but needs hands-on verification. Please try it and report how it goes.</dd>
+                </dl>
                 <p class="note">
                     Product IDs are USB IDs; Bluetooth and dongle versions are listed under their USB entry. Tablet not here? Choose <strong>Help › Collect Device Data…</strong> and send us the zip file.
                 </p>
@@ -633,7 +636,7 @@
                     Intuos 4 <span class="muted-h">&middot; 2009–2012</span>
                 </h2>
                 <p>
-                    A touch ring replaced the strips, and the keys gained OLED labels. 2048 pressure levels, tilt, and Art Pen rotation. The wireless PTK-540WL&rsquo;s Bluetooth is untested.
+                    A touch ring replaced the strips, and the keys gained OLED labels. 2048 pressure levels, tilt, and Art Pen rotation. The wireless PTK-540WL&rsquo;s Bluetooth needs testing.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -1024,7 +1027,7 @@
                 </div>
 
                 <h2>
-                    Bamboo, Intuos &amp; Wacom One pen tablets
+                    Bamboo, Intuos, &amp; Wacom One pen tablets
                     <span class="muted-h">&middot; 2007–present</span>
                 </h2>
                 <p>
@@ -1651,7 +1654,7 @@
                 </div>
 
                 <h2>
-                    Cintiq, Wacom One &amp; MobileStudio pen displays
+                    Cintiq, Wacom One, &amp; MobileStudio pen displays
                     <span class="muted-h">&middot; 2005–present</span>
                 </h2>
                 <p>
@@ -2322,9 +2325,8 @@
                 </h2>
                 <p>
                     Wacom&rsquo;s signature pads and annotation displays.
-                    MockTab recognizes them and decodes the pen where its
-                    format is known, but they aren&rsquo;t a drawing focus,
-                    and no further work is planned for them.
+                    MockTab may recognize them, but has no plans for 
+                    further support.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
