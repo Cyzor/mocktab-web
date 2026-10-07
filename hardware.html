@@ -54,40 +54,22 @@
             <section class="hero wrap">
                 <h1>Supported hardware</h1>
                 <p class="lede">
-                    MockTab supports Wacom USB and Bluetooth
-                    tablets from the early 2000s to about 2020:
-                    nearly a hundred models across a dozen
-                    generations. A few newer models are still experimental. MockTab also supports some
-                    Xencelabs tablets. Each table lists pressure
-                    range, buttons, connection, and test status.
+                    MockTab supports Wacom USB and Bluetooth tablets from 1996 to today, plus some Xencelabs tablets. Each table shows pressure, buttons, connection, and whether the model has been tested.
                 </p>
             </section>
 
             <section class="wrap">
-                <h2>Status legend</h2>
+                <h2>What the symbols mean</h2>
                 <ul class="bullets">
-                    <li>
-                        <strong>&#10003; Confirmed</strong>: works on real hardware.
-                    </li>
-                    <li>
-                        <strong>&#9888;
-                        Generic-decoder</strong>: the family's decoder, built from the Linux driver and OpenTabletDriver, covers it, but this model needs further testing.
-                    </li>
-                    <li>
-                        <strong>&#8230; Pending</strong>: MockTab has a decoder for it, but it needs testing on real hardware. It may work; please report results.
-                    </li>
+                    <li><strong>&#10003; Works</strong>: tested on a real tablet.</li>
+                    <li><strong>&#8776; Likely works</strong>: a closely related model already works, but this model may need testing.</li>
+                    <li><strong>&#8230; Untested</strong>: Possibly works, but needs hands-on verification. Please try it and report how it goes.</li>
                 </ul>
                 <p class="note">
-                    Product IDs are USB IDs. Bluetooth and
-                    wireless-dongle versions have their own IDs,
-                    but MockTab merges them into the USB entry,
-                    so each tablet appears once. For a tablet missing here, choose <strong>Help ›
-                    Collect Device Data…</strong> and send the
-                    zip file it makes.
+                    Product IDs are USB IDs; Bluetooth and dongle versions are listed under their USB entry. Tablet not here? Choose <strong>Help › Collect Device Data…</strong> and send us the zip file.
                 </p>
                 <p class="note">
-                    Release details from some models come from TheSevenPens&rsquo;
-                    <a href="https://github.com/TheSevenPens/DrawTabData">DrawTabData</a>.
+                    Release years for some models come from TheSevenPens&rsquo; <a href="https://github.com/TheSevenPens/DrawTabData">DrawTabData</a>.
                 </p>
             </section>
 
@@ -97,13 +79,7 @@
                     <span class="muted-h">&middot; 1996–2007</span>
                 </h2>
                 <p>
-                    Compact consumer line using the 8-byte
-                    <em>Graphire</em> report. No tilt, rotation,
-                    or ExpressKeys, though a couple of
-                    Bamboo-branded models added a few buttons.
-                    Pressure tops out at 511 (9-bit); the
-                    original PenPartner tops out at 255. The
-                    decoder follows the Linux driver. A Bamboo Fun (CTE-650) capture confirmed the pen, but these models need further testing.
+                    Compact consumer tablets. No tilt or ExpressKeys, though a few Bamboo models added buttons. Pressure tops out at 512 levels (256 on the original PenPartner). The Bamboo Fun (CTE-650) pen works.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -125,7 +101,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>PenPartner</td>
@@ -138,7 +114,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Graphire</td>
@@ -151,7 +127,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Graphire 2 (4×5)</td>
@@ -164,7 +140,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Graphire 2 (5×7)</td>
@@ -177,8 +153,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Graphire 3 (4×5)</td>
                                 <td><code>0x0013</code></td>
@@ -190,8 +166,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Graphire 3 (6×8)</td>
                                 <td><code>0x0014</code></td>
@@ -203,8 +179,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Volito</td>
                                 <td><code>0x0060</code></td>
@@ -216,8 +192,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>PenStation</td>
                                 <td><code>0x0061</code></td>
@@ -229,7 +205,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Volito 2</td>
@@ -242,8 +218,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Graphire 4 (4×5)</td>
                                 <td><code>0x0015</code></td>
@@ -255,8 +231,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Graphire 4 (6×8)</td>
                                 <td><code>0x0016</code></td>
@@ -268,8 +244,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo (MTE-450)</td>
                                 <td><code>0x0065</code></td>
@@ -281,8 +257,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo Fun (CTE-450)</td>
                                 <td><code>0x0017</code></td>
@@ -294,8 +270,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo1 Medium</td>
                                 <td><code>0x0019</code></td>
@@ -307,7 +283,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Volito 2 (2×3)</td>
@@ -320,7 +296,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>PenPartner2</td>
@@ -339,10 +315,7 @@
                     Intuos 1 <span class="muted-h">&middot; 1998–2002</span>
                 </h2>
                 <p>
-                    The original professional Intuos. 10-byte
-                    reports, 1024 pressure levels, and tilt,
-                    with no ExpressKeys or touch ring. All five
-                    sizes share one decoder. They need further testing, but the Linux driver and OpenTabletDriver agree on the report layout.
+                    The original professional Intuos: 1024 pressure levels and tilt, no ExpressKeys.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -364,8 +337,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 4×5</td>
                                 <td><code>0x0020</code></td>
@@ -377,7 +350,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Intuos 6×8</td>
@@ -390,8 +363,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 9×12</td>
                                 <td><code>0x0022</code></td>
@@ -403,8 +376,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 12×12</td>
                                 <td><code>0x0023</code></td>
@@ -416,8 +389,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 12×18</td>
                                 <td><code>0x0024</code></td>
@@ -435,9 +408,7 @@
                     Intuos 2 <span class="muted-h">&middot; 2001–2004</span>
                 </h2>
                 <p>
-                    Same format and features as Intuos 1, with a
-                    new design and product IDs: 1024 pressure
-                    levels, tilt, and no ExpressKeys.
+                    Same features as Intuos 1, with a new design.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -459,8 +430,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 2 (4×5)</td>
                                 <td><code>0x0041</code></td>
@@ -472,8 +443,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 2 (6×8)</td>
                                 <td><code>0x0042</code></td>
@@ -485,8 +456,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 2 (9×12)</td>
                                 <td><code>0x0043</code></td>
@@ -498,8 +469,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 2 (12×12)</td>
                                 <td><code>0x0044</code></td>
@@ -511,8 +482,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos 2 (12×18)</td>
                                 <td><code>0x0045</code></td>
@@ -524,7 +495,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Intuos 2 (6×8, alt)</td>
@@ -543,11 +514,7 @@
                     Intuos 3 <span class="muted-h">&middot; 2004–2006</span>
                 </h2>
                 <p>
-                    The PTZ series added ExpressKeys and touch
-                    strips (one set on the smallest sizes, two
-                    on the rest), and the rotating Art Pen
-                    (ZP-600). Every model supports tilt and Art
-                    Pen rotation. Testing so far covers only the widescreen 6&times;8 (PTZ-631W).
+                    Added ExpressKeys, touch strips, and the rotating Art Pen, with tilt on every model. Tested on the widescreen 6&times;8 (PTZ-631W).
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -569,8 +536,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos3 4×5 (PTZ-430)</td>
                                 <td><code>0x00B0</code></td>
@@ -582,8 +549,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos3 6×8 (PTZ-630)</td>
                                 <td><code>0x00B1</code></td>
@@ -595,8 +562,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos3 9×12 (PTZ-930)</td>
                                 <td><code>0x00B2</code></td>
@@ -608,8 +575,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos3 4×6 WS (PTZ-431W)</td>
                                 <td><code>0x00B7</code></td>
@@ -621,7 +588,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Intuos3 6×8 WS (PTZ-631W)</td>
@@ -634,8 +601,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos3 12×12 (PTZ-1230)</td>
                                 <td><code>0x00B3</code></td>
@@ -647,8 +614,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos3 12×19 WS (PTZ-1231W)</td>
                                 <td><code>0x00B4</code></td>
@@ -666,10 +633,7 @@
                     Intuos 4 <span class="muted-h">&middot; 2009–2012</span>
                 </h2>
                 <p>
-                    The PTK series replaced the touch strips
-                    with a touch ring and added OLED key labels.
-                    Pressure rose to 2048 levels, with tilt and
-                    Art Pen rotation. The wireless PTK-540WL also pairs over Bluetooth, which needs further testing.
+                    A touch ring replaced the strips, and the keys gained OLED labels. 2048 pressure levels, tilt, and Art Pen rotation. The wireless PTK-540WL&rsquo;s Bluetooth is untested.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -691,8 +655,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos4 S (PTK-440)</td>
                                 <td><code>0x00B8</code></td>
@@ -704,8 +668,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos4 M (PTK-640)</td>
                                 <td><code>0x00B9</code></td>
@@ -717,8 +681,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos4 L (PTK-840)</td>
                                 <td><code>0x00BA</code></td>
@@ -730,8 +694,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos4 XL (PTK-1240)</td>
                                 <td><code>0x00BB</code></td>
@@ -743,8 +707,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos4 WL (PTK-540WL)</td>
                                 <td><code>0x00BC</code></td>
@@ -756,8 +720,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos4 WL (PTK-540WL) BT</td>
                                 <td><code>0x00BD</code></td>
@@ -776,11 +740,7 @@
                     <span class="muted-h">&middot; 2012–2015</span>
                 </h2>
                 <p>
-                    A mid-cycle rename from Intuos5 (pen-only
-                    PTK-x50, Intuos5 touch PTH-x50) to Intuos
-                    Pro (PTH-x51), on the same hardware: Intuos
-                    4's report format, 2048 pressure levels, a
-                    touch ring, and no Bluetooth. Testing covers the L (PTH-851) and the touch L (PTH-850), including finger touch over USB. The S and M touch models use the same touch format.
+                    Intuos5 (PTK-x50, touch PTH-x50) was renamed Intuos Pro (PTH-x51) on the same hardware: 2048 pressure levels, a touch ring, and no Bluetooth. The L (PTH-851) and touch L (PTH-850) work, finger touch included.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -802,8 +762,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos5 touch S (PTH-450)</td>
                                 <td><code>0x0026</code></td>
@@ -815,8 +775,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos5 S (PTK-450)</td>
                                 <td><code>0x0029</code></td>
@@ -828,8 +788,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos5 M (PTK-650)</td>
                                 <td><code>0x002A</code></td>
@@ -841,8 +801,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos5 touch M (PTH-650)</td>
                                 <td><code>0x0027</code></td>
@@ -854,7 +814,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Intuos5 touch L (PTH-850)</td>
@@ -867,8 +827,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos Pro S (PTH-451)</td>
                                 <td><code>0x0314</code></td>
@@ -880,7 +840,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Intuos Pro M (PTH-651)</td>
@@ -893,7 +853,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Intuos Pro L (PTH-851)</td>
@@ -913,10 +873,7 @@
                     <span class="muted-h">&middot; 2017–2025</span>
                 </h2>
                 <p>
-                    A new report format with 8192 pressure
-                    levels, Bluetooth alongside USB, and an
-                    optional wireless dongle. The Pro Pen 2
-                    works with all three sizes. The M and L work over USB and Bluetooth, finger touch included.
+                    8192 pressure levels, Bluetooth alongside USB, and the Pro Pen 2. The M and L work over USB and Bluetooth, finger touch included.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -938,7 +895,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Intuos Pro M (PTH-660)</td>
@@ -951,7 +908,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Intuos Pro L (PTH-860)</td>
@@ -964,8 +921,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos Pro S (PTH-460)</td>
                                 <td><code>0x0392</code> (USB), <code>0x0393</code> (BT)</td>
@@ -977,8 +934,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos Pro S (PTH-460)</td>
                                 <td><code>0x03DC</code></td>
@@ -992,13 +949,10 @@
                     </table>
                 </div>
                 <p class="note">
-                    Wacom assigns the Bluetooth IDs above, but a PTH-660 on Bluetooth reported its USB ID (<code>0x0357</code>) instead of
-                    <code>0x0360</code>. MockTab matches either.
+                    A PTH-660 on Bluetooth may report its USB ID (0x0357) instead of 0x0360; MockTab accepts either.
                 </p>
                 <p class="note">
-                    The PTH-660 and 860 connect wirelessly over
-                    Bluetooth only. They have no wireless
-                    dongle.
+                    The PTH-660 and 860 connect wirelessly over Bluetooth only, with no dongle.
                 </p>
 
                 <h2>
@@ -1006,11 +960,7 @@
                     <span class="muted-h">&middot; 2025–present</span>
                 </h2>
                 <p>
-                    The current Intuos Pro (PTK series), with
-                    two dials instead of a touch ring, and no
-                    finger touch. Its USB and Bluetooth reports
-                    differ from Gen 2 and from each other. The L (PTK-870) works over both; the S and M share its decoder. The S has five
-                    ExpressKeys; the M and L have eight.
+                    The current Intuos Pro, with two dials instead of a touch ring and no finger touch. The L (PTK-870) works over USB and Bluetooth. The S has five ExpressKeys; the M and L have eight.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -1032,8 +982,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos Pro S (PTK-470)</td>
                                 <td><code>0x03F5</code></td>
@@ -1045,8 +995,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos Pro M (PTK-670)</td>
                                 <td><code>0x03F7</code></td>
@@ -1058,7 +1008,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Intuos Pro L (PTK-870)</td>
@@ -1078,12 +1028,7 @@
                     <span class="muted-h">&middot; 2007–present</span>
                 </h2>
                 <p>
-                    A long line that Wacom sold as Bamboo, Intuos, or Wacom One, depending on year and region. Pressure
-                    ranges from 1024 to 4096 levels, with no
-                    tilt or rotation. The Bamboo Pen (CTL-460) and Bamboo Touch (CTT-460) work on real hardware, and most others share their decoders. The 2023
-                    Wacom One S and M (CTC-x110WL) connect over
-                    USB or Bluetooth, and have an Android mode
-                    with its own product ID.
+                    Sold as Bamboo, Intuos, or Wacom One depending on year and region: 1024 to 4096 pressure levels, no tilt. The Bamboo Pen (CTL-460) and Bamboo Touch (CTT-460) work. The 2023 Wacom One S and M connect over USB or Bluetooth.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -1105,8 +1050,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo One (CTF-430)</td>
                                 <td><code>0x0069</code></td>
@@ -1118,7 +1063,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Bamboo Touch (CTT-460)</td>
@@ -1131,8 +1076,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo Pen &amp; Touch (CTH-460)</td>
                                 <td><code>0x00D1</code></td>
@@ -1144,8 +1089,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo Fun Pen &amp; Touch (CTH-461)</td>
                                 <td><code>0x00D6</code></td>
@@ -1157,8 +1102,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo Pen (CTL-660)</td>
                                 <td><code>0x00D7</code></td>
@@ -1170,8 +1115,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTE-460</td>
                                 <td><code>0x006A</code></td>
@@ -1183,8 +1128,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTE-650</td>
                                 <td><code>0x0018</code></td>
@@ -1196,8 +1141,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTE-660</td>
                                 <td><code>0x006B</code></td>
@@ -1209,8 +1154,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo Pen (CTL-660)</td>
                                 <td><code>0x00D5</code></td>
@@ -1222,8 +1167,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo Craft (CTH-461)</td>
                                 <td><code>0x00D2</code></td>
@@ -1235,7 +1180,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Bamboo Pen (CTL-460)</td>
@@ -1248,8 +1193,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo Pen &amp; Touch SE (CTH-461SE)</td>
                                 <td><code>0x00DA</code></td>
@@ -1261,8 +1206,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Bamboo Pen &amp; Touch SE (CTH-661SE)</td>
                                 <td><code>0x00DB</code></td>
@@ -1274,8 +1219,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTH-661</td>
                                 <td><code>0x00D3</code>, <code>0x00D8</code></td>
@@ -1287,8 +1232,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTH-470</td>
                                 <td><code>0x00DE</code></td>
@@ -1300,8 +1245,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTH-670</td>
                                 <td><code>0x00DF</code></td>
@@ -1313,8 +1258,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-470</td>
                                 <td><code>0x00DD</code></td>
@@ -1326,8 +1271,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTH-300</td>
                                 <td><code>0x0319</code></td>
@@ -1339,8 +1284,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTH-301</td>
                                 <td><code>0x0318</code></td>
@@ -1352,8 +1297,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTH-480</td>
                                 <td><code>0x0302</code></td>
@@ -1365,8 +1310,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTH-680</td>
                                 <td><code>0x0303</code></td>
@@ -1378,8 +1323,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-471</td>
                                 <td><code>0x0300</code></td>
@@ -1391,8 +1336,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-480</td>
                                 <td><code>0x030E</code></td>
@@ -1404,8 +1349,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-671</td>
                                 <td><code>0x0301</code></td>
@@ -1417,8 +1362,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-680</td>
                                 <td><code>0x0323</code></td>
@@ -1430,8 +1375,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTH-490</td>
                                 <td><code>0x033C</code></td>
@@ -1443,7 +1388,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Wacom CTH-690</td>
@@ -1456,8 +1401,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-472</td>
                                 <td><code>0x037A</code></td>
@@ -1469,8 +1414,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-490</td>
                                 <td><code>0x033B</code></td>
@@ -1482,8 +1427,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-672</td>
                                 <td><code>0x037B</code></td>
@@ -1495,8 +1440,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-690</td>
                                 <td><code>0x033D</code></td>
@@ -1508,8 +1453,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-4100</td>
                                 <td><code>0x0374</code></td>
@@ -1521,8 +1466,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-4100WL</td>
                                 <td><code>0x0376</code>, <code>0x0377</code>, <code>0x03C5</code></td>
@@ -1534,8 +1479,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-6100</td>
                                 <td><code>0x0375</code></td>
@@ -1547,8 +1492,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom CTL-6100WL</td>
                                 <td><code>0x0378</code>, <code>0x03C7</code></td>
@@ -1560,8 +1505,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>CTL-4100WL</td>
                                 <td><code>0x03C6</code></td>
@@ -1573,8 +1518,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>CTL-6100WL</td>
                                 <td><code>0x03C8</code></td>
@@ -1586,8 +1531,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Intuos M (CTL-6100WL)</td>
                                 <td><code>0x0379</code></td>
@@ -1599,7 +1544,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>One S (CTC-4110WL)</td>
@@ -1612,7 +1557,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>One S (CTC-4110WL)</td>
@@ -1625,8 +1570,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>One S (CTC-4110WL, Android)</td>
                                 <td><code>0x0104</code></td>
@@ -1638,8 +1583,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>One M (CTC-6110WL)</td>
                                 <td><code>0x0102</code></td>
@@ -1651,7 +1596,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>One M (CTC-6110WL)</td>
@@ -1664,8 +1609,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>One M (CTC-6110WL, Android)</td>
                                 <td><code>0x0105</code></td>
@@ -1677,7 +1622,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Bamboo Touch (CTT-460A)</td>
@@ -1690,7 +1635,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Bamboo Touch (CTT-470)</td>
@@ -1710,16 +1655,7 @@
                     <span class="muted-h">&middot; 2005–present</span>
                 </h2>
                 <p>
-                    Pen displays with built-in screens. Older
-                    models use a 10-byte report, with
-                    ExpressKeys and touch rings in a separate
-                    report. Newer models (Cintiq 16 onward) use
-                    the same format as Intuos Pro Gen 2. The
-                    24HD has a touch ring on each side, each
-                    with three assignable modes. On models with
-                    finger touch, MockTab pairs the separate
-                    touch sensor with its display automatically,
-                    so it has no row of its own.
+                    Pen displays with built-in screens. On models with finger touch, the touch sensor has its own ID; MockTab pairs it with the display, so it has no row of its own.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -1741,8 +1677,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 21UX (DTZ-2100)</td>
                                 <td><code>0x003F</code></td>
@@ -1754,8 +1690,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 12WX</td>
                                 <td><code>0x00C6</code></td>
@@ -1767,8 +1703,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 20WSX (DTZ-2000W)</td>
                                 <td><code>0x00C5</code></td>
@@ -1780,8 +1716,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 21UX2 (DTK-2100)</td>
                                 <td><code>0x00CC</code></td>
@@ -1793,7 +1729,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Cintiq 24HD (DTK-2400)</td>
@@ -1806,8 +1742,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 22HD (DTK-2200)</td>
                                 <td><code>0x00FA</code>, <code>0x00F9</code></td>
@@ -1819,8 +1755,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 13HD (DTK-1300)</td>
                                 <td><code>0x0304</code></td>
@@ -1832,8 +1768,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 24HD Touch (DTH-2400)</td>
                                 <td><code>0x00F8</code></td>
@@ -1845,8 +1781,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 22HD Touch (DTH-2200)</td>
                                 <td><code>0x005B</code></td>
@@ -1858,8 +1794,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq Companion 2 (DTH-W1310)</td>
                                 <td><code>0x0325</code></td>
@@ -1871,8 +1807,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 27QHD (DTK-2700)</td>
                                 <td><code>0x032A</code></td>
@@ -1884,7 +1820,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Cintiq 27QHD Touch (DTH-2700)</td>
@@ -1897,8 +1833,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 13HD Touch (DTH-1300)</td>
                                 <td><code>0x0333</code></td>
@@ -1910,7 +1846,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>MobileStudio Pro 13 (DTH-W1320)</td>
@@ -1923,7 +1859,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>MobileStudio Pro 16 (DTH-W1620)</td>
@@ -1936,8 +1872,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq Pro 16 (DTH-1620)</td>
                                 <td><code>0x0350</code></td>
@@ -1949,7 +1885,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>MobileStudio Pro 16 (DTH-W1620, alt)</td>
@@ -1962,8 +1898,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTH-1320</td>
                                 <td><code>0x034F</code></td>
@@ -1975,7 +1911,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Cintiq Pro 24 (DTK-2420, pen only)</td>
@@ -1988,8 +1924,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq Pro 24 (DTH-2420, touch)</td>
                                 <td><code>0x0351</code></td>
@@ -2001,8 +1937,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 16 (DTK-1660)</td>
                                 <td><code>0x0390</code>, <code>0x03AE</code></td>
@@ -2014,8 +1950,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq Pro 32 (DTH-3220)</td>
                                 <td><code>0x0352</code></td>
@@ -2027,8 +1963,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom One (DTC-133)</td>
                                 <td><code>0x03A6</code></td>
@@ -2040,7 +1976,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Cintiq 22 (DTK-2260)</td>
@@ -2053,7 +1989,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>MobileStudio Pro 13 (DTH-W1321)</td>
@@ -2066,7 +2002,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>MobileStudio Pro 16 (DTH-W1621)</td>
@@ -2079,7 +2015,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>One (DTC-133)</td>
@@ -2092,7 +2028,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Cintiq Pro 16 (DTH-167)</td>
@@ -2105,8 +2041,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq Pro 27 (DTH-271)</td>
                                 <td><code>0x03C0</code></td>
@@ -2118,8 +2054,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>One Pen Display 12 (DTC-121)</td>
                                 <td><code>0x03CE</code></td>
@@ -2131,8 +2067,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq Pro 22 (DTH-227)</td>
                                 <td><code>0x03D0</code></td>
@@ -2144,8 +2080,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq Pro 17 (DTH172)</td>
                                 <td><code>0x03C4</code></td>
@@ -2157,8 +2093,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>One Pen Display 13 (DTH134)</td>
                                 <td><code>0x03CB</code></td>
@@ -2170,8 +2106,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>DTH134</td>
                                 <td><code>0x03EC</code></td>
@@ -2183,8 +2119,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>DTC121</td>
                                 <td><code>0x03ED</code></td>
@@ -2196,8 +2132,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Movink 13 (DTH-135)</td>
                                 <td><code>0x03F0</code></td>
@@ -2209,7 +2145,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Cintiq 16 gen 3 (DTK-168)</td>
@@ -2222,7 +2158,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>One 14 (DTC-141)</td>
@@ -2235,7 +2171,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Cintiq 24 (DTK246)</td>
@@ -2248,7 +2184,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Cintiq 24 Touch (DTH246)</td>
@@ -2261,7 +2197,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTK-1660E</td>
@@ -2274,7 +2210,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTK-1660E</td>
@@ -2287,7 +2223,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTK-168E</td>
@@ -2300,7 +2236,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTK-246E</td>
@@ -2313,7 +2249,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTH-246E</td>
@@ -2326,7 +2262,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>One 14 Touch (DTH142)</td>
@@ -2339,7 +2275,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>One 14 Touch (DTH142)</td>
@@ -2352,8 +2288,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Cintiq 22 (DTK-2241)</td>
                                 <td><code>0x0057</code></td>
@@ -2365,7 +2301,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Cintiq 22 Touch (DTH-2242)</td>
@@ -2410,7 +2346,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTU-710</td>
@@ -2423,8 +2359,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTU-2231</td>
                                 <td><code>0x00CE</code></td>
@@ -2436,8 +2372,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTU-1631</td>
                                 <td><code>0x00F0</code></td>
@@ -2449,8 +2385,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTU-1031</td>
                                 <td><code>0x00FB</code></td>
@@ -2462,8 +2398,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTU-1031X</td>
                                 <td><code>0x032F</code></td>
@@ -2475,8 +2411,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTU-1141</td>
                                 <td><code>0x0336</code></td>
@@ -2488,8 +2424,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTK-1651 (Cintiq 16)</td>
                                 <td><code>0x0343</code></td>
@@ -2501,8 +2437,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTU-1141B</td>
                                 <td><code>0x0359</code></td>
@@ -2514,8 +2450,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Wacom DTH-1152</td>
                                 <td><code>0x035A</code></td>
@@ -2527,7 +2463,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTI-520</td>
@@ -2540,7 +2476,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTU-1931</td>
@@ -2553,7 +2489,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>DTH-2452</td>
@@ -2573,8 +2509,7 @@
                     <span class="muted-h">&middot; 1998–2005</span>
                 </h2>
                 <p>
-                    The pen displays before the Cintiq line; Wacom also sold the PL-550 and PL-800 as the Cintiq 15X and 18SX. No tilt and no ExpressKeys. The
-                    decoder follows the Linux driver. A PL-800 confirmed the display switches on, but pen input needs further testing.
+                    The pen displays before the Cintiq; the PL-550 and PL-800 were also sold as the Cintiq 15X and 18SX. No tilt or ExpressKeys. A PL-800 switches on, but its pen is untested.
                 </p>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -2596,7 +2531,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>PL400</td>
@@ -2609,7 +2544,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>PL500</td>
@@ -2622,8 +2557,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>PL600</td>
                                 <td><code>0x0032</code></td>
@@ -2635,7 +2570,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Pending</span
+                                        >Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>PL550 (Cintiq 15X)</td>
@@ -2648,8 +2583,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>PL800 (Cintiq 18SX)</td>
                                 <td><code>0x0035</code></td>
@@ -2661,8 +2596,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>PL700</td>
                                 <td><code>0x0037</code></td>
@@ -2674,8 +2609,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>DTF-521</td>
                                 <td><code>0x00C4</code></td>
@@ -2687,8 +2622,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>PL600SX</td>
                                 <td><code>0x0033</code></td>
@@ -2700,8 +2635,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>PL510</td>
                                 <td><code>0x0038</code></td>
@@ -2713,8 +2648,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>DTF-720</td>
                                 <td><code>0x00C0</code></td>
@@ -2726,8 +2661,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>DTF-720a</td>
                                 <td><code>0x00C2</code></td>
@@ -2766,7 +2701,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Xencelabs Pen Display 24</td>
@@ -2777,7 +2712,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <span class="visually-hidden">Pending</span
+                                    <span class="visually-hidden">Untested</span
                                     ><span aria-hidden="true">&#8230;</span>
                                 </td>
                                 <td>Xencelabs Pen Display 16</td>
@@ -2789,7 +2724,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Xencelabs Quick Keys</td>
@@ -2801,7 +2736,7 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Confirmed</span
+                                        >Works</span
                                     ><span aria-hidden="true">&#10003;</span>
                                 </td>
                                 <td>Quick Keys wireless dongle</td>
@@ -2813,8 +2748,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Xencelabs Pen Tablet Medium</td>
                                 <td><code>0x5201</code></td>
@@ -2825,8 +2760,8 @@
                             <tr>
                                 <td>
                                     <span class="visually-hidden"
-                                        >Generic-decoder</span
-                                    ><span aria-hidden="true">&#9888;</span>
+                                        >Likely works</span
+                                    ><span aria-hidden="true">&#8776;</span>
                                 </td>
                                 <td>Xencelabs Pen Tablet Small</td>
                                 <td><code>0x5204</code></td>
@@ -2838,55 +2773,22 @@
                     </table>
                 </div>
                 <p class="note">
-                    Quick Keys' 8 keys, mode button, and dial
-                    work the same directly or through the
-                    wireless dongle; MockTab treats both as one
-                    device. Reports don't distinguish the
-                    bundle's 3-button pen from the thinner
-                    2-button pen, so both appear as
-                    &ldquo;Xencelabs Pen.&rdquo;
+                    Quick Keys&rsquo; 8 keys, mode button, and dial work the same plugged in or through the wireless dongle. MockTab can&rsquo;t tell the bundle&rsquo;s 3-button pen from the thinner 2-button pen, so both appear as &ldquo;Xencelabs Pen.&rdquo;
                 </p>
 
                 <h2>Wireless</h2>
                 <ul class="bullets">
                     <li>
-                        <strong
-                            >USB dongle (ACK-40401, PID
-                            <code>0x0084</code>):</strong
-                        >
-                        works once paired. MockTab detects
-                        the paired tablet's format on
-                        connection.
+                        <strong>USB dongle</strong> (ACK-40401, ID <code>0x0084</code>): works once paired with a supported tablet.
                     </li>
                     <li>
-                        <strong>Bluetooth:</strong>
-                        works on the Intuos Pro Gen 2
-                        (PTH-460/660/860) and Gen 3
-                        (PTK-470/670/870). The Intuos
-                        CTL-4100WL/6100WL and Wacom One S/M
-                        also connect over Bluetooth, with less testing. Pair in System
-                        Settings; MockTab finds them and
-                        merges them with the matching USB
-                        entry.
+                        <strong>Bluetooth</strong>: works on the Intuos Pro Gen 2 (PTH-460/660/860) and Gen 3 (PTK-470/670/870); the Intuos CTL-4100WL/6100WL and Wacom One S/M are less tested. Pair in System Settings; MockTab lists the tablet under its USB entry.
                     </li>
                     <li>
-                        <strong
-                            >Wireless receivers (Intuos4/5/Pro Gen 1
-                            WL):</strong
-                        >
-                        the receivers (IDs
-                        <code>0x009D</code> and
-                        <code>0x009A</code>) pass along the
-                        paired tablet's reports. Pen input
-                        works on an Intuos5 L (PTH-850) over
-                        the wireless kit; other models need further testing.
+                        <strong>Wireless kit</strong> (Intuos4, Intuos5, and Intuos Pro Gen 1; receiver IDs 0x009D and 0x009A): works on an Intuos5 L (PTH-850); other models are untested.
                     </li>
                     <li>
-                        <strong>Intuos Pro Gen 2 &ldquo;LE&rdquo; identity:</strong>
-                        these tablets also show a second
-                        Bluetooth device, which Wacom's paper notes mode uses, not tablet input.
-                        Pair the &ldquo;BT&rdquo; one
-                        instead.
+                        <strong>Second Bluetooth device</strong> (Intuos Pro Gen 2): Wacom&rsquo;s paper-notes feature uses it, not tablet input. Pair the one whose name ends in &ldquo;BT.&rdquo;
                     </li>
                     <li>
                         <strong>ExpressKey Remote (EKR-100, PID
@@ -2920,13 +2822,7 @@
                 </ul>
 
                 <p class="note">
-                    Have an unlisted tablet, or a pending one
-                    you've tested? Please <a
-                    href="https://github.com/Cyzor/tablet-driver/issues/new">open
-                    an issue</a> with the model number and what
-                    you saw, and attach the zip file from
-                    <strong>Help › Collect Device
-                    Data…</strong>.
+                    Have a tablet that isn&rsquo;t listed, or tried one marked untested? Please <a href="https://github.com/Cyzor/tablet-driver/issues/new">open an issue</a> with the model number and what happened, and attach the zip file from <strong>Help › Collect Device Data…</strong>.
                 </p>
 
                 <p class="note">

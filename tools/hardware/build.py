@@ -27,9 +27,9 @@ PAGE = ROOT / "hardware.html"
 DATA = Path(__file__).with_name("devices.json")
 DEFAULT_REGISTRY = ROOT.parent / "mocktab-app" / "TabletKit" / "registry.json"
 
-STATUS = {"verified": "Confirmed", "crossReferenced": "Generic-decoder", "experimental": "Pending"}
-RANK = {"Pending": 0, "Generic-decoder": 1, "Confirmed": 2}
-SYMBOL = {"Confirmed": "&#10003;", "Generic-decoder": "&#9888;", "Pending": "&#8230;"}
+STATUS = {"verified": "Works", "crossReferenced": "Likely works", "experimental": "Untested"}
+RANK = {"Untested": 0, "Likely works": 1, "Works": 2}
+SYMBOL = {"Works": "&#10003;", "Likely works": "&#8776;", "Untested": "&#8230;"}
 BITS = {255: 8, 511: 9, 1023: 10, 2047: 11, 4095: 12, 8191: 13}
 
 
@@ -59,7 +59,7 @@ def defaults(d):
 
 
 def render_row(pid, rec, reg):
-    row = defaults(reg) if reg else {"status": "Pending", "pressure": "—", "buttons": "—", "transport": "USB"}
+    row = defaults(reg) if reg else {"status": "Untested", "pressure": "—", "buttons": "—", "transport": "USB"}
     for k in ("name", "pressure", "buttons", "transport"):
         if k in rec:
             row[k] = rec[k]

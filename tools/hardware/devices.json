@@ -87,31 +87,31 @@
   "0x0020": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 0
   },
   "0x0021": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 1
   },
   "0x0022": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 2
   },
   "0x0023": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 3
   },
   "0x0024": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 4
   },
   "0x0026": {
@@ -206,31 +206,31 @@
   "0x0041": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 0
   },
   "0x0042": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 1
   },
   "0x0043": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 2
   },
   "0x0044": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 3
   },
   "0x0045": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 4
   },
   "0x0047": {
@@ -292,7 +292,7 @@
    "year": "~2009",
    "name": "Wacom CTE-460",
    "pressure": "511 (9-bit)",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 7
   },
   "0x006B": {
@@ -461,7 +461,7 @@
    "year": "2011",
    "buttons": "4",
    "order": 4,
-   "status": "Confirmed"
+   "status": "Works"
   },
   "0x00D5": {
    "section": "consumer",
@@ -592,14 +592,14 @@
    "section": "consumer",
    "year": "~2013",
    "name": "Wacom CTL-471",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 22
   },
   "0x0301": {
    "section": "consumer",
    "year": "~2013",
    "name": "Wacom CTL-671",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 26
   },
   "0x0302": {
@@ -620,7 +620,7 @@
    "section": "displays",
    "year": "2013",
    "buttons": "4 keys + rocker ring",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 4
   },
   "0x030E": {
@@ -644,7 +644,7 @@
    "pidCell": "<code>0x0316</code>, <code>0x0315</code>",
    "year": "2013",
    "buttons": "8 keys + ring",
-   "status": "Confirmed",
+   "status": "Works",
    "order": 6
   },
   "0x0317": {
@@ -733,7 +733,7 @@
    "year": "~2016",
    "name": "Wacom CTH-690",
    "buttons": "4",
-   "status": "Confirmed",
+   "status": "Works",
    "order": 20
   },
   "0x0343": {
@@ -801,7 +801,7 @@
    "name": "Wacom DTU-1141B",
    "pressure": "8191 (13-bit)",
    "buttons": "4",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 6
   },
   "0x035A": {
@@ -809,7 +809,7 @@
    "name": "Wacom DTH-1152",
    "pressure": "8191 (13-bit)",
    "buttons": "touch, no pen eraser",
-   "status": "Generic-decoder",
+   "status": "Likely works",
    "order": 7
   },
   "0x0374": {
