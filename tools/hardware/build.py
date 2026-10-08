@@ -5,7 +5,8 @@ Rebuild the device tables in hardware.html from TabletKit's registry.
 The registry supplies each device's name, pressure, button count, and
 confidence. tools/hardware/devices.json supplies what it lacks: which table a
 device belongs in, its year, its position among devices of the same year,
-and any wording or status the page should use instead. Prose outside the marked tables is left alone.
+and any wording the page should use instead. Status always comes from the
+registry. Prose outside the marked tables is left alone.
 
 Usage (from the repo root):
   tools/hardware/build.py [--registry PATH] [--check]
@@ -28,8 +29,7 @@ DATA = Path(__file__).with_name("devices.json")
 DEFAULT_REGISTRY = ROOT.parent / "mocktab-app" / "TabletKit" / "registry.json"
 
 STATUS = {"verified": "Works", "crossReferenced": "Likely works", "experimental": "Untested"}
-RANK = {"Untested": 0, "Likely works": 1, "Works": 2}
-SYMBOL = {"Works": "&#10003;", "Likely works": "&#8776;", "Untested": "&#8230;"}
+SYMBOL = {"Works": "&#10003;", "Likely works": "&#8776;", "Untested": "&#8230;", "Out of scope": "&#8856;"}
 BITS = {255: 8, 511: 9, 1023: 10, 2047: 11, 4095: 12, 8191: 13}
 
 
@@ -54,7 +54,7 @@ def defaults(d):
         "pressure": pressure,
         "buttons": f"{b} keys" if b else "—",
         "transport": "Bluetooth" if bluetooth else "USB",
-        "status": STATUS[d["confidence"]],
+        "status": "Out of scope" if d.get("outOfScope") else STATUS[d["confidence"]],
     }
 
 
@@ -63,9 +63,6 @@ def render_row(pid, rec, reg):
     for k in ("name", "pressure", "buttons", "transport"):
         if k in rec:
             row[k] = rec[k]
-    # A stored status is a floor: a later registry upgrade still shows.
-    if "status" in rec and RANK[rec["status"]] > RANK[row["status"]]:
-        row["status"] = rec["status"]
     st = row["status"]
     pid_cell = rec.get("pidCell") or f"<code>{pid}</code>"
     e = html.escape

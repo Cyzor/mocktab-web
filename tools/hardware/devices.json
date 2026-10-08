@@ -87,31 +87,26 @@
   "0x0020": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Likely works",
    "order": 0
   },
   "0x0021": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Likely works",
    "order": 1
   },
   "0x0022": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Likely works",
    "order": 2
   },
   "0x0023": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Likely works",
    "order": 3
   },
   "0x0024": {
    "section": "intuos1",
    "year": "1998",
-   "status": "Likely works",
    "order": 4
   },
   "0x0026": {
@@ -206,31 +201,26 @@
   "0x0041": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Likely works",
    "order": 0
   },
   "0x0042": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Likely works",
    "order": 1
   },
   "0x0043": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Likely works",
    "order": 2
   },
   "0x0044": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Likely works",
    "order": 3
   },
   "0x0045": {
    "section": "intuos2",
    "year": "2001",
-   "status": "Likely works",
    "order": 4
   },
   "0x0047": {
@@ -292,7 +282,6 @@
    "year": "~2009",
    "name": "Wacom CTE-460",
    "pressure": "511 (9-bit)",
-   "status": "Likely works",
    "order": 7
   },
   "0x006B": {
@@ -460,8 +449,7 @@
    "section": "consumer",
    "year": "2011",
    "buttons": "4",
-   "order": 4,
-   "status": "Works"
+   "order": 4
   },
   "0x00D5": {
    "section": "consumer",
@@ -592,14 +580,12 @@
    "section": "consumer",
    "year": "~2013",
    "name": "Wacom CTL-471",
-   "status": "Likely works",
    "order": 22
   },
   "0x0301": {
    "section": "consumer",
    "year": "~2013",
    "name": "Wacom CTL-671",
-   "status": "Likely works",
    "order": 26
   },
   "0x0302": {
@@ -620,7 +606,6 @@
    "section": "displays",
    "year": "2013",
    "buttons": "4 keys + rocker ring",
-   "status": "Likely works",
    "order": 4
   },
   "0x030E": {
@@ -640,7 +625,6 @@
    "section": "intuos5",
    "year": "2013",
    "buttons": "8 keys + ring",
-   "status": "Works",
    "order": 6
   },
   "0x0317": {
@@ -729,7 +713,6 @@
    "year": "~2016",
    "name": "Wacom CTH-690",
    "buttons": "4",
-   "status": "Works",
    "order": 20
   },
   "0x0343": {
