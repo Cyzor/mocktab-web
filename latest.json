@@ -11,22 +11,18 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-08T20:55Z",
+        "date": "2026-10-09T22:19Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
-            "One by Wacom (CTL-472, CTL-672), Bamboo Connect (CTL-470), and Bamboo CTE-460, CTE-660, and CTF-430 respond to pen input",
             "Cintiq Pro 16, Cintiq 13HD, and similar pen displays get a working pen, keys, and full tilt",
-            "Cintiq touch no longer blocks clicks, during or after use",
+            "Cintiq touch no longer blocks clicks",
             "Cintiq brightness and contrast on more connections",
-            "Better palm rejection",
-            "Calibration view fix",
+            "Touch ignores palms, the pen hand, and typing, with optional two-finger right-click and three-finger drag",
+            "Calibration on the pen display itself",
+            "ExpressKey Remote keys in its tablet's Buttons tab",
             "Span Displays button action",
-            "Click Lock button action",
-            "Disable Hover Click",
-            "Clearer status when a window's tablet isn't connected",
             "Pen identity and settings kept across Bluetooth, USB, and the eraser",
-            "Fixes for Rebelle pressure, better Xencelabs pen recognition, and Bamboo One M range",
-            "Double-click fix for macOS 27"
+            "Fixes for Rebelle pressure, Xencelabs pen recognition, and Bamboo One M range"
         ]
     }
 }
