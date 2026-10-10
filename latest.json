@@ -1,13 +1,19 @@
 {
     "release": {
-        "version": "0.5.1",
-        "date": "2026-10-01T19:04Z",
-        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.5.1/MockTab-0.5.1.dmg",
+        "version": "0.5.2",
+        "date": "2026-10-10T23:23Z",
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.5.2/MockTab-0.5.2.dmg",
         "notes": [
-            "Tilt and Art Pen rotation in apps again",
-            "Art Pen on Intuos4, Intuos5, and Intuos Pro gen 1",
-            "Hovering eraser on Intuos Pro gen 2 over Bluetooth",
-            "Tilt scale fixes"
+            "Cintiq Pro 16 pen and ExpressKeys",
+            "Preliminary Cintiq 13HD Touch support",
+            "Cintiq touch no longer blocks clicks",
+            "Cintiq brightness and contrast on more connections",
+            "Optional contact-only pen buttons",
+            "Side-button eraser",
+            "Optional two-finger right-click and three-finger drag",
+            "Better palm rejection",
+            "Span Displays button action",
+            "Calibration on the pen display itself"
         ]
     },
     "snapshot": {
