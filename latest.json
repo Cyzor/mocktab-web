@@ -17,18 +17,19 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-09T22:19Z",
+        "date": "2026-10-16T21:58Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
-            "Cintiq Pro 16, Cintiq 13HD, and similar pen displays get a working pen, keys, and full tilt",
-            "Cintiq touch no longer blocks clicks",
-            "Cintiq brightness and contrast on more connections",
-            "Touch ignores palms, the pen hand, and typing, with optional two-finger right-click and three-finger drag",
-            "Calibration on the pen display itself",
-            "ExpressKey Remote keys in its tablet's Buttons tab",
-            "Span Displays button action",
-            "Pen identity and settings kept across Bluetooth, USB, and the eraser",
-            "Fixes for Rebelle pressure, Xencelabs pen recognition, and Bamboo One M range"
+            "Faster launch, with the pen working before settings windows open",
+            "Steadier cursor on older Intuos tablets",
+            "Intuos4 recovers when it slips back into mouse mode, and its key labels turn for left-handed use",
+            "Cintiq 24HD right ring gets its own modes",
+            "Wireless kit battery level",
+            "No crash when a tablet is slow to answer at connect",
+            "A pen that leaves range over Bluetooth stays gone",
+            "Smoother ring scrolling",
+            "A notice when an Intuos is in Android mode",
+            "Settings work with Text Size, the keyboard, and VoiceOver"
         ]
     }
 }
