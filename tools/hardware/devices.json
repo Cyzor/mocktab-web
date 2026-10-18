@@ -67,6 +67,16 @@
    "penDisplay": false
   }
  },
+ "extraGlyphs": {
+  "xencelabs-display": {
+   "glyph": "0x520D",
+   "surfaceMM": [
+    527.04,
+    296.46
+   ],
+   "penDisplay": true
+  }
+ },
  "devices": {
   "0x0003": {
    "section": "graphire",
