@@ -373,6 +373,45 @@ table.matrix code {
     border-radius: 4px;
 }
 
+/* Hardware family heading: a tablet glyph beside the title and intro. */
+.family {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    column-gap: 20px;
+    margin-top: 56px;
+}
+
+.family h2 {
+    margin-top: 0;
+}
+
+.family p {
+    margin-bottom: 0;
+}
+
+.family-glyph {
+    color: var(--muted);
+    /* Centers the glyph on the title's first line. */
+    padding-top: 1px;
+}
+
+.family-glyph svg {
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .family {
+        grid-template-columns: 36px 1fr;
+        column-gap: 14px;
+        margin-top: 40px;
+    }
+
+    .family-glyph svg {
+        width: 36px;
+        height: auto;
+    }
+}
+
 .faq {
     margin: 24px 0;
     border-top: 1px solid var(--border);

@@ -8,6 +8,9 @@ device belongs in, its year, its position among devices of the same year,
 and any wording the page should use instead. Status always comes from the
 registry. Prose outside the marked tables is left alone.
 
+Each family's heading glyph comes from tools/hardware/glyphs/<slug>.svg,
+written by glyphs/export.sh, and is inlined between glyph markers.
+
 Usage (from the repo root):
   tools/hardware/build.py [--registry PATH] [--check]
 
@@ -26,6 +29,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PAGE = ROOT / "hardware.html"
 DATA = Path(__file__).with_name("devices.json")
+GLYPHS = Path(__file__).with_name("glyphs")
 DEFAULT_REGISTRY = ROOT.parent / "mocktab-app" / "TabletKit" / "registry.json"
 
 STATUS = {"verified": "Works", "crossReferenced": "Likely works", "experimental": "Untested"}
@@ -109,6 +113,18 @@ def build(page, data, registry):
 
     new = re.sub(r"<!-- hardware:([a-z0-9-]+) -->.*?<!-- /hardware:\1 -->", fill, page, flags=re.S)
     missing = set(sections) - set(re.findall(r"<!-- hardware:([a-z0-9-]+) -->", page))
+
+    def glyph(m):
+        slug = m.group(1)
+        svg = GLYPHS / f"{slug}.svg"
+        if not svg.exists():
+            missing.add(f"glyph:{slug}")
+            return m.group(0)
+        return f"<!-- glyph:{slug} -->{svg.read_text().strip()}<!-- /glyph:{slug} -->"
+
+    new = re.sub(r"<!-- glyph:([a-z0-9-]+) -->.*?<!-- /glyph:\1 -->", glyph, new, flags=re.S)
+    missing |= {f"glyph:{s}" for s in data.get("families", {})} - {
+        f"glyph:{s}" for s in re.findall(r"<!-- glyph:([a-z0-9-]+) -->", page)}
     return new, unassigned, sorted(missing)
 
 
@@ -131,7 +147,10 @@ def main():
         print(f"unassigned: {pid} {name} — add it to devices.json with a section, or to exclude")
         problems += 1
     for slug in missing:
-        print(f"no table marked for section '{slug}' in hardware.html")
+        if slug.startswith("glyph:"):
+            print(f"no glyph for family '{slug[6:]}': add its marker to hardware.html, or run glyphs/export.sh")
+        else:
+            print(f"no table marked for section '{slug}' in hardware.html")
         problems += 1
 
     if args.check:

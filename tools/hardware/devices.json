@@ -17,6 +17,56 @@
   "0x03CF": "USB-C display bridge (Billboard), not a tablet",
   "0x03F2": "USB-C display bridge (Billboard), not a tablet"
  },
+ "families": {
+  "graphire": {
+   "glyph": "0x0016"
+  },
+  "intuos1": {
+   "glyph": "0x0021"
+  },
+  "intuos2": {
+   "glyph": "0x0042"
+  },
+  "intuos3": {
+   "glyph": "0x00B5"
+  },
+  "intuos4": {
+   "glyph": "0x00B9"
+  },
+  "intuos5": {
+   "glyph": "0x0028"
+  },
+  "intuos-pro-gen2": {
+   "glyph": "0x0357"
+  },
+  "intuos-pro-gen3": {
+   "glyph": "0x03F9"
+  },
+  "consumer": {
+   "glyph": "0x0375"
+  },
+  "displays": {
+   "glyph": "0x00FA"
+  },
+  "dtu": {
+   "glyph": "0x00FB"
+  },
+  "pl": {
+   "glyph": "0x0035",
+   "surfaceMM": [
+    359,
+    287
+   ]
+  },
+  "xencelabs": {
+   "glyph": "0x5201",
+   "surfaceMM": [
+    254,
+    158.75
+   ],
+   "penDisplay": false
+  }
+ },
  "devices": {
   "0x0003": {
    "section": "graphire",

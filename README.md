@@ -36,6 +36,12 @@ from the registry. A stored status is a minimum, so a later registry upgrade
 still shows. The script lists new registry devices that have no table rather
 than guessing. `--check` exits 1 if the page is out of date.
 
+Each family heading carries a tablet glyph. `families` in `devices.json`
+names the model each one draws. `tools/hardware/glyphs/export.sh` draws them
+with the app's own figure code (it needs `../mocktab-app` and Swift), and
+`build.py` then copies them into the page. Rerun both after a family pick
+or the app's figure code changes.
+
 By default the script reads `../mocktab-app/TabletKit/registry.json`. Pass
 `--registry` to use another copy.
 
