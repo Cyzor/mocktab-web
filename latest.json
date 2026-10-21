@@ -17,7 +17,7 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-21T13:18Z",
+        "date": "2026-10-21T17:18Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
             "Faster launch, with the pen working before settings windows open",
