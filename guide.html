@@ -54,7 +54,7 @@
         <li><strong><a href="#buttons">Button Mapping</a></strong>: pen buttons, ExpressKeys, touch rings, and dials.</li>
         <li><strong><a href="#tablet-area">Tablet Area</a></strong>: active area and orientation.</li>
         <li><strong><a href="#display">Display Mapping</a></strong>: which display, and alignment.</li>
-        <li><strong><a href="#pen-feel">Pen Feel</a></strong>: pressure, smoothing, double-clicks, and rotation.</li>
+        <li><strong><a href="#pen-feel">Pen Feel</a></strong>: pressure, steadiness, clicks, and rotation.</li>
         <li><strong><a href="#touch">Touch</a></strong>: finger scrolling, tapping, and touch area, on tablets with touch.</li>
         <li><strong><a href="#scratchpad">Scratchpad</a></strong>: a blank canvas for testing.</li>
         <li><strong><a href="#info">Info</a></strong>: live tablet state, for troubleshooting.</li>
@@ -149,6 +149,10 @@
         The Button Mapping pane assigns actions to every control: pen tip, eraser, pen
         buttons, ExpressKeys, touch rings, and dials.
       </p>
+      <p>
+        Recognized tablets, pens, and mice appear as a diagram beside the list. Press a
+        control to highlight it, or click a part of the diagram to jump to its settings.
+      </p>
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/buttons-light.png" width="717" height="1243" alt="Button mapping panel for pen buttons, touch ring, and ExpressKeys">
         <img class="shot dark" src="images/ui/buttons-dark.png" width="717" height="1243" alt="Button mapping panel for pen buttons, touch ring, and ExpressKeys (dark theme)">
@@ -162,7 +166,11 @@
 
         <li>
           <p class="name">Left / Right / Middle Click</p>
-          <p class="desc">Clicks at the cursor. <em>Middle Click + Tip</em> also sends pressure, which SketchUp and a few other apps need.</p>
+          <p class="desc">Clicks at the cursor. <strong>Require Contact</strong> in Pen Feel can limit a side button's click to when the tip touches the tablet.</p>
+        </li>
+        <li>
+          <p class="name">Click Lock</p>
+          <p class="desc">Holds the left button down until the next press, for long drags without holding a button.</p>
         </li>
         <li>
           <p class="name">Double Click</p>
@@ -173,8 +181,8 @@
           <p class="desc">Switches to the eraser in many creativity apps.</p>
         </li>
         <li>
-          <p class="name">Spacebar</p>
-          <p class="desc">Presses Space. Useful for apps that pan with Space and drag.</p>
+          <p class="name">Spacebar / Escape</p>
+          <p class="desc">Presses Space or Esc. Space suits apps that pan with Space and drag.</p>
         </li>
         <li>
           <p class="name">Key Combination</p>
@@ -183,6 +191,10 @@
         <li>
           <p class="name">Toggle Display</p>
           <p class="desc">Moves the tablet to the next display. Choose the displays in the Display Mapping pane.</p>
+        </li>
+        <li>
+          <p class="name">Span Displays</p>
+          <p class="desc">Spreads the tablet across the displays chosen in Display Mapping. Press again to go back.</p>
         </li>
         <li>
           <p class="name">Ring: Cycle / Dial: Cycle</p>
@@ -221,8 +233,12 @@
         and mice have buttons 3 to 5.
       </p>
       <p>
-        Button 1 also allows <strong>hover drag</strong>: hold it while the pen hovers
-        to drag without touching the tablet.
+        Any button set to Left, Right, or Middle Click also allows <strong>hover
+        drag</strong>: hold it while the pen hovers to drag without touching the tablet.
+      </p>
+      <p>
+        A Wacom mouse or puck gets its own diagram and button rows. Its first three
+        buttons start as Left, Right, and Middle Click.
       </p>
 
       <h3 id="express-keys">Express keys</h3>
@@ -230,6 +246,10 @@
         ExpressKeys are the buttons on the tablet itself, and each can do anything a pen
         button can. They send only a press and a release, so for actions you hold down
         (like panning in some apps), assign a modifier key with Key Combination instead.
+      </p>
+      <p>
+        An Intuos4 with key displays shows each key's action beside it while connected
+        by USB. The displays dim after 5 minutes without input and turn off after 10.
       </p>
 
       <h3 id="ring-slots">Touch rings, dials, and slots</h3>
@@ -249,7 +269,7 @@
       <div class="table-scroll">
         <table class="matrix">
           <thead>
-            <tr><th>Mode</th><th>What it sends</th><th>Speed multiplier</th></tr>
+            <tr><th>Mode</th><th>What it sends</th><th>Speed</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -260,15 +280,15 @@
             <tr>
               <td><strong>Zoom</strong></td>
               <td>Smooth pinch-to-zoom, like a trackpad.</td>
-              <td>Zoom per step, up to 8&times;.</td>
+              <td>Off to Max.</td>
             </tr>
             <tr>
               <td><strong>Rotate</strong></td>
               <td>Smooth two-finger rotate, like a trackpad.</td>
-              <td>At 1.0&times;, one full turn of the ring or dial turns the canvas 360&deg;. Lower values turn it less.</td>
+              <td>Off to Max. At Max, one full turn of the ring or dial turns the canvas 360&deg;.</td>
             </tr>
             <tr>
-              <td><strong>Key Press</strong></td>
+              <td><strong>Key</strong></td>
               <td>One shortcut for clockwise and another for counterclockwise.</td>
               <td>Higher values send more presses per step.</td>
             </tr>
@@ -290,8 +310,9 @@
         (<kbd>[</kbd> / <kbd>]</kbd>).
       </p>
       <p>
-        <strong>Touch strips</strong> on older Intuos tablets use the same slots. Each
-        strip has its own action and speed.
+        <strong>Touch strips</strong> on older Intuos and Cintiq tablets use the same
+        slots, and both strips share them. On the Cintiq 21UX2 and 22HD, each strip
+        has its own modes and a <strong>Strip Toggle</strong> button beside it.
       </p>
       <p>
         Assign <strong>Cycle</strong> to a pen button or ExpressKey to change modes
@@ -404,14 +425,14 @@
         press; up is what the app receives. The preview updates as you drag.
       </p>
 
-      <h3 id="smoothing">Smoothing</h3>
+      <h3 id="smoothing">Steadiness</h3>
       <p>
-        <strong>Smoothing</strong> steadies the cursor against hand tremor. Higher
+        <strong>Steadiness</strong> steadies the cursor against hand tremor. Higher
         values smooth more but add lag. For drawing, moderate values work well. For
         pixel-precise work, set it to zero.
       </p>
       <p>
-        Smoothing moves only the cursor, and eases off during fast strokes.
+        Steadiness moves only the cursor, and eases off during fast strokes.
       </p>
       <p>
         <strong>Pressure Smoothing</strong> steadies pressure on its own.
@@ -422,6 +443,11 @@
         <strong>Drag Threshold</strong> sets how far the cursor must move before a press
         becomes a drag, which helps with jittery pens. <strong>Tip-up Assist</strong>
         keeps the end of a fast stroke from getting clipped when you lift the pen.
+      </p>
+      <p>
+        <strong>Require Contact</strong> makes side buttons set to Right Click, Middle
+        Click, Double Click, or Pan View work only while the tip touches the tablet.
+        Unchecked actions work while the pen hovers.
       </p>
 
       <h3 id="double-click">Double-click distance</h3>
@@ -461,17 +487,23 @@
       <h2 id="touch">Touch</h2>
       <p>
         The Touch pane sets up finger touch on tablets that have it. Touch has its own
-        on/off switch, sensitivity, and area, separate from the pen.
+        on/off switch, cursor speed, and area, separate from the pen.
       </p>
       <p>
-        <strong>Enable finger touch</strong> turns touch on. Some tablets also have a
+        <strong>Enable Finger Touch</strong> turns touch on. Some tablets also have a
         touch switch on the tablet itself, which must be on too.
       </p>
       <p>
         <strong>Two-finger scroll</strong> scrolls smoothly, just like a Magic Trackpad,
         including the bounce at the edges in Safari and Preview. <strong>Reverse
         direction</strong> flips it to feel like a mouse wheel.
-        <strong>Sensitivity</strong> sets how fast one finger moves the cursor.
+        <strong>Cursor Speed</strong> sets how fast one finger moves the cursor.
+      </p>
+      <p>
+        <strong>Tap to Click</strong> clicks with a brief touch.
+        <strong>Two-Finger Right-Click</strong> right-clicks with a brief two-finger
+        touch. With <strong>Three-Finger Drag</strong>, three fingers hold the mouse
+        button down while they move.
       </p>
       <p>
         <strong>Momentum Scrolling</strong> keeps content coasting after you lift your
@@ -510,13 +542,13 @@
         pen is in range, and hover height.
       </p>
       <p>
-        The <strong>Jitter</strong> reading shows how steady the pen signal is. High
-        readings that persist can mean interference, a low battery on a Bluetooth
-        tablet, or a hardware problem.
-      </p>
-      <p>
         Use it to check that the tablet sends data, that a button works, or that the
         cursor lines up, without opening a drawing app.
+      </p>
+      <p>
+        On an Intuos5 or Intuos Pro (2013) with the Wacom wireless kit, the
+        <strong>Battery</strong> row also sets how long the tablet sits unused before it
+        sleeps.
       </p>
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/info-light.png" width="717" height="1080" alt="MockTab Info pane with live tablet state values">
