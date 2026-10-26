@@ -1,19 +1,25 @@
 {
     "release": {
-        "version": "0.5.2",
-        "date": "2026-10-10T23:23Z",
-        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.5.2/MockTab-0.5.2.dmg",
+        "version": "0.6.0",
+        "date": "2026-10-26T15:01Z",
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.6.0/MockTab-0.6.0.dmg",
         "notes": [
-            "Cintiq Pro 16 pen and ExpressKeys",
-            "Preliminary Cintiq 13HD Touch support",
-            "Cintiq touch no longer blocks clicks",
-            "Cintiq brightness and contrast on more connections",
-            "Optional contact-only pen buttons",
-            "Side-button eraser",
-            "Optional two-finger right-click and three-finger drag",
-            "Better palm rejection",
-            "Span Displays button action",
-            "Calibration on the pen display itself"
+            "The Buttons pane draws your tablet, lights each key as you press it, and jumps to any control you click",
+            "Drawings, key assignments, and pen tilt turn with the tablet, and ⌘⌥1–4 picks an orientation",
+            "Preliminary touch strips and keys on older Cintiqs, and each touch strip keeps its own modes",
+            "Graphire-era tablets switch into full pen mode and click more reliably",
+            "Preliminary Graphire 3 Wireless support",
+            "Bamboo Touch ExpressKeys",
+            "Wireless kit battery level and sleep timer",
+            "Intuos4 key labels wrap to fit, turn with the tablet, and dim when idle",
+            "Art Pen 2 rotation",
+            "Intuos4 Grip Pen side buttons and full pressure on Intuos Pro (2017)",
+            "Side buttons stay held near the edge of range",
+            "Cintiq 24HD right ring gets its own modes",
+            "Faster launch, with the pen working before settings windows open",
+            "Steadier cursor on older Intuos tablets",
+            "Settings work with Text Size, the keyboard, and VoiceOver",
+            "The Auto-Switch toggle leaves Profiles"
         ]
     },
     "snapshot": {
