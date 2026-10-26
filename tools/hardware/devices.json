@@ -351,6 +351,12 @@
    "pressure": "511 (9-bit)",
    "order": 9
   },
+  "0x0081": {
+   "section": "graphire",
+   "year": "2004",
+   "transport": "Bluetooth Classic",
+   "order": 6
+  },
   "0x00B0": {
    "section": "intuos3",
    "year": "2004",
