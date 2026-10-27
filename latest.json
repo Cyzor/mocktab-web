@@ -23,19 +23,14 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-24T15:39Z",
+        "date": "2026-10-27T20:28Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
-            "Faster launch, with the pen working before settings windows open",
-            "Steadier cursor on older Intuos tablets",
-            "Intuos4 recovers when it slips back into mouse mode, and its key labels turn for left-handed use",
-            "Cintiq 24HD right ring gets its own modes",
-            "Wireless kit battery level",
-            "No crash when a tablet is slow to answer at connect",
-            "A pen that leaves range over Bluetooth stays gone",
-            "Smoother ring scrolling",
-            "A notice when an Intuos is in Android mode",
-            "Settings work with Text Size, the keyboard, and VoiceOver"
+            "Renaming a tablet works again",
+            "Tablet Area shows the active area's size in millimeters or inches, editable in place",
+            "The Info pane can show or hide the Dock icon",
+            "Pen clicks and window activation should work on macOS 27.2",
+            "Pan View scrolls Finder's columns sideways more reliably, locks to an axis only on a straight start, and no longer leaves a click stuck"
         ]
     }
 }
