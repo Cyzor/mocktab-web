@@ -23,7 +23,7 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-27T22:08Z",
+        "date": "2026-10-29T05:15Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
             "Renaming a tablet works again",
@@ -31,7 +31,11 @@
             "Tablet Area shows the active area's size in millimeters or inches, editable in place",
             "The Info pane can show or hide the Dock icon",
             "Pen clicks and window activation should work on macOS 27.2",
-            "Pan View scrolls Finder's columns sideways more reliably, locks to an axis only on a straight start, and no longer leaves a click stuck"
+            "Pan View scrolls Finder's columns sideways more reliably, locks to an axis only on a straight start, and no longer leaves a click stuck",
+            "A tap that wobbles on contact stays a click",
+            "Pen actions saved by another version keep working and show a question mark in the Buttons pane",
+            "Firm presses no longer fire the side buttons of newer Grip Pens on Intuos Pro (2017)",
+            "Backups restore each pen's settings, and an import leaves alone any setting it can't read"
         ]
     }
 }
