@@ -79,11 +79,8 @@
  },
  "devices": {
   "0x0003": {
-   "section": "graphire",
-   "year": "1996",
-   "name": "PenPartner",
-   "pressure": "255 (8-bit)",
-   "order": 0
+   "section": "pl",
+   "order": 12
   },
   "0x0004": {
    "section": "graphire",
