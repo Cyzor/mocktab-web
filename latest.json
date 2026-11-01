@@ -23,26 +23,25 @@
         ]
     },
     "snapshot": {
-        "date": "2026-10-30T19:37Z",
+        "date": "2026-11-01T14:12Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
             "Renaming a tablet works again",
             "The Cintiq 24HD Touch pen works again alongside touch",
-            "Tablet Area shows the active area's size in millimeters or inches, editable in place",
-            "The Info pane can show or hide the Dock icon",
             "Pen clicks and window activation should work on macOS 27.2",
-            "Pan View scrolls Finder's columns sideways more reliably, starts a fresh pan when you turn to the other direction, locks to an axis only on a straight start, and no longer leaves a click stuck",
+            "Tablet Area shows the active area's size in millimeters or inches, editable in place",
+            "Pan View and two-finger scrolling reach Finder's column view more reliably, start fresh when you turn, and lock to an axis only on a straight start",
             "A tap that wobbles on contact stays a click",
-            "Pen actions saved by another version keep working and show a question mark in the Buttons pane",
-            "Firm presses no longer fire the side buttons of newer Grip Pens on Intuos Pro (2017)",
-            "Backups restore each pen's settings, and an import leaves alone any setting it can't read",
-            "Each tablet keeps its own pen list, and a pen the tablet doesn't support says so",
-            "Recorded shortcuts read as in macOS menus (⌥Z, not ⌥Ω) and show dead keys",
-            "Numbers follow your region",
-            "Help matches the app's language, and its title no longer covers the text",
-            "Japanese Intuos4 key labels wrap at natural breaks",
-            "A profile named Default can be deleted",
-            "Timing holds steady when macOS adjusts the clock"
+            "The Cintiq 22HD's three top keys work",
+            "Preliminary Cintiq Partner (PTU-600) support",
+            "An Art Pen on Intuos4 and Intuos5-era tablets updates twice as often",
+            "A hand resting on a touch ring no longer scrolls",
+            "The conflicts alert names the driver that's running",
+            "Pen actions saved by another version keep working",
+            "Backups restore each pen's settings",
+            "Each tablet keeps its own pen list",
+            "Recorded shortcuts read as in macOS menus",
+            "A smaller download"
         ]
     }
 }
