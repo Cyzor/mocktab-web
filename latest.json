@@ -23,29 +23,21 @@
         ]
     },
     "snapshot": {
-        "date": "2026-11-04T21:35Z",
+        "date": "2026-11-05T18:43Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
-            "Renaming a tablet works again",
-            "The Cintiq 24HD Touch pen works again alongside touch",
+            "A held ExpressKey shortcut no longer leaves a key down after the pen leaves range",
             "Pen clicks and window activation should work on macOS 27.2",
-            "Tablet Area shows the active area's size in millimeters or inches",
-            "Pan View and two-finger scrolling reach Finder's column view more reliably",
             "A tap that wobbles on contact stays a click",
             "Presses and window drags no longer stick on small tablets with large displays",
+            "Renaming a tablet works again",
+            "The Cintiq 24HD Touch pen works again alongside touch",
             "The Cintiq 22HD's three top keys work",
+            "The 2017 Cintiq Pro 16 should start its pen and touch reliably",
             "Preliminary Cintiq Partner (PTU-600) support",
             "Preliminary touch on the Bamboo Pen & Touch 6×8",
             "An Art Pen on Intuos4 and Intuos5-era tablets updates twice as often",
-            "A hand resting on a touch ring no longer scrolls",
-            "The conflicts alert names the driver that's running",
-            "Each tablet keeps its own pen list",
-            "Pen settings open on the pen used last, and a pen button set to None says so",
-            "Recorded shortcuts read as in macOS menus",
-            "Pan View scrolling direction now reversible",
-            "The 2017 Cintiq Pro 16 should start its pen and touch reliably",
-            "Settings that have no effect on a tablet stay hidden",
-            "A smaller download"
+            "Pan View and two-finger scrolling reach Finder's column view more reliably"
         ]
     }
 }
