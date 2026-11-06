@@ -167,10 +167,19 @@
                 document.getElementById("result").replaceChildren(status, cards, caveat);
             }
 
+            // Downloads come only from the project's own releases, even if
+            // latest.json is tampered with.
+            const downloads = "https://github.com/Cyzor/tablet-driver/releases/download/";
+            // Checked as the browser resolves it, so ".." can't climb out.
+            function trusted(url) {
+                try { return new URL(url).href.startsWith(downloads); } catch { return false; }
+            }
+
             let latest = null;
             fetch("/latest.json", { cache: "no-store" })
                 .then((r) => (r.ok ? r.json() : Promise.reject()))
                 .then((j) => {
+                    if (!trusted(j.release.url) || !trusted(j.snapshot.url)) return;
                     latest = j; render(latest);
                 })
                 .catch(() => {}); // Keep the no-JavaScript fallback.
