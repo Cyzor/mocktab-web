@@ -1,25 +1,19 @@
 {
     "release": {
-        "version": "0.6.0",
-        "date": "2026-10-26T15:01Z",
-        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.6.0/MockTab-0.6.0.dmg",
+        "version": "0.6.1",
+        "date": "2026-11-06T23:01Z",
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.6.1/MockTab-0.6.1.dmg",
         "notes": [
-            "The Buttons pane draws your tablet, lights each key as you press it, and jumps to any control you click",
-            "Drawings, key assignments, and pen tilt turn with the tablet, and ⌘⌥1–4 picks an orientation",
-            "Preliminary touch strips and keys on older Cintiqs, and each touch strip keeps its own modes",
-            "Graphire-era tablets switch into full pen mode and click more reliably",
-            "Preliminary Graphire 3 Wireless support",
-            "Bamboo Touch ExpressKeys",
-            "Wireless kit battery level and sleep timer",
-            "Intuos4 key labels wrap to fit, turn with the tablet, and dim when idle",
-            "Art Pen 2 rotation",
-            "Intuos4 Grip Pen side buttons and full pressure on Intuos Pro (2017)",
-            "Side buttons stay held near the edge of range",
-            "Cintiq 24HD right ring gets its own modes",
-            "Faster launch, with the pen working before settings windows open",
-            "Steadier cursor on older Intuos tablets",
-            "Settings work with Text Size, the keyboard, and VoiceOver",
-            "The Auto-Switch toggle leaves Profiles"
+            "A held ExpressKey shortcut no longer stays down after the pen leaves range",
+            "Buttons can send F13 through F19 or open MockTab's settings",
+            "Pen clicks and window activation should work on macOS 27.2",
+            "Wobbly taps stay clicks",
+            "Presses no longer stick on small tablets with large displays",
+            "An Art Pen on Intuos4 and Intuos5-era tablets updates twice as often",
+            "Pan View can reverse direction",
+            "The Cintiq 22HD's three top keys work",
+            "The Cintiq 24HD Touch pen works again alongside touch",
+            "Preliminary Cintiq Partner (PTU-600) support"
         ]
     },
     "snapshot": {
