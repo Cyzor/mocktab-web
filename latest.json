@@ -17,21 +17,19 @@
         ]
     },
     "snapshot": {
-        "date": "2026-11-05T18:43Z",
+        "date": "2026-11-11T18:39Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
-            "A held ExpressKey shortcut no longer leaves a key down after the pen leaves range",
-            "Pen clicks and window activation should work on macOS 27.2",
-            "A tap that wobbles on contact stays a click",
-            "Presses and window drags no longer stick on small tablets with large displays",
-            "Renaming a tablet works again",
-            "The Cintiq 24HD Touch pen works again alongside touch",
-            "The Cintiq 22HD's three top keys work",
-            "The 2017 Cintiq Pro 16 should start its pen and touch reliably",
-            "Preliminary Cintiq Partner (PTU-600) support",
-            "Preliminary touch on the Bamboo Pen & Touch 6×8",
-            "An Art Pen on Intuos4 and Intuos5-era tablets updates twice as often",
-            "Pan View and two-finger scrolling reach Finder's column view more reliably"
+            "Buttons open apps, files, and links dragged onto their rows, and run Keyboard Maestro macros",
+            "A row's menu edits its link",
+            "Mocktab links open settings panes and Help sections",
+            "MobileStudio Pro keys, rocker, and ring work, untested on hardware",
+            "A resting pen holds the pointer steady on older tablets",
+            "Intuos4 key displays go dark at quit",
+            "MockTab recognizes the small 2026 Intuos, untested on hardware",
+            "The menu bar menu adds Help and Check for Updates",
+            "Granting Input Monitoring late starts tablets at once",
+            "Escape cancels a capture"
         ]
     }
 }
