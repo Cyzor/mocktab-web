@@ -14,7 +14,8 @@
             "The Cintiq 22HD's three top keys work",
             "The Cintiq 24HD Touch pen works again alongside touch",
             "Preliminary Cintiq Partner (PTU-600) support"
-        ]
+        ],
+        "sha256": "3a0a91db0c4882f99172e3838194c4a2c48900f88732a195cc6fef79ed86070c"
     },
     "snapshot": {
         "date": "2026-11-11T18:39Z",
