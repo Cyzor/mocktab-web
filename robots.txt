@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /download/
 Sitemap: https://mocktab.org/sitemap.xml

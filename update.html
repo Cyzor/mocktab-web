@@ -169,10 +169,11 @@
 
             // Downloads come only from the project's own releases, even if
             // latest.json is tampered with.
-            const downloads = "https://github.com/Cyzor/tablet-driver/releases/download/";
+            const downloads = ["https://github.com/Cyzor/tablet-driver/releases/download/",
+                               "https://mocktab.org/download/"];
             // Checked as the browser resolves it, so ".." can't climb out.
             function trusted(url) {
-                try { return new URL(url).href.startsWith(downloads); } catch { return false; }
+                try { const href = new URL(url).href; return downloads.some((d) => href.startsWith(d)); } catch { return false; }
             }
 
             let latest = null;
