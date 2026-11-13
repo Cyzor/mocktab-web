@@ -43,8 +43,8 @@ class FAQExtractor(HTMLParser):
             self._in_question = False
         elif self._depth is not None:
             if self._depth == 0:
-                answer = " ".join(" ".join(self._answer_parts).split())
-                question = " ".join(" ".join(self._question).split())
+                answer = " ".join("".join(self._answer_parts).split())
+                question = " ".join("".join(self._question).split())
                 if question and answer:
                     self.items.append((question, answer))
                 self._depth = None
