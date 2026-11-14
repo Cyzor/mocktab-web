@@ -18,6 +18,10 @@ entries=(
     "https://mocktab.org/hardware.html|hardware.html|0.80"
     "https://mocktab.org/configuration.html|configuration.html|0.80"
     "https://mocktab.org/guide.html|guide.html|0.80"
+    "https://mocktab.org/fr/|fr/index.html|0.50"
+    "https://mocktab.org/de/|de/index.html|0.50"
+    "https://mocktab.org/es/|es/index.html|0.50"
+    "https://mocktab.org/ja/|ja/index.html|0.50"
     "https://mocktab.org/notes/|notes/index.html|0.80"
 )
 
