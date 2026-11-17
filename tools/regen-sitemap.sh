@@ -22,6 +22,7 @@ entries=(
     "https://mocktab.org/fr/|fr/index.html|0.50"
     "https://mocktab.org/de/|de/index.html|0.50"
     "https://mocktab.org/es/|es/index.html|0.50"
+    "https://mocktab.org/it/|it/index.html|0.50"
     "https://mocktab.org/ja/|ja/index.html|0.50"
     "https://mocktab.org/notes/|notes/index.html|0.10"
 )

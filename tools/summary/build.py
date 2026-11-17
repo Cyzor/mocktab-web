@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Write the one-page summaries in other languages: fr/, de/, es/, and ja/.
+Write the one-page summaries in other languages: fr/, de/, es/, it/, and ja/.
 
 Each page is a short overview for people who search in their own language.
 It leaves out versions and features on purpose, so a release never needs an
@@ -44,7 +44,7 @@ PAGES = {
         "steps": ["Vérifiez que votre tablette figure dans la <a href=\"/hardware.html\">liste du matériel</a>.",
                   "Quittez ou désinstallez le pilote de Wacom.",
                   f"<a href=\"{DOWNLOAD}\">Téléchargez MockTab</a>, ouvrez l’app et accordez les autorisations demandées."],
-        "language": "L’app, le <a href=\"/guide.html\">guide complet</a> et les pages de <a href=\"/troubleshooting.html\">dépannage</a> sont en anglais.",
+        "language": "L’app est en français. Le <a href=\"/guide.html\">guide complet</a> et les pages de <a href=\"/troubleshooting.html\">dépannage</a> sont uniquement en anglais.",
         "download": "Télécharger pour Mac",
         "footer": "MockTab est un projet indépendant, sans lien avec Wacom.",
         "faq": [
@@ -103,6 +103,32 @@ PAGES = {
             ("¿Qué es MockTab?", "Un controlador gratuito para Mac para las tabletas Wacom que el controlador de Wacom ya no admite."),
             ("¿Qué tabletas admite MockTab?", f"Modelos USB y Bluetooth de las familias {FAMILIES} y Graphire, hasta la Intuos original de 1998, además del paquete Xencelabs Pen Display."),
             ("¿Cuánto cuesta MockTab?", "Nada. Es gratis y de código abierto."),
+        ],
+    },
+    "it": {
+        "name": "Italiano",
+        "title": "MockTab: un driver Mac gratuito per le vecchie tavolette Wacom",
+        "description": "MockTab è un driver Mac gratuito per le tavolette Wacom che il driver di Wacom non supporta più.",
+        "h1": "La tua tavoletta Wacom funziona ancora",
+        "intro": "Il driver di Wacom abbandona poco a poco le tavolette più vecchie. La tua tavoletta forse si accende ancora, ma se il driver di Wacom mostra uno di questi messaggi, MockTab può rimetterla in funzione:",
+        "messages": ["«Il dispositivo Wacom non è più supportato»",
+                     "«Il driver della tavoletta non risponde.»"],
+        "what_h": "Cosa fa MockTab",
+        "what": f"MockTab è un’app Mac gratuita che legge direttamente la tua tavoletta. Supporta pressione, inclinazione e pulsanti della penna e della tavoletta, sui modelli USB e Bluetooth delle serie {FAMILIES} e Graphire, fino alla prima Intuos del 1998, oltre al kit Xencelabs Pen Display.",
+        "clean": "Non installa estensioni di sistema né servizi in background. Per disinstallarla, spostala nel Cestino.",
+        "req_h": "Requisiti",
+        "req": "macOS 13 (Ventura) o successivo, su Mac con chip Apple o Intel.",
+        "start_h": "Per iniziare",
+        "steps": ["Controlla che la tua tavoletta sia nell’<a href=\"/hardware.html\">elenco dell’hardware</a>.",
+                  "Chiudi o disinstalla il driver di Wacom.",
+                  f"<a href=\"{DOWNLOAD}\">Scarica MockTab</a>, apri l’app e concedi le autorizzazioni richieste."],
+        "language": "L’app è in italiano. La <a href=\"/guide.html\">guida completa</a> e le pagine di <a href=\"/troubleshooting.html\">risoluzione dei problemi</a> sono solo in inglese.",
+        "download": "Scarica per Mac",
+        "footer": "MockTab è un progetto indipendente, non affiliato a Wacom.",
+        "faq": [
+            ("Cos’è MockTab?", "Un driver Mac gratuito per le tavolette Wacom che il driver di Wacom non supporta più."),
+            ("Quali tavolette supporta MockTab?", f"I modelli USB e Bluetooth delle serie {FAMILIES} e Graphire, fino alla prima Intuos del 1998, oltre al kit Xencelabs Pen Display."),
+            ("Quanto costa MockTab?", "Niente. L’app è gratuita e il suo codice sorgente è pubblico."),
         ],
     },
     "ja": {
