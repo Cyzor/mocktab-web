@@ -18,19 +18,19 @@
         "sha256": "3a0a91db0c4882f99172e3838194c4a2c48900f88732a195cc6fef79ed86070c"
     },
     "snapshot": {
-        "date": "2026-11-11T18:39Z",
+        "date": "2026-11-18T00:12Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
+            "MockTab can download and install updates",
             "Buttons open apps, files, and links dragged onto their rows, and run Keyboard Maestro macros",
-            "A row's menu edits its link",
-            "Mocktab links open settings panes and Help sections",
-            "MobileStudio Pro keys, rocker, and ring work, untested on hardware",
+            "French and Italian translations",
+            "The Info pane shows live input as gauges",
+            "Internal links open settings panes and Help sections",
+            "MobileStudio Pro keys, rocker, and ring gain device support, but require verification",
             "A resting pen holds the pointer steady on older tablets",
             "Intuos4 key displays go dark at quit",
-            "MockTab recognizes the small 2026 Intuos, untested on hardware",
-            "The menu bar menu adds Help and Check for Updates",
-            "Granting Input Monitoring late starts tablets at once",
-            "Escape cancels a capture"
-        ]
+            "Art Pen rotation no longer stands in for tilt, since Photoshop reads rotation directly"
+        ],
+        "sha256": "a6dda219cfe8fc65c388fb0b48e5442eb3ba98ae8803d26f1566c9891a6f68d3"
     }
 }
