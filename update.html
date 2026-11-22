@@ -147,17 +147,22 @@
                 const snapAhead = run && run.snapshotDate && time(snap.date) > time(run.snapshotDate);
 
                 let title, fact;
-                if (!run) { title = "Download MockTab"; fact = "Two builds are available."; }
+                if (!run) { title = "Download MockTab"; fact = snapLeads ? "Two builds are available." : "Version " + rel.version + " is the latest."; }
                 else if (relAhead) { title = "Update available."; fact = "A new release is out."; }
                 else if (snapAhead) { title = "A newer snapshot is out."; fact = "You're following snapshots."; }
                 else { title = "MockTab is up to date."; fact = snapLeads && onRel
                     ? "A snapshot of more recent changes is also available." : "Nothing newer is available."; }
 
                 const status = el("div", { className: "status" }, [el("h2", { textContent: title }), el("p", { textContent: fact })]);
-                const cards = el("div", { className: "channels" }, [
-                    channel({ title: "Release v" + rel.version, when: "Released " + stamp(rel.date),
-                        notes: rel.notes, url: rel.url, label: "Download release",
-                        installed: onRel, newer: !!relAhead, primary: !snapAhead }),
+                const release = channel({ title: "Release v" + rel.version, when: "Released " + stamp(rel.date),
+                    notes: rel.notes, url: rel.url, label: "Download release",
+                    installed: onRel, newer: !!relAhead, primary: !snapAhead || !snapLeads });
+                // A snapshot older than the release holds nothing the release lacks.
+                if (!snapLeads) {
+                    document.getElementById("result").replaceChildren(status, el("div", { className: "channels" }, [release]));
+                    return;
+                }
+                const cards = el("div", { className: "channels" }, [release,
                     channel({ title: "Snapshot", when: "Built " + stamp(snap.date),
                         blurb: "Everything in v" + rel.version + (snap.notes ? ", plus:" : ", plus newer work."), notes: snap.notes,
                         url: snap.url, label: "Download snapshot",
