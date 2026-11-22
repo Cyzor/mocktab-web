@@ -1,21 +1,22 @@
 {
+    "schema": 1,
     "release": {
-        "version": "0.6.1",
-        "date": "2026-11-06T23:01Z",
-        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.6.1/MockTab-0.6.1.dmg",
+        "version": "0.6.2",
+        "date": "2026-11-22T15:35Z",
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/v0.6.2/MockTab-0.6.2.dmg",
         "notes": [
-            "A held ExpressKey shortcut no longer stays down after the pen leaves range",
-            "Buttons can send F13 through F19 or open MockTab's settings",
-            "Pen clicks and window activation should work on macOS 27.2",
-            "Wobbly taps stay clicks",
-            "Presses no longer stick on small tablets with large displays",
-            "An Art Pen on Intuos4 and Intuos5-era tablets updates twice as often",
-            "Pan View can reverse direction",
-            "The Cintiq 22HD's three top keys work",
-            "The Cintiq 24HD Touch pen works again alongside touch",
-            "Preliminary Cintiq Partner (PTU-600) support"
+            "MockTab installs its own updates",
+            "Buttons open apps, files, and links dragged onto their rows, and run Keyboard Maestro macros",
+            "French and Italian translations",
+            "The Info pane shows live input as gauges",
+            "A resting pen holds the pointer steady on older tablets",
+            "Preliminary MobileStudio Pro keys, rocker, and ring",
+            "The Graphire4's pad wheel should scroll",
+            "Intuos4 key displays go dark at quit",
+            "Opening a second installed copy brings the running one forward"
         ],
-        "sha256": "3a0a91db0c4882f99172e3838194c4a2c48900f88732a195cc6fef79ed86070c"
+        "sha256": "bf00f0a6ad3013e01eb197e7848a0ce9963bdcb228ca37685f352bd3168561ea",
+        "minimumSystemVersion": "13.0"
     },
     "snapshot": {
         "date": "2026-11-18T00:12Z",
