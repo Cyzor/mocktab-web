@@ -36,8 +36,7 @@
     <section class="hero wrap">
       <h1>Guide</h1>
       <p class="lede">
-        This guide covers each settings pane and how they fit together. MockTab saves
-        every change automatically.
+        This guide covers each settings pane. MockTab saves every change automatically.
       </p>
     </section>
 
@@ -51,9 +50,9 @@
       <ul>
         <li><strong><a href="#devices">Devices</a></strong>: connected tablets, battery, and connection.</li>
         <li><strong><a href="#profiles">Profiles</a></strong>: named presets and per-app settings.</li>
-        <li><strong><a href="#buttons">Button Mapping</a></strong>: pen buttons, ExpressKeys, touch rings, and dials.</li>
+        <li><strong><a href="#buttons">Buttons</a></strong>: pen buttons, ExpressKeys, touch rings, and dials.</li>
         <li><strong><a href="#tablet-area">Tablet Area</a></strong>: active area and orientation.</li>
-        <li><strong><a href="#display">Display Mapping</a></strong>: which display, and alignment.</li>
+        <li><strong><a href="#display">Display</a></strong>: which display, and alignment.</li>
         <li><strong><a href="#pen-feel">Pen Feel</a></strong>: pressure, steadiness, clicks, and rotation.</li>
         <li><strong><a href="#touch">Touch</a></strong>: finger scrolling, tapping, and touch area, on tablets with touch.</li>
         <li><strong><a href="#scratchpad">Scratchpad</a></strong>: a blank canvas for testing.</li>
@@ -72,9 +71,8 @@
         <li><strong>App settings</strong>: apply only while a given app is in front.</li>
       </ol>
       <p>
-        Editing an app's settings changes only that app; the profile beneath stays the
-        same. The bar at the bottom of the window shows which app's settings are active,
-        if any.
+        Editing an app's settings leaves the profile beneath unchanged. The bar at the
+        bottom of the window shows which app's settings are active.
       </p>
 
       <h2 id="devices">Devices</h2>
@@ -97,9 +95,8 @@
 
       <h2 id="profiles">Profiles</h2>
       <p>
-        A profile saves a tablet's settings (display, pressure, buttons, and more) so
-        you can switch between workflows. Create one from the current settings, then
-        switch back to it any time.
+        A profile saves a tablet's settings, such as display, pressure, and buttons, so
+        you can switch between workflows.
       </p>
 
       <div class="shot-wrap section-shot">
@@ -110,16 +107,16 @@
       <h3 id="app-overrides">Per-app overrides</h3>
       <p>
         The bar at the top of the Buttons, Tablet Area, Display, and Pen Feel panes
-        holds per-app settings. <strong>Global</strong> edits the shared settings; each
-        app's chip edits settings that apply only while that app is in front.
+        holds per-app settings. <strong>Global</strong> edits the shared settings; an
+        app's chip edits that app's own.
       </p>
       <p>
-        Add an app from the menu, or drag it from Finder or the Dock onto the bar. (To
-        drag from the Dock, hold <kbd>⌘</kbd> while dragging.)
+        Add an app from the menu, or drag it onto the bar from the Finder or the Dock.
+        To drag from the Dock, hold <kbd>⌘</kbd>.
       </p>
       <p>
-        An app appears in the bar only once it has its own settings. Removing an app
-        deletes its settings, and the shared settings apply again.
+        An app appears in the bar once it has its own settings. Removing it deletes
+        them, and the shared settings apply again.
       </p>
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/add-app-light.png" width="609" height="662" alt="Adding a per-app override by drag and drop or drop-down menu">
@@ -128,23 +125,22 @@
 
       <h3 id="export-import">Export and import</h3>
       <p>
-        <strong>Export</strong> saves a profile to a file, with every setting except
-        per-pen and per-app settings. <strong>Import</strong> merges a file into the
-        current settings without replacing your other profiles.
+        Drag the JSON tile in the Profiles pane to the Finder to save all settings. Drag
+        a file onto the tile to import it and choose which tablets to bring in.
       </p>
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/import-light.png" width="488" height="543" alt="Profile import dialog">
         <img class="shot dark" src="images/ui/import-dark.png" width="488" height="543" alt="Profile import dialog (dark theme)">
       </div>
 
-      <h2 id="buttons">Button Mapping</h2>
+      <h2 id="buttons">Buttons</h2>
       <p>
-        The Button Mapping pane assigns actions to every control: pen tip, eraser, pen
+        The Buttons pane assigns actions to every control: pen tip, eraser, pen
         buttons, ExpressKeys, touch rings, and dials.
       </p>
       <p>
-        Recognized tablets, pens, and mice appear as a diagram beside the list. Press a
-        control to highlight it, or click a part of the diagram to jump to its settings.
+        Recognized tablets, pens, and mice appear as a diagram. Press a control to
+        highlight it, or click part of the diagram to jump to its settings.
       </p>
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/buttons-light.png" width="717" height="1243" alt="Button mapping panel for pen buttons, touch ring, and ExpressKeys">
@@ -159,7 +155,7 @@
 
         <li>
           <p class="name">Left / Right / Middle Click</p>
-          <p class="desc">Clicks at the cursor. <strong>Require Contact</strong> in Pen Feel can limit a side button's click to when the tip touches the tablet.</p>
+          <p class="desc">Clicks at the cursor. <strong>Require Contact</strong> in Pen Feel can make a side button wait for the tip to touch.</p>
         </li>
         <li>
           <p class="name">Click Lock</p>
@@ -167,7 +163,7 @@
         </li>
         <li>
           <p class="name">Double Click</p>
-          <p class="desc">Double-clicks, for renaming files in Finder or selecting words in some apps.</p>
+          <p class="desc">Double-clicks.</p>
         </li>
         <li>
           <p class="name">Eraser</p>
@@ -187,11 +183,11 @@
         </li>
         <li>
           <p class="name">Toggle Display</p>
-          <p class="desc">Moves the tablet to the next display. Choose the displays in the Display Mapping pane.</p>
+          <p class="desc">Moves the tablet to the next display. Choose the displays in the Display pane.</p>
         </li>
         <li>
           <p class="name">Span Displays</p>
-          <p class="desc">Spreads the tablet across the displays chosen in Display Mapping. Press again to go back.</p>
+          <p class="desc">Spreads the tablet across the displays chosen in the Display pane. Press again to go back.</p>
         </li>
         <li>
           <p class="name">Ring: Cycle / Dial: Cycle</p>
@@ -203,7 +199,7 @@
         </li>
         <li>
           <p class="name">Pan View</p>
-          <p class="desc">Drags the canvas like a hand tool while held. Pen Feel can reverse its direction, and <strong>Momentum Scrolling</strong> keeps it coasting after release. Some apps and websites don't support it; see <a href="/configuration.html#panning">Panning</a> for alternatives.</p>
+          <p class="desc">Drags the canvas like a hand tool while held. Pen Feel can reverse it or let it coast. Some apps and websites don't support it; see <a href="/configuration.html#panning">Panning</a>.</p>
         </li>
         <li>
           <p class="name">Toggle Relative Mode</p>
@@ -218,8 +214,8 @@
       <h3 id="key-combos">Recording key combinations</h3>
       <p>
         Click the record button next to a Key Combination, then type the shortcut. A
-        modifier alone, such as <kbd>⌘</kbd>, works too, and behaves like a real
-        modifier key, which some Adobe apps rely on.
+        modifier alone, such as <kbd>⌘</kbd>, acts like the real key, which some Adobe
+        apps rely on.
       </p>
       <p>
         Shortcuts keep working if your keyboard layout changes, for example with <a
@@ -229,14 +225,12 @@
 
       <h3 id="pen-buttons">Pen buttons</h3>
       <p>
-        Most Wacom pens have one or more side buttons. Button 1 (the lower one) defaults
-        to <kbd>Right Click</kbd>, and Button 2 to <kbd>Middle Click</kbd>. Some pens
-        and mice have buttons 3 to 5.
+        Button 1, the lower side button, starts as <kbd>Right Click</kbd>, and Button 2
+        as <kbd>Middle Click</kbd>. Some pens and mice have buttons 3 to 5.
       </p>
       <p>
-        Holding a button set to Left, Right, or Middle Click while the pen hovers drags
-        without touching the tablet. Checking Require Contact in Pen Feel for Right Click
-        or Middle Click turns this off for those buttons.
+        A button set to Left, Right, or Middle Click also drags while the pen hovers.
+        Require Contact in Pen Feel turns this off.
       </p>
       <p>
         A Wacom mouse or puck gets its own diagram and button rows. Its first three
@@ -246,8 +240,7 @@
       <h3 id="express-keys">Express keys</h3>
       <p>
         ExpressKeys are the buttons on the tablet itself, and each can do anything a pen
-        button can. They send only a press and a release, so for actions you hold down
-        (like panning in some apps), assign a modifier key with Key Combination instead.
+        button can.
       </p>
       <p>
         An Intuos4 with key displays shows each key's action beside it while connected
@@ -256,12 +249,10 @@
 
       <h3 id="ring-slots">Touch rings, dials, and slots</h3>
       <p>
-        Touch rings, mechanical dials (such as on the Intuos Pro Gen 3 and Xencelabs
-        Quick Keys), and the scroll wheel on some Intuos models all work the same way.
-        Each has up to four modes, called <em>slots</em>, each with its own action and
-        speed. On tablets with ring lights, the lights show the current slot. Each of
-        the Cintiq 24HD's two rings has three slots. The button in the center has its
-        own separate action.
+        Touch rings, dials, and the scroll wheel on some Intuos models work the same
+        way. Each has up to four modes, called <em>slots</em>, with their own action and
+        speed. Ring lights show the current slot, and the center button has its own
+        action.
       </p>
       <p>
         On tablets with two dials, each dial has its own slots, and the
@@ -312,9 +303,9 @@
         (<kbd>[</kbd> / <kbd>]</kbd>).
       </p>
       <p>
-        <strong>Touch strips</strong> on older Intuos and Cintiq tablets use the same
-        slots, and each strip has its own modes. On the Cintiq 21UX2 and 22HD, a
-        <strong>Strip Toggle</strong> button sits beside each strip.
+        <strong>Touch strips</strong> on older Intuos and Cintiq tablets use slots too,
+        one set per strip. On the Cintiq 21UX2 and 22HD, a <strong>Strip Toggle</strong>
+        button sits beside each strip.
       </p>
       <p>
         Assign <strong>Cycle</strong> to a pen button or ExpressKey to change modes
@@ -335,10 +326,10 @@
       <h2 id="tablet-area">Tablet Area</h2>
       <p>
         The Tablet Area pane sets which part of the tablet maps to the display. Drag the
-        rectangle to resize it; it snaps to the display's shape. Hold <kbd>⌘</kbd> to skip
-        snapping, or <kbd>⇧</kbd> to keep its shape. <strong>Fit to Tablet</strong>,
-        <strong>Fit to Screen Area</strong>, and <strong>Best Fit</strong> size it in one
-        click, and <strong>Edit Mapping</strong> takes exact numbers.
+        rectangle or its handles; it snaps to the screen area's shape. <strong>Fit to
+        Tablet</strong>, <strong>Fit to Screen Area</strong>, and <strong>Best
+        Fit</strong> size it in one click, and <strong>Edit Mapping</strong> takes exact
+        numbers. Help lists the modifier and arrow keys.
       </p>
       <p>
         <strong>Proportional mapping</strong> matches the area's shape to the display's,
@@ -351,52 +342,46 @@
 
       <h3 id="tablet-orientation">Tablet orientation</h3>
       <p>
-        Choose the orientation whose picture matches how the tablet sits on your
-        desk: <strong>Landscape</strong>, <strong>Portrait</strong>,
-        <strong>Landscape Flipped</strong>, or <strong>Portrait Flipped</strong>.
-        In the Tablet Area pane, <kbd>⌘</kbd><kbd>⌥</kbd><kbd>1</kbd> through
-        <kbd>⌘</kbd><kbd>⌥</kbd><kbd>4</kbd> choose them in order. The pen, touch,
-        and tilt follow the choice, and the Button Mapping pane draws the tablet as
-        it sits.
+        Choose the orientation that matches how the tablet sits on your desk, or press
+        <kbd>⌘</kbd><kbd>⌥</kbd><kbd>1</kbd> through
+        <kbd>⌘</kbd><kbd>⌥</kbd><kbd>4</kbd> in the Tablet Area pane. The pen, touch,
+        and tilt follow, and the Buttons pane draws the tablet as it sits.
       </p>
       <p>
-        Turning the tablet moves each assignment to the key now in its place, so
-        every place keeps its action, in every profile and app override. Undo
-        restores the orientation and the assignments together.
+        Turning the tablet moves each assignment to the key now in its place, in every
+        profile and app override. Undo reverses both together.
       </p>
       <p>
-        To move assignments without changing the orientation, right-click the
-        tablet drawing in the Button Mapping pane and choose <strong>Turn
-        Assignments Around</strong>. Each assignment moves to the key in the
-        opposite place; choose it again to put everything back.
+        To move assignments alone, right-click the tablet drawing in the Buttons pane
+        and choose <strong>Turn Assignments Around</strong>. Choose it again to put them
+        back.
       </p>
 
-      <h2 id="display">Display Mapping</h2>
+      <h2 id="display">Display</h2>
       <p>
-        The Display Mapping pane chooses which screen the tablet controls, and
+        The Display pane chooses which screen the tablet controls, and
         fine-tunes alignment.
       </p>
       <div class="shot-wrap section-shot">
-        <img class="shot light" src="images/ui/displays-light.png" width="717" height="996" alt="MockTab Display Mapping pane">
-        <img class="shot dark" src="images/ui/displays-dark.png" width="717" height="996" alt="MockTab Display Mapping pane (dark theme)">
+        <img class="shot light" src="images/ui/displays-light.png" width="717" height="996" alt="MockTab Display pane">
+        <img class="shot dark" src="images/ui/displays-dark.png" width="717" height="996" alt="MockTab Display pane (dark theme)">
       </div>
 
       <h3 id="target-display">Target display</h3>
       <p>
-        <strong>Primary display</strong> uses the main screen. A numbered display uses
-        that monitor. <strong>Toggle between displays</strong> moves to the next display
-        each time you press a button set to <em>Toggle Display</em>.
-        <strong>All</strong> spans every display as one surface.
+        <strong>Primary display</strong> uses the main screen, and a numbered display
+        uses that monitor. <strong>Toggle between displays</strong> moves on with each
+        press of a <em>Toggle Display</em> button. <strong>All</strong> spans every
+        display.
       </p>
       <p>
-        <strong>Included displays</strong> chooses which monitors the toggle visits, so
-        you can skip one, such as a pen display off to the side.
+        <strong>Active Displays</strong> chooses which monitors the toggle visits.
       </p>
 
       <h3 id="calibration">Calibration</h3>
       <p>
-        <strong>Offset X</strong> and <strong>Offset Y</strong> shift the cursor. On pen
-        displays, use them to line the cursor up with the pen tip.
+        <strong>Pointer Offset</strong> shifts the cursor. On pen displays, use it to
+        line the cursor up with the pen tip.
       </p>
       <p>
         <strong>Parallax Offset</strong> allows even finer adjustment, below a single
@@ -431,15 +416,14 @@
             technical drawing that want a crisp minimum line.</li>
       </ul>
       <p>
-        Drag the handles in the curve editor to shape it freely. Across is how hard you
-        press; up is what the app receives. The preview updates as you drag.
+        Drag the handles to shape the curve. Across is how hard you press; up is what
+        the app receives.
       </p>
 
       <h3 id="smoothing">Steadiness</h3>
       <p>
-        <strong>Steadiness</strong> steadies the cursor against hand tremor. Higher
-        values smooth more but add lag. For drawing, moderate values work well. For
-        pixel-precise work, set it to zero.
+        <strong>Steadiness</strong> smooths the cursor against hand tremor. Higher
+        values smooth more but add lag; for pixel-precise work, set it to zero.
       </p>
       <p>
         Steadiness moves only the cursor, and eases off during fast strokes.
@@ -450,28 +434,25 @@
         clicks.
       </p>
       <p>
-        <strong>Drag Threshold</strong> sets how far the cursor must move before a press
-        becomes a drag, which helps with jittery pens. <strong>Tip-up Assist</strong>
-        keeps the end of a fast stroke from getting clipped when you lift the pen.
+        <strong>Drag Threshold</strong> keeps a tap from turning into a small drag.
+        <strong>Tip-up Assist</strong> keeps a fast stroke's end from getting clipped
+        when you lift the pen.
       </p>
       <p>
-        <strong>Require Contact</strong> makes side buttons set to Right Click, Middle
-        Click, Double Click, or Pan View work only while the tip touches the tablet.
-        Unchecked actions work while the pen hovers.
+        <strong>Require Contact</strong> makes checked side-button actions wait for the
+        tip to touch. Unchecked ones also work while the pen hovers.
       </p>
 
       <h3 id="double-click">Double-click distance</h3>
       <p>
-        When a second tap lands close to the first, MockTab moves it onto the first tap,
-        so small hand movements don't break a double-click. Set the slider to zero to
-        turn this off.
+        MockTab moves a second tap onto the first when it lands close by, so small hand
+        movements don't break a double-click. Zero turns this off.
       </p>
 
       <h3 id="rotation">Rotation handling</h3>
       <p>
         <strong>Invert Rotation Direction</strong> reverses Art Pen barrel rotation for
-        apps that read it backward. It applies to the whole tablet, and the per-app bar
-        can change it for single apps.
+        the whole tablet, or for single apps through the per-app bar.
       </p>
       <p>
         Photoshop, Illustrator, Krita, and Rebelle all read Art Pen rotation. See <a
@@ -481,9 +462,8 @@
 
       <h3 id="relative-mode">Relative cursor movement</h3>
       <p>
-        In relative mode, the pen works like a mouse: it moves the cursor from where it
-        is, instead of to a fixed point on the screen. Useful for presentations, or
-        whenever a mouse feels more natural.
+        In relative mode, the pen moves the cursor from where it is, like a mouse,
+        instead of to a fixed point on the screen.
       </p>
       <p>
         Relative mode ignores display and alignment settings. The pen can reach every
@@ -496,18 +476,18 @@
 
       <h2 id="touch">Touch</h2>
       <p>
-        The Touch pane sets up finger touch on tablets that have it. Touch has its own
-        on/off switch, cursor speed, and area, separate from the pen.
+        The Touch pane sets up finger touch, with its own switch, cursor speed, and
+        area, separate from the pen.
       </p>
       <p>
         <strong>Enable Finger Touch</strong> turns touch on. Some tablets also have a
         touch switch on the tablet itself, which must be on too.
       </p>
       <p>
-        <strong>Two-finger scroll</strong> scrolls smoothly, just like a Magic Trackpad,
-        including the bounce at the edges in Safari and Preview. <strong>Reverse
-        direction</strong> flips it to feel like a mouse wheel.
-        <strong>Cursor Speed</strong> sets how fast one finger moves the cursor.
+        <strong>Two-finger scroll</strong> works like a Magic Trackpad, including the
+        bounce at the edges. <strong>Reverse Direction</strong> makes it feel like a
+        mouse wheel. <strong>Cursor Speed</strong> sets how fast one finger moves the
+        cursor.
       </p>
       <p>
         <strong>Tap to Click</strong> clicks with a brief touch.
@@ -516,19 +496,17 @@
         button down while they move.
       </p>
       <p>
-        <strong>Momentum Scrolling</strong> keeps content coasting after you lift your
-        fingers. It's off by default. Pen Feel has the same setting for Pan View,
-        and the per-app bar can turn either on just for the apps where it works.
+        <strong>Momentum Scrolling</strong>, off by default, keeps content coasting
+        after you lift your fingers. Pen Feel has the same setting for Pan View, and the
+        per-app bar can turn either on for single apps.
       </p>
       <p>
         <strong>Pinch to Zoom</strong> and <strong>Rotate</strong> work like the
-        trackpad gestures: spread or pinch two fingers to zoom, and twist them to
-        rotate. Scroll, zoom, and rotate each turn on and off separately.
+        trackpad gestures, and each gesture turns on and off separately.
       </p>
       <p>
-        The <strong>Touch Area</strong> editor works like the Tablet Area editor: drag
-        the handles to set where touch works. Touches outside it do nothing. It's
-        separate from the pen area; most people leave touch on the whole surface.
+        The <strong>Touch Area</strong> editor works like the Tablet Area editor,
+        separately from the pen area. Touches outside it do nothing.
       </p>
       <div class="shot-wrap section-shot">
         <img class="shot light" src="images/ui/touch-light.png" width="672" height="1080" alt="MockTab Touch pane with two-finger scroll controls and touch area crop editor">
@@ -537,23 +515,22 @@
 
       <h2 id="scratchpad">Scratchpad</h2>
       <p>
-        The Scratchpad is a blank canvas for testing the pen without opening a drawing
-        app. It shows pressure, tilt, and rotation as you draw. Nothing is saved when it
-        closes.
+        The Scratchpad is a blank canvas for checking that the pen registers pressure
+        and motion. MockTab doesn't save what you draw.
       </p>
       <div class="shot-wrap section-shot">
-        <img class="shot light" src="images/ui/scratchpad-light.png" width="717" height="692" alt="Live scratchpad showing pressure and tilt visualization">
-        <img class="shot dark" src="images/ui/scratchpad-dark.png" width="717" height="692" alt="Live scratchpad showing pressure and tilt visualization (dark theme)">
+        <img class="shot light" src="images/ui/scratchpad-light.png" width="717" height="684" alt="Scratchpad with a test drawing">
+        <img class="shot dark" src="images/ui/scratchpad-dark.png" width="717" height="684" alt="Scratchpad with a test drawing (dark theme)">
       </div>
 
       <h2 id="info">Info</h2>
       <p>
-        The Info pane shows the tablet's live state: pen position, buttons, whether the
-        pen is in range, and hover height.
+        The Info pane shows the tablet's live state as gauges: position, pressure, tilt,
+        rotation, hover height, and touch.
       </p>
       <p>
         Use it to check that the tablet sends data, that a button works, or that the
-        cursor lines up, without opening a drawing app.
+        cursor lines up.
       </p>
       <p>
         On an Intuos5 or Intuos Pro (2013) with the Wacom wireless kit, the
@@ -561,17 +538,15 @@
         sleeps.
       </p>
       <div class="shot-wrap section-shot">
-        <img class="shot light" src="images/ui/info-light.png" width="717" height="1080" alt="MockTab Info pane with live tablet state values">
-        <img class="shot dark" src="images/ui/info-dark.png" width="717" height="1080" alt="MockTab Info pane with live tablet state values (dark theme)">
+        <img class="shot light" src="images/ui/info-light.png" width="717" height="997" alt="MockTab Info pane with live input gauges">
+        <img class="shot dark" src="images/ui/info-dark.png" width="717" height="997" alt="MockTab Info pane with live input gauges (dark theme)">
       </div>
 
       <h3 id="data-collection">Collecting device data</h3>
       <p>
         Choose <strong>Help › Collect Device Data…</strong>, or click <strong>Collect
-        Device Data…</strong> in the Info pane. The sheet lists things to try: tap the
-        pen, press its buttons, touch with the eraser, press the tablet's keys, slide a
-        finger around a ring or strip, turn any dials, and drag and pinch on a touch surface. Each item
-        checks off when the tablet reports it. Do what your tablet supports, then click
+        Device Data…</strong> in the Info pane. Work through the sheet's list as far as
+        your tablet allows; each item checks off when the tablet reports it. Then click
         <strong>Done</strong>.
       </p>
       <p>
