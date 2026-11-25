@@ -22,7 +22,8 @@
         "date": "2026-11-25T20:37Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
-            "Includes a potential fix for a cursor that stops following the pen after a pause or while it hovers a little high, and new diagnostics may clarify the problem",
+            "Includes a potential fix for a cursor that stops following the pen after a pause or while hovering",
+            "Additional diagnostics to track timing",
             "The pen alone wakes displays and holds off display sleep",
             "An eraser end lying flat no longer moves the pointer"
         ],
