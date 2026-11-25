@@ -19,14 +19,14 @@
         "minimumSystemVersion": "13.0"
     },
     "snapshot": {
-        "date": "2026-11-25T03:46Z",
+        "date": "2026-11-25T20:37Z",
         "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
         "notes": [
-            "Includes a potential fix for a cursor that stops following the pen after a pause, and new diagnostics may clarify the problem",
+            "Includes a potential fix for a cursor that stops following the pen after a pause or while it hovers a little high, and new diagnostics may clarify the problem",
             "The pen alone wakes displays and holds off display sleep",
             "An eraser end lying flat no longer moves the pointer"
         ],
-        "sha256": "6f13de856447dbbaea429359adf948c6ee89eb56f12f1f576f4ecec99f0e1006",
+        "sha256": "de22f6e0f52ff06868f77fed190f0382409d0d1ee0ebf4131e3d19509306007f",
         "minimumSystemVersion": "13.0"
     }
 }
