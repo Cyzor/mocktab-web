@@ -19,15 +19,15 @@
         "minimumSystemVersion": "13.0"
     },
     "snapshot": {
-        "date": "2026-11-25T20:37Z",
-        "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot.dmg",
+        "date": "2026-11-27T15:28Z",
+        "url": "https://github.com/Cyzor/tablet-driver/releases/download/snapshot/MockTab-snapshot-20261127T1528Z.dmg",
         "notes": [
-            "Includes a potential fix for a cursor that stops following the pen after a pause or while hovering",
-            "Additional diagnostics to track timing",
-            "The pen alone wakes displays and holds off display sleep",
+            "A CTL-6100 pen no longer freezes the cursor after a pause, and one that stops clicking may recover",
+            "Preliminary Wacom One 14 pen support",
+            "The pen alone wakes displays",
             "An eraser end lying flat no longer moves the pointer"
         ],
-        "sha256": "de22f6e0f52ff06868f77fed190f0382409d0d1ee0ebf4131e3d19509306007f",
+        "sha256": "7760a8ec80b7455bedc555273dee187f1a287b599259a00a98fb7b8f2e7d772a",
         "minimumSystemVersion": "13.0"
     }
 }
